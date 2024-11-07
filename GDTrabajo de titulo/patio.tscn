@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsnxp3u5vksfj"]
+
+[ext_resource type="Texture2D" uid="uid://caxtp7lb502aq" path="res://fotos/Porton.jpg" id="1_8smtl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7aw0s"]
+
+[node name="Patio" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(640, 360)
+scale = Vector2(0.998437, 0.75)
+texture = ExtResource("1_8smtl")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(614, 376)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+modulate = Color(0.0862745, 0.956863, 0.956863, 1)
+self_modulate = Color(0.0509804, 0.352941, 0.541176, 0.878431)
+position = Vector2(28.5, 194.5)
+scale = Vector2(1141, 191)
+texture = SubResource("CanvasTexture_7aw0s")
