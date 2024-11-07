@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsnxp3u5vksfj"]
+[gd_scene load_steps=4 format=3 uid="uid://d1syp4pqgbuyy"]
 
-[ext_resource type="Texture2D" uid="uid://caxtp7lb502aq" path="res://fotos/Porton.jpg" id="1_8smtl"]
+[ext_resource type="Texture2D" uid="uid://caxtp7lb502aq" path="res://background/Porton.jpg" id="1_8smtl"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="2_0qebv"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7aw0s"]
