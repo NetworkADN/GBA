@@ -5,7 +5,7 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7aw0s"]
 
-[node name="Patio" type="Node2D"]
+[node name="Porton" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
