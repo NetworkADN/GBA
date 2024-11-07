@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsnxp3u5vksfj"]
+[gd_scene load_steps=4 format=3 uid="uid://dsnxp3u5vksfj"]
 
 [ext_resource type="Texture2D" uid="uid://caxtp7lb502aq" path="res://fotos/Porton.jpg" id="1_8smtl"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="2_0qebv"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7aw0s"]
 
@@ -24,3 +25,24 @@ self_modulate = Color(0.0509804, 0.352941, 0.541176, 0.878431)
 position = Vector2(28.5, 194.5)
 scale = Vector2(1141, 191)
 texture = SubResource("CanvasTexture_7aw0s")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 500.0
+offset_right = 1166.0
+offset_bottom = 646.0
+theme_override_fonts/normal_font = ExtResource("2_0qebv")
+theme_override_font_sizes/normal_font_size = 32
+text = "Era un dia comun y corriente en la maravillosa universidad tecnologica metropolitana de santiago de chile, pero entonces conoci a yin carrey"
