@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7g54rif6krnl"]
+
+[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_76l3p"]
+[ext_resource type="Texture2D" uid="uid://1sv2kbj8cvi2" path="res://background/Casillero (cerrado).jpg" id="2_mdn0t"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_3jo3o"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_76l3p")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-5, -8)
+
+[node name="Sala_carrera(locker)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(647.17, 365.491)
+rotation = 1.5708
+scale = Vector2(0.353685, 0.845869)
+texture = ExtResource("2_mdn0t")
+
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Sala_carrera(locker)"]
+offset_left = -26.0
+offset_top = 372.0
+offset_right = 1567.0
+offset_bottom = 1843.0
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_3jo3o")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Sala_carrera(locker)/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://w2omn4rnk0op"]
+
+[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_lshna"]
+[ext_resource type="Texture2D" uid="uid://bfg182id50v6w" path="res://background/M8.jpg" id="2_rhrdh"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_75vvb"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lshna")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-5, -8)
+
+[node name="M8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(645.5, 374.5)
+scale = Vector2(0.633433, 0.48082)
+texture = ExtResource("2_rhrdh")
+
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/M8"]
+offset_left = -26.0
+offset_top = 372.0
+offset_right = 1567.0
+offset_bottom = 1843.0
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_75vvb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/M8/Button" to="." method="_on_button_pressed"]
