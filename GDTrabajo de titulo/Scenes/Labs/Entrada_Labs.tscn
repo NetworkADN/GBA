@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://diohvyvhnc2pe"]
+
+[ext_resource type="Script" path="res://Scripts/entrada.gd" id="1_3b2cp"]
+[ext_resource type="Texture2D" uid="uid://cpi4uysv5wxrp" path="res://background/Entrada Labs.jpg" id="2_nctl5"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_ad4cl"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3b2cp")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Entrada_Labs" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(640, 359)
+scale = Vector2(0.998438, 0.75)
+texture = ExtResource("2_nctl5")
+
+[node name="Sprite2D" type="Button" parent="."]
+offset_left = 593.0
+offset_top = 391.0
+offset_right = 2137.0
+offset_bottom = 1935.0
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("3_ad4cl")
+flat = true
+
+[connection signal="pressed" from="Sprite2D" to="." method="_on_sprite_2d_pressed"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://pkkojm57ah12"]
+
+[ext_resource type="Script" path="res://Scripts/entrada.gd" id="1_6w4e3"]
+[ext_resource type="Texture2D" uid="uid://384kvaju0p0g" path="res://background/Pasillo Labs.jpg" id="2_wkbbb"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_ol3wb"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6w4e3")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Pasillo_Labs" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(640.5, 359.5)
+scale = Vector2(0.999219, 0.751042)
+texture = ExtResource("2_wkbbb")
+
+[node name="Sprite2D" type="Button" parent="."]
+offset_left = 118.0
+offset_top = 531.0
+offset_right = 1662.0
+offset_bottom = 2075.0
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("3_ol3wb")
+flat = true
+
+[connection signal="pressed" from="Sprite2D" to="." method="_on_sprite_2d_pressed"]

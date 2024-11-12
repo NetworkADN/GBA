@@ -12,12 +12,12 @@ script = ExtResource("1_8blqk")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-5, -8)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Patio_1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(647, 366)
 scale = Vector2(1, 0.75)
 texture = ExtResource("1_1wq2t")
 
-[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Sprite2D"]
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_1"]
 offset_left = -35.0
 offset_top = 364.0
 offset_right = 1509.0
@@ -26,4 +26,4 @@ scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_7cuvy")
 flat = true
 
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Sprite2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_1/Button" to="." method="_on_button_pressed"]

@@ -11,7 +11,7 @@
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Porton" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(640, 360)
 scale = Vector2(0.998437, 0.75)
 texture = ExtResource("1_6dswq")
