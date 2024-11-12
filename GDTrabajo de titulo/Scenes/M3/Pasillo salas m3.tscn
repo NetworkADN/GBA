@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy326wydf3mwi"]
+[gd_scene load_steps=5 format=3 uid="uid://dy326wydf3mwi"]
 
 [ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_ner3e"]
 [ext_resource type="Texture2D" uid="uid://c27hwow1unj2q" path="res://background/Pasillo M3.jpg" id="2_afcya"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_m4cye"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_rx5bv"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ner3e")
@@ -26,6 +27,17 @@ scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_m4cye")
 flat = true
 icon_alignment = 1
+expand_icon = true
+
+[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/Pasillo_salas_m3"]
+offset_left = 150.0
+offset_top = -105.0
+offset_right = 1536.0
+offset_bottom = 1244.0
+rotation = -4.72664
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_rx5bv")
+flat = true
 expand_icon = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pasillo_salas_m3/Button" to="." method="_on_button_pressed"]

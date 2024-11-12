@@ -18,10 +18,10 @@ scale = Vector2(0.630952, 0.474206)
 texture = ExtResource("2_a1g3m")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Casino(Mesa)"]
-offset_left = -26.0
-offset_top = 372.0
-offset_right = 1567.0
-offset_bottom = 1843.0
+offset_left = -28.5283
+offset_top = 606.277
+offset_right = 2051.47
+offset_bottom = 2732.28
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_3isov")
 flat = true

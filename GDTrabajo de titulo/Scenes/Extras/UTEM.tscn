@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn0fo3ri6qgae"]
+[gd_scene load_steps=5 format=3 uid="uid://cwqrw0jkeq3ng"]
 
 [ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_rwedd"]
 [ext_resource type="Texture2D" uid="uid://ceypxlwgn8jg0" path="res://background/UTEM.jpg" id="2_bwh5d"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_3c5wo"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_mccis"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rwedd")
@@ -25,5 +26,17 @@ offset_bottom = 1908.0
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_3c5wo")
 flat = true
+
+[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/UTEM"]
+offset_left = -456.0
+offset_top = -101.0
+offset_right = 795.0
+offset_bottom = 1200.0
+rotation = -0.0144711
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_mccis")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/UTEM/Button" to="." method="_on_button_pressed"]

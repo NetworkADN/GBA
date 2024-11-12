@@ -18,10 +18,10 @@ scale = Vector2(0.635417, 0.476852)
 texture = ExtResource("2_wmea1")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Sala_carrera"]
-offset_left = -26.0
-offset_top = 372.0
-offset_right = 1567.0
-offset_bottom = 1843.0
+offset_left = -121.967
+offset_top = 535.806
+offset_right = 3003.03
+offset_bottom = 3488.81
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_gn0av")
 flat = true

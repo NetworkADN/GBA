@@ -19,10 +19,11 @@ scale = Vector2(0.630952, 0.474206)
 texture = ExtResource("2_i8soo")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Casino(Microondas_abierto)"]
-offset_left = -26.0
-offset_top = 372.0
-offset_right = 1567.0
-offset_bottom = 1843.0
+offset_left = 109.276
+offset_top = -616.824
+offset_right = 2015.28
+offset_bottom = 1278.18
+rotation = 3.15641
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_t4gal")
 flat = true

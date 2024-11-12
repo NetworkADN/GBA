@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://w2omn4rnk0op"]
+[gd_scene load_steps=5 format=3 uid="uid://w2omn4rnk0op"]
 
 [ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_lshna"]
 [ext_resource type="Texture2D" uid="uid://bfg182id50v6w" path="res://background/M8.jpg" id="2_rhrdh"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_75vvb"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_ea0b5"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lshna")
@@ -13,17 +14,29 @@ script = ExtResource("1_lshna")
 position = Vector2(-5, -8)
 
 [node name="M8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(645.5, 374.5)
-scale = Vector2(0.633433, 0.48082)
+position = Vector2(645.5, 368.5)
+scale = Vector2(0.633433, 0.474206)
 texture = ExtResource("2_rhrdh")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/M8"]
-offset_left = -26.0
-offset_top = 372.0
-offset_right = 1567.0
-offset_bottom = 1843.0
+offset_left = -59.2012
+offset_top = 583.08
+offset_right = 2386.8
+offset_bottom = 2934.08
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_75vvb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/M8"]
+offset_left = -59.0771
+offset_top = 100.168
+offset_right = 1909.92
+offset_bottom = 2527.17
+rotation = -6.28457
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_ea0b5")
 flat = true
 icon_alignment = 1
 expand_icon = true

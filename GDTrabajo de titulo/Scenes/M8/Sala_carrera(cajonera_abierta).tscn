@@ -13,16 +13,17 @@ script = ExtResource("1_37yw2")
 position = Vector2(-5, -8)
 
 [node name="Sala_carrera(cajonera_abierta)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(647.17, 365.491)
+position = Vector2(647.17, 367.991)
 rotation = 1.5708
-scale = Vector2(0.353685, 0.845869)
+scale = Vector2(0.356165, 0.845869)
 texture = ExtResource("2_tvir8")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Sala_carrera(cajonera_abierta)"]
-offset_left = -26.0
-offset_top = 372.0
-offset_right = 1567.0
-offset_bottom = 1843.0
+offset_left = 856.37
+offset_top = 81.7725
+offset_right = 2449.37
+offset_bottom = 2172.77
+rotation = -1.58107
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_1uxio")
 flat = true

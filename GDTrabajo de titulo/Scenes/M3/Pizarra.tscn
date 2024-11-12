@@ -13,15 +13,15 @@ script = ExtResource("1_1ausi")
 position = Vector2(-5, -8)
 
 [node name="Pizarra" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(643.5, 367)
-scale = Vector2(0.633433, 0.481481)
+position = Vector2(644.5, 368.5)
+scale = Vector2(0.634425, 0.475529)
 texture = ExtResource("2_kede1")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Pizarra"]
-offset_left = -26.0
-offset_top = 372.0
-offset_right = 1567.0
-offset_bottom = 1843.0
+offset_left = -31.0
+offset_top = 617.0
+offset_right = 1817.0
+offset_bottom = 2494.0
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_uo2kc")
 flat = true
