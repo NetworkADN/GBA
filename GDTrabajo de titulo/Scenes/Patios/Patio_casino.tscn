@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw3xup5p5id8i"]
+[gd_scene load_steps=5 format=3 uid="uid://cw3xup5p5id8i"]
 
 [ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_b8ii8"]
 [ext_resource type="Texture2D" uid="uid://dhjh3v0nwixnr" path="res://background/Patio Casino.jpg" id="2_abw7o"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_ahccd"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_55iir"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_b8ii8")
@@ -25,5 +26,16 @@ offset_bottom = 1908.0
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_ahccd")
 flat = true
+
+[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_casino"]
+offset_left = -36.6367
+offset_top = 34.6689
+offset_right = 1228.36
+offset_bottom = 1554.67
+rotation = -0.00577521
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_55iir")
+flat = true
+expand_icon = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_casino/Button" to="." method="_on_button_pressed"]

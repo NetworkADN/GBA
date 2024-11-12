@@ -12,17 +12,17 @@ script = ExtResource("1_y0ovp")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="PC" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(638.394, 361.606)
-scale = Vector2(0.631554, 0.478034)
+position = Vector2(641.394, 361.606)
+scale = Vector2(0.63453, 0.478034)
 texture = ExtResource("2_xe641")
 
-[node name="Sprite2D" type="Button" parent="."]
-offset_left = 401.0
-offset_top = 272.0
-offset_right = 1945.0
-offset_bottom = 1816.0
+[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/PC"]
+offset_left = 177.464
+offset_top = 751.817
+offset_right = 2520.46
+offset_bottom = 3584.82
+rotation = -3.12941
 scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("3_3nfrt")
 flat = true
-
-[connection signal="pressed" from="Sprite2D" to="." method="_on_sprite_2d_pressed"]
+expand_icon = true

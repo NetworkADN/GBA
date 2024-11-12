@@ -16,13 +16,25 @@ position = Vector2(640.5, 359.5)
 scale = Vector2(0.999219, 0.751042)
 texture = ExtResource("2_wkbbb")
 
-[node name="Sprite2D" type="Button" parent="."]
-offset_left = 118.0
-offset_top = 531.0
-offset_right = 1662.0
-offset_bottom = 2075.0
+[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/Pasillo_Labs"]
+offset_left = -512.0
+offset_top = 163.0
+offset_right = 1032.0
+offset_bottom = 1617.0
+rotation = -1.57258
 scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("3_ol3wb")
 flat = true
+expand_icon = true
 
-[connection signal="pressed" from="Sprite2D" to="." method="_on_sprite_2d_pressed"]
+[node name="Sprite2D2" type="Button" parent="ParallaxBackground/ParallaxLayer/Pasillo_Labs"]
+offset_left = 21.0
+offset_top = 481.0
+offset_right = 1513.0
+offset_bottom = 2051.0
+rotation = -3.12941
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("3_ol3wb")
+flat = true
+icon_alignment = 1
+expand_icon = true
