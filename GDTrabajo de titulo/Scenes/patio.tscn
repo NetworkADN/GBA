@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1syp4pqgbuyy"]
+[gd_scene load_steps=4 format=3 uid="uid://cjfr8pj5kdrxb"]
 
-[ext_resource type="Texture2D" uid="uid://caxtp7lb502aq" path="res://background/Porton.jpg" id="1_8smtl"]
-[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="2_0qebv"]
+[ext_resource type="Texture2D" uid="uid://caxtp7lb502aq" path="res://background/Porton.jpg" id="1_6dswq"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="2_np84k"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7aw0s"]
 
@@ -14,7 +14,7 @@
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(640, 360)
 scale = Vector2(0.998437, 0.75)
-texture = ExtResource("1_8smtl")
+texture = ExtResource("1_6dswq")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(614, 376)
@@ -43,6 +43,6 @@ offset_left = 92.0
 offset_top = 500.0
 offset_right = 1166.0
 offset_bottom = 646.0
-theme_override_fonts/normal_font = ExtResource("2_0qebv")
+theme_override_fonts/normal_font = ExtResource("2_np84k")
 theme_override_font_sizes/normal_font_size = 32
 text = "Era un dia comun y corriente en la maravillosa universidad tecnologica metropolitana de santiago de chile, pero entonces conoci a yin carrey"
