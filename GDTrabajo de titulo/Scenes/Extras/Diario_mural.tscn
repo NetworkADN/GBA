@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cboang24ru07n"]
+
+[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_ajxkx"]
+[ext_resource type="Texture2D" uid="uid://ck47d7qg7xvo2" path="res://background/Diario Mural.jpg" id="2_vwjen"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_khsa2"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ajxkx")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-5, -8)
+
+[node name="Diario_mural" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(645, 368)
+scale = Vector2(0.633929, 0.472884)
+texture = ExtResource("2_vwjen")
+
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Diario_mural"]
+offset_left = -35.0
+offset_top = 364.0
+offset_right = 1509.0
+offset_bottom = 1908.0
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_khsa2")
+flat = true
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Diario_mural/Button" to="." method="_on_button_pressed"]

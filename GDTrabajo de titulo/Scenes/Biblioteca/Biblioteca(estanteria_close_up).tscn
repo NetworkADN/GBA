@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdl5n1e7toyo6"]
+
+[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_060sf"]
+[ext_resource type="Texture2D" uid="uid://b7ma8rql8hk8r" path="res://background/Estante Biblioteca (Close up).jpg" id="2_yrdr5"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_bxe4u"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_060sf")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-5, -8)
+
+[node name="Biblioteca(estanteria_close_up)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(647, 367.5)
+scale = Vector2(0.634921, 0.470238)
+texture = ExtResource("2_yrdr5")
+
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Biblioteca(estanteria_close_up)"]
+offset_left = -35.0
+offset_top = 364.0
+offset_right = 1509.0
+offset_bottom = 1908.0
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_bxe4u")
+flat = true
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(estanteria_close_up)/Button" to="." method="_on_button_pressed"]

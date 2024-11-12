@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b05kggl05crev"]
+
+[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_ky1ly"]
+[ext_resource type="Texture2D" uid="uid://bbgxxr1fkjfrf" path="res://background/Sala multiuso.jpg" id="2_sahqk"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_8fbma"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ky1ly")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-5, -8)
+
+[node name="Biblioteca(sala_multiuso)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(645.547, 368.362)
+rotation = 1.5708
+scale = Vector2(0.359486, 0.843316)
+texture = ExtResource("2_sahqk")
+
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Biblioteca(sala_multiuso)"]
+offset_left = -35.0
+offset_top = 364.0
+offset_right = 1509.0
+offset_bottom = 1908.0
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_8fbma")
+flat = true
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(sala_multiuso)/Button" to="." method="_on_button_pressed"]
