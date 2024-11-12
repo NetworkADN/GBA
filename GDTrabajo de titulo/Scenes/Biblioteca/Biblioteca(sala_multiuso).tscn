@@ -13,18 +13,20 @@ script = ExtResource("1_ky1ly")
 position = Vector2(-5, -8)
 
 [node name="Biblioteca(sala_multiuso)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(645.547, 368.362)
+position = Vector2(645.547, 367.862)
 rotation = 1.5708
-scale = Vector2(0.359486, 0.843316)
+scale = Vector2(0.357006, 0.845962)
 texture = ExtResource("2_sahqk")
 
-[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Biblioteca(sala_multiuso)"]
-offset_left = -35.0
-offset_top = 364.0
-offset_right = 1509.0
-offset_bottom = 1908.0
+[node name="Button" type="Button" parent="."]
+offset_left = 623.0
+offset_top = 629.0
+offset_right = 1900.0
+offset_bottom = 1856.0
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_8fbma")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(sala_multiuso)/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

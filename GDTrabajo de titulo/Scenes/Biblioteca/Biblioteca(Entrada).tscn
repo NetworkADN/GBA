@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_jbe22"]
 [ext_resource type="Texture2D" uid="uid://b7r8107e3buj0" path="res://background/Biblioteca.jpg" id="2_vf283"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_03ua5"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_m75ev"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jbe22")
@@ -13,18 +13,43 @@ script = ExtResource("1_jbe22")
 position = Vector2(-5, -8)
 
 [node name="Biblioteca(Entrada)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(645.955, 366.636)
+position = Vector2(645.955, 367.896)
 rotation = 1.5708
-scale = Vector2(0.35588, 0.846621)
+scale = Vector2(0.35713, 0.846621)
 texture = ExtResource("2_vf283")
 
-[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Biblioteca(Entrada)"]
-offset_left = -35.0
-offset_top = 364.0
-offset_right = 1509.0
-offset_bottom = 1908.0
-scale = Vector2(0.061849, 0.0724826)
-icon = ExtResource("3_03ua5")
+[node name="Sprite2D" type="Button" parent="."]
+offset_left = 650.0
+offset_top = 720.0
+offset_right = 1932.0
+offset_bottom = 2059.0
+rotation = -3.11821
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("3_m75ev")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(Entrada)/Button" to="." method="_on_button_pressed"]
+[node name="Sprite2D2" type="Button" parent="."]
+offset_left = 475.0
+offset_top = 313.0
+offset_right = 1502.0
+offset_bottom = 1383.0
+rotation = -1.58649
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("3_m75ev")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sprite2D3" type="Button" parent="."]
+offset_left = 986.0
+offset_top = 231.0
+offset_right = 2126.0
+offset_bottom = 1310.0
+rotation = -4.71484
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("3_m75ev")
+flat = true
+icon_alignment = 1
+expand_icon = true

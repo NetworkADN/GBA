@@ -18,13 +18,15 @@ rotation = 1.5708
 scale = Vector2(0.355551, 0.843493)
 texture = ExtResource("2_6anl5")
 
-[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Escuela(oficina)"]
-offset_left = -35.0
-offset_top = 364.0
-offset_right = 1509.0
-offset_bottom = 1908.0
+[node name="Button" type="Button" parent="."]
+offset_left = 555.0
+offset_top = 627.0
+offset_right = 1832.0
+offset_bottom = 1854.0
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_2lu2x")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Escuela(oficina)/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

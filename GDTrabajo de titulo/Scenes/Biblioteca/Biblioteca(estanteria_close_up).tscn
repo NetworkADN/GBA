@@ -13,17 +13,19 @@ script = ExtResource("1_060sf")
 position = Vector2(-5, -8)
 
 [node name="Biblioteca(estanteria_close_up)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(647, 367.5)
-scale = Vector2(0.634921, 0.470238)
+position = Vector2(645, 368)
+scale = Vector2(0.633929, 0.47619)
 texture = ExtResource("2_yrdr5")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Biblioteca(estanteria_close_up)"]
-offset_left = -35.0
-offset_top = 364.0
-offset_right = 1509.0
-offset_bottom = 1908.0
+offset_left = 85.183
+offset_top = 558.6
+offset_right = 2675.18
+offset_bottom = 3290.6
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_bxe4u")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(estanteria_close_up)/Button" to="." method="_on_button_pressed"]

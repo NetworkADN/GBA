@@ -13,17 +13,19 @@ script = ExtResource("1_mxg76")
 position = Vector2(-5, -8)
 
 [node name="Anuncios_escuela" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(645, 368)
-scale = Vector2(0.633929, 0.472884)
+position = Vector2(645, 366.75)
+scale = Vector2(0.633929, 0.474537)
 texture = ExtResource("2_ng32t")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Anuncios_escuela"]
-offset_left = -35.0
-offset_top = 364.0
-offset_right = 1509.0
-offset_bottom = 1908.0
+offset_left = -93.0703
+offset_top = 582.146
+offset_right = 2163.93
+offset_bottom = 2922.15
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_c2qxa")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Anuncios_escuela/Button" to="." method="_on_button_pressed"]

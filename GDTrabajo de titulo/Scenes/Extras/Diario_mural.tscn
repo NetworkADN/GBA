@@ -13,17 +13,19 @@ script = ExtResource("1_ajxkx")
 position = Vector2(-5, -8)
 
 [node name="Diario_mural" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(645, 368)
-scale = Vector2(0.633929, 0.472884)
+position = Vector2(645.5, 366.75)
+scale = Vector2(0.633433, 0.474537)
 texture = ExtResource("2_vwjen")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Diario_mural"]
-offset_left = -35.0
-offset_top = 364.0
-offset_right = 1509.0
-offset_bottom = 1908.0
+offset_left = -79.7246
+offset_top = 571.609
+offset_right = 2511.28
+offset_bottom = 3071.61
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_khsa2")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Diario_mural/Button" to="." method="_on_button_pressed"]

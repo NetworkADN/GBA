@@ -13,17 +13,19 @@ script = ExtResource("1_bmnlj")
 position = Vector2(-5, -8)
 
 [node name="Biblioteca(mesa)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(644, 366)
-scale = Vector2(0.634921, 0.470899)
+position = Vector2(646, 368)
+scale = Vector2(0.633929, 0.47619)
 texture = ExtResource("2_3yaen")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Biblioteca(mesa)"]
-offset_left = -35.0
-offset_top = 364.0
-offset_right = 1509.0
-offset_bottom = 1908.0
+offset_left = -70.9854
+offset_top = 552.301
+offset_right = 2155.01
+offset_bottom = 3338.3
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_p0rxn")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(mesa)/Button" to="." method="_on_button_pressed"]

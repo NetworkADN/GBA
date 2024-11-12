@@ -28,11 +28,22 @@ icon = ExtResource("3_ahccd")
 flat = true
 
 [node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_casino"]
-offset_left = -36.6367
-offset_top = 34.6689
-offset_right = 1228.36
-offset_bottom = 1554.67
+offset_left = -37.5576
+offset_top = -21.3271
+offset_right = 1227.44
+offset_bottom = 1498.67
 rotation = -0.00577521
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_55iir")
+flat = true
+expand_icon = true
+
+[node name="Sprite2D2" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_casino"]
+offset_left = -400.0
+offset_top = 148.0
+offset_right = 915.0
+offset_bottom = 1497.0
+rotation = -1.57041
 scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("4_55iir")
 flat = true

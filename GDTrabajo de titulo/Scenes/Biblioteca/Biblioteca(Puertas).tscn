@@ -18,12 +18,14 @@ scale = Vector2(1, 0.75)
 texture = ExtResource("2_sxmv8")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Biblioteca(Puertas)"]
-offset_left = -35.0
-offset_top = 364.0
-offset_right = 1509.0
-offset_bottom = 1908.0
+offset_left = 26.0
+offset_top = 376.001
+offset_right = 1295.0
+offset_bottom = 1810.0
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_t1h1j")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(Puertas)/Button" to="." method="_on_button_pressed"]
