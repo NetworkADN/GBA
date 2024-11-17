@@ -1,11 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://x1wc15hwtbgj"]
+[gd_scene load_steps=8 format=3 uid="uid://x1wc15hwtbgj"]
 
-[ext_resource type="Script" path="res://Scripts/entrada.gd" id="1_j3wp6"]
+[ext_resource type="Script" path="res://Scenes/Entradas/escaleras_lab.gd" id="1_32geu"]
 [ext_resource type="Texture2D" uid="uid://dmuw3a1w4sccl" path="res://background/Escaleras Labs.jpg" id="2_vwid5"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_g6rt3"]
 
+[sub_resource type="Animation" id="Animation_1tse1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_i0amt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l0obv"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bty0q"]
+_data = {
+"RESET": SubResource("Animation_i0amt"),
+"fade_in": SubResource("Animation_l0obv"),
+"fade_out": SubResource("Animation_1tse1")
+}
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_j3wp6")
+script = ExtResource("1_32geu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -16,7 +104,7 @@ position = Vector2(640.5, 359.5)
 scale = Vector2(0.999219, 0.751042)
 texture = ExtResource("2_vwid5")
 
-[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab"]
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab"]
 offset_left = -201.658
 offset_top = -108.516
 offset_right = 1342.34
@@ -26,7 +114,7 @@ scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("3_g6rt3")
 flat = true
 
-[node name="Sprite2D2" type="Button" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab"]
+[node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab"]
 anchors_preset = -1
 anchor_left = -5.07
 anchor_top = -0.633
@@ -43,4 +131,16 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Escaleras_Lab/Sprite2D" to="." method="_on_sprite_2d_pressed"]
+[node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab"]
+libraries = {
+"": SubResource("AnimationLibrary_bty0q")
+}
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab/Transition"]
+offset_right = 1282.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Escaleras_Lab/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Escaleras_Lab/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Escaleras_Lab/Transition" to="." method="_on_transition_animation_finished"]

@@ -1,11 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgr732mvotfq"]
+[gd_scene load_steps=8 format=3 uid="uid://bgr732mvotfq"]
 
-[ext_resource type="Script" path="res://Scripts/entrada.gd" id="1_8drgp"]
+[ext_resource type="Script" path="res://Scenes/Entradas/entrada.gd" id="1_8dx7u"]
 [ext_resource type="Texture2D" uid="uid://dptyiv2g3saqb" path="res://background/Entrada.jpg" id="2_ji11c"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_abdj4"]
 
+[sub_resource type="Animation" id="Animation_1tse1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_i0amt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l0obv"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bty0q"]
+_data = {
+"RESET": SubResource("Animation_i0amt"),
+"fade_in": SubResource("Animation_l0obv"),
+"fade_out": SubResource("Animation_1tse1")
+}
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_8drgp")
+script = ExtResource("1_8dx7u")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -16,7 +104,7 @@ position = Vector2(640.5, 359.5)
 scale = Vector2(0.999219, 0.751042)
 texture = ExtResource("2_ji11c")
 
-[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/Entrada"]
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Entrada"]
 offset_left = -34.5269
 offset_top = 60.5825
 offset_right = 1363.47
@@ -27,17 +115,28 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Sprite2D2" type="Button" parent="ParallaxBackground/ParallaxLayer/Entrada"]
-offset_left = 168.632
-offset_top = -52.5936
-offset_right = 1303.63
-offset_bottom = 1061.41
-rotation = 1.56664
+[node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Entrada"]
+offset_left = 161.626
+offset_top = -68.5714
+offset_right = 1559.62
+offset_bottom = 1088.43
+rotation = 1.56947
 scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("3_abdj4")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Entrada/Sprite2D" to="." method="_on_sprite_2d_pressed"]
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Entrada/Sprite2D2" to="." method="_on_sprite_2d_pressed"]
+[node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Entrada"]
+libraries = {
+"": SubResource("AnimationLibrary_bty0q")
+}
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/Entrada/Transition"]
+offset_right = 1282.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Entrada/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Entrada/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Entrada/Transition" to="." method="_on_transition_animation_finished"]
