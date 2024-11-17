@@ -1,12 +1,100 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdp0w3m88txcd"]
+[gd_scene load_steps=9 format=3 uid="uid://bdp0w3m88txcd"]
 
-[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_doqmq"]
+[ext_resource type="Script" path="res://Scenes/Patios/patio_biblioteca(a_escuela).gd" id="1_eqdcq"]
 [ext_resource type="Texture2D" uid="uid://cdqmj6elgohmx" path="res://background/Patio Biblioteca (escuela).jpg" id="2_vocuc"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_gb1a5"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_3xmjx"]
 
+[sub_resource type="Animation" id="Animation_i0amt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l0obv"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1tse1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bty0q"]
+_data = {
+"RESET": SubResource("Animation_i0amt"),
+"fade_in": SubResource("Animation_l0obv"),
+"fade_out": SubResource("Animation_1tse1")
+}
+
 [node name="Node2D2" type="Node2D"]
-script = ExtResource("1_doqmq")
+script = ExtResource("1_eqdcq")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -27,7 +115,7 @@ scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_gb1a5")
 flat = true
 
-[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)"]
+[node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)"]
 offset_left = 347.0
 offset_top = -42.0
 offset_right = 1766.0
@@ -39,4 +127,29 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Button3" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)"]
+offset_left = -638.958
+offset_top = 177.597
+offset_right = 780.042
+offset_bottom = 1691.6
+rotation = -7.85615
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_3xmjx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)"]
+libraries = {
+"": SubResource("AnimationLibrary_bty0q")
+}
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)/Transition"]
+offset_right = 1282.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)/Transition" to="." method="_on_transition_animation_finished"]

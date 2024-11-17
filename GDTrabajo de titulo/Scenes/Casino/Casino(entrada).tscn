@@ -1,12 +1,100 @@
-[gd_scene load_steps=5 format=3 uid="uid://b07ieemx6d3px"]
+[gd_scene load_steps=9 format=3 uid="uid://b07ieemx6d3px"]
 
-[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_lobkm"]
+[ext_resource type="Script" path="res://Scenes/Casino/casino(entrada).gd" id="1_8hlnd"]
 [ext_resource type="Texture2D" uid="uid://cwvvb8nxrnr0h" path="res://background/Casino.jpg" id="2_uj05t"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_cjdpo"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_fx7l6"]
 
+[sub_resource type="Animation" id="Animation_i0amt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l0obv"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1tse1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bty0q"]
+_data = {
+"RESET": SubResource("Animation_i0amt"),
+"fade_in": SubResource("Animation_l0obv"),
+"fade_out": SubResource("Animation_1tse1")
+}
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_lobkm")
+script = ExtResource("1_8hlnd")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -20,17 +108,6 @@ scale = Vector2(0.3573, 0.847462)
 texture = ExtResource("2_uj05t")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 681.0
-offset_top = 630.0
-offset_right = 1942.0
-offset_bottom = 1872.0
-scale = Vector2(0.061849, 0.0724826)
-icon = ExtResource("3_cjdpo")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="Sprite2D" type="Button" parent="."]
 offset_left = 1278.0
 offset_top = 306.0
 offset_right = 2417.0
@@ -42,4 +119,27 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 681.0
+offset_top = 630.0
+offset_right = 1942.0
+offset_bottom = 1872.0
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_cjdpo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bty0q")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+offset_right = 1282.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

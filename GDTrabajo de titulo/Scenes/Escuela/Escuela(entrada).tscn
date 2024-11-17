@@ -1,12 +1,100 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8bmnl0f28b28"]
+[gd_scene load_steps=9 format=3 uid="uid://b8bmnl0f28b28"]
 
-[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_4atrb"]
+[ext_resource type="Script" path="res://Scenes/Escuela/escuela(entrada).gd" id="1_g8svj"]
 [ext_resource type="Texture2D" uid="uid://d1ja8jikuh6v4" path="res://background/Escuela Recepcion.jpg" id="2_sp48y"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_atgm8"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_6m20r"]
 
+[sub_resource type="Animation" id="Animation_i0amt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l0obv"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1tse1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bty0q"]
+_data = {
+"RESET": SubResource("Animation_i0amt"),
+"fade_in": SubResource("Animation_l0obv"),
+"fade_out": SubResource("Animation_1tse1")
+}
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_4atrb")
+script = ExtResource("1_g8svj")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -30,7 +118,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Sprite2D" type="Button" parent="."]
+[node name="Button2" type="Button" parent="."]
 offset_left = 723.0
 offset_top = 366.0
 offset_right = 1843.0
@@ -42,4 +130,16 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bty0q")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+offset_right = 1282.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
