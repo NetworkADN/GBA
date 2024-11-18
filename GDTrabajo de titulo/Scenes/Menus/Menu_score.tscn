@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5v7snvxsjtnu"]
+[gd_scene load_steps=7 format=3 uid="uid://dsrkbhcuuicgt"]
 
-[ext_resource type="Script" path="res://Scenes/Menus/menu.gd" id="1_e8b6d"]
-[ext_resource type="Texture2D" uid="uid://damg6yaopswkk" path="res://background/Fondo Menu.jpg" id="2_c4xmr"]
+[ext_resource type="Script" path="res://Scenes/Menus/menu_score.gd" id="1_fpxkw"]
+[ext_resource type="Texture2D" uid="uid://damg6yaopswkk" path="res://Background/Fondo Menu.jpg" id="2_pg42w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83pxc"]
 bg_color = Color(0.473215, 0.449859, 0.879242, 1)
@@ -10,6 +10,9 @@ bg_color = Color(0.473215, 0.449859, 0.879242, 1)
 bg_color = Color(0.47451, 0.45098, 0.878431, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwyhd"]
+bg_color = Color(0.47451, 0.45098, 0.878431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pix7x"]
 bg_color = Color(0.47451, 0.45098, 0.878431, 1)
 
 [node name="Menu" type="Control"]
@@ -21,16 +24,14 @@ offset_right = -1280.0
 offset_bottom = -720.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_e8b6d")
+script = ExtResource("1_fpxkw")
 
 [node name="Sprite2D" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
 offset_right = 1097.0
 offset_bottom = 771.0
 scale = Vector2(1.16911, 0.932642)
-texture = ExtResource("2_c4xmr")
+texture = ExtResource("2_pg42w")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -53,21 +54,25 @@ alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_83pxc")
-text = "PLAY"
+text = "SCORE 1"
 icon_alignment = 1
 
 [node name="SCORE" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_1it7m")
-text = "SCORE"
+text = "SCORE 2"
 
 [node name="QUIT" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fwyhd")
-text = "QUIT"
+text = "SCORE 3"
 
-[connection signal="pressed" from="VBoxContainer/PLAY" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/SCORE" to="." method="_on_score_pressed"]
-[connection signal="pressed" from="VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
+[node name="BACK" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_pix7x")
+text = "BACK"
+
+[connection signal="pressed" from="VBoxContainer/BACK" to="." method="_on_back_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c27hwow1unj2q"
-path="res://.godot/imported/Pasillo M3.jpg-5a105dad9a9514915c210e58e3f34389.ctex"
+uid="uid://damg6yaopswkk"
+path="res://.godot/imported/Fondo Menu.jpg-c8023d2cd472da3a006fc17a1a79b1dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Pasillo M3.jpg"
-dest_files=["res://.godot/imported/Pasillo M3.jpg-5a105dad9a9514915c210e58e3f34389.ctex"]
+source_file="res://Background/Fondo Menu.jpg"
+dest_files=["res://.godot/imported/Fondo Menu.jpg-c8023d2cd472da3a006fc17a1a79b1dc.ctex"]
 
 [params]
 
