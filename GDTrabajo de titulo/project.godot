@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 AudioManager="*res://Scenes/Audio/audio_manager.tscn"
 AudioPlayer="*res://Scenes/Audio/audio_player.tscn"
-AudioPlayer2="*res://Scenes/Audio/audio_player_2.tscn"
 
 [display]
 

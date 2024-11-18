@@ -20,6 +20,7 @@ func _on_button_pressed() -> void:
 func _on_button_2_pressed() -> void:
 	next_scene = "res://Scenes/Entradas/Escaleras_Lab.tscn"
 	transition.play("fade_out")
+	AudioManager.steps_audio.play()
 
 # Función para el cambio de escena
 func _on_transition_animation_finished(anim_name: StringName) -> void:

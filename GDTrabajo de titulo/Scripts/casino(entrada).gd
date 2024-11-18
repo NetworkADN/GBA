@@ -12,11 +12,13 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	next_scene = "res://Scenes/Casino/Casino(microondas).tscn"
 	transition.play("fade_out")
+	AudioManager.steps_audio.play()
 
 
 func _on_button_2_pressed() -> void:
 	next_scene = "res://Scenes/Patios/Patio_casino.tscn"
 	transition.play("fade_out")
+	AudioManager.steps_audio.play()
 
 
 func _on_transition_animation_finished(anim_name: StringName) -> void:
