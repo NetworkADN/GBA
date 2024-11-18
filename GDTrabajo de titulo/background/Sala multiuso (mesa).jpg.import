@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx47gn2gal7ol"
-path="res://.godot/imported/Sala multiuso (mesa).jpg-288445b9c131e2e6f86fdefdfb4cd9f6.ctex"
+path="res://.godot/imported/Sala multiuso (mesa).jpg-6f47ede04c5e0f16ef520a962ba4a194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Sala multiuso (mesa).jpg"
-dest_files=["res://.godot/imported/Sala multiuso (mesa).jpg-288445b9c131e2e6f86fdefdfb4cd9f6.ctex"]
+source_file="res://background/Sala multiuso (mesa).jpg"
+dest_files=["res://.godot/imported/Sala multiuso (mesa).jpg-6f47ede04c5e0f16ef520a962ba4a194.ctex"]
 
 [params]
 

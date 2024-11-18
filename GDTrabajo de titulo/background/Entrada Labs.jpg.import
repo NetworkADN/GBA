@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpi4uysv5wxrp"
-path="res://.godot/imported/Entrada Labs.jpg-d83ecb4129a440e32d4153ad6d07fe9e.ctex"
+path="res://.godot/imported/Entrada Labs.jpg-34d767dec82240b10dcdf44cb6b04167.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Entrada Labs.jpg"
-dest_files=["res://.godot/imported/Entrada Labs.jpg-d83ecb4129a440e32d4153ad6d07fe9e.ctex"]
+source_file="res://background/Entrada Labs.jpg"
+dest_files=["res://.godot/imported/Entrada Labs.jpg-34d767dec82240b10dcdf44cb6b04167.ctex"]
 
 [params]
 
