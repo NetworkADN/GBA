@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://x1wc15hwtbgj"]
 
-[ext_resource type="Script" path="res://Scenes/Entradas/escaleras_lab.gd" id="1_32geu"]
-[ext_resource type="Texture2D" uid="uid://dmuw3a1w4sccl" path="res://background/Escaleras Labs.jpg" id="2_vwid5"]
-[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_g6rt3"]
+[ext_resource type="Script" path="res://Scripts/escaleras_lab.gd" id="1_n60qy"]
+[ext_resource type="Texture2D" uid="uid://dmuw3a1w4sccl" path="res://Background/Escaleras Labs.jpg" id="2_hnxyb"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://Assets/arrow_up.png" id="3_ucw7l"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -93,7 +93,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_32geu")
+script = ExtResource("1_n60qy")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -102,7 +102,7 @@ script = ExtResource("1_32geu")
 [node name="Escaleras_Lab" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(640.5, 359.5)
 scale = Vector2(0.999219, 0.751042)
-texture = ExtResource("2_vwid5")
+texture = ExtResource("2_hnxyb")
 
 [node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab"]
 offset_left = -201.658
@@ -111,7 +111,7 @@ offset_right = 1342.34
 offset_bottom = 1435.48
 rotation = 0.561299
 scale = Vector2(0.0722657, 0.069987)
-icon = ExtResource("3_g6rt3")
+icon = ExtResource("3_ucw7l")
 flat = true
 
 [node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab"]
@@ -126,7 +126,7 @@ offset_right = 8505.5
 offset_bottom = 2595.68
 rotation = -3.12941
 scale = Vector2(0.0722657, 0.069987)
-icon = ExtResource("3_g6rt3")
+icon = ExtResource("3_ucw7l")
 flat = true
 icon_alignment = 1
 expand_icon = true

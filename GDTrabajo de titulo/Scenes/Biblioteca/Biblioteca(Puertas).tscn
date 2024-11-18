@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cgadvvkow0kw4"]
 
-[ext_resource type="Script" path="res://Scenes/Biblioteca/biblioteca(puertas).gd" id="1_vxxx0"]
-[ext_resource type="Texture2D" uid="uid://ds42dss642nag" path="res://background/Entrada Biblioteca.jpg" id="2_sxmv8"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_t1h1j"]
+[ext_resource type="Script" path="res://Scripts/biblioteca(puertas).gd" id="1_vxxx0"]
+[ext_resource type="Texture2D" uid="uid://ds42dss642nag" path="res://Background/Entrada Biblioteca.jpg" id="2_sxmv8"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://Assets/arrow_down.png" id="3_t1h1j"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001

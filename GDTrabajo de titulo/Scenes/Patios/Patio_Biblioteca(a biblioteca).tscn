@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://g7bqlqam0e7g"]
 
-[ext_resource type="Script" path="res://Scenes/Patios/patio_biblioteca(a_biblioteca).gd" id="1_sbtc2"]
-[ext_resource type="Texture2D" uid="uid://cd0br8ff5cdeo" path="res://background/Patio Biblioteca.jpg" id="2_xtsx0"]
-[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_pbwap"]
+[ext_resource type="Script" path="res://Scripts/patio_biblioteca(a_biblioteca).gd" id="1_sbtc2"]
+[ext_resource type="Texture2D" uid="uid://cd0br8ff5cdeo" path="res://Background/Patio Biblioteca.jpg" id="2_xtsx0"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://Assets/arrow_up.png" id="4_pbwap"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001

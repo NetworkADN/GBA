@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dy326wydf3mwi"]
 
-[ext_resource type="Script" path="res://Scenes/M3/pasillo_salas_m_3.gd" id="1_3d7l5"]
-[ext_resource type="Texture2D" uid="uid://c27hwow1unj2q" path="res://background/Pasillo M3.jpg" id="2_afcya"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_m4cye"]
-[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_rx5bv"]
+[ext_resource type="Script" path="res://Scripts/pasillo_salas_m_3.gd" id="1_3d7l5"]
+[ext_resource type="Texture2D" uid="uid://c27hwow1unj2q" path="res://Background/Pasillo M3.jpg" id="2_afcya"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://Assets/arrow_down.png" id="3_m4cye"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://Assets/arrow_up.png" id="4_rx5bv"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001

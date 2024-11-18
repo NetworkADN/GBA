@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cboang24ru07n"]
 
-[ext_resource type="Script" path="res://Scenes/Extras/diario_mural.gd" id="1_rp7fb"]
-[ext_resource type="Texture2D" uid="uid://ck47d7qg7xvo2" path="res://background/Diario Mural.jpg" id="2_vwjen"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_khsa2"]
+[ext_resource type="Script" path="res://Scripts/diario_mural.gd" id="1_rp7fb"]
+[ext_resource type="Texture2D" uid="uid://ck47d7qg7xvo2" path="res://Background/Diario Mural.jpg" id="2_vwjen"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://Assets/arrow_down.png" id="3_khsa2"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001

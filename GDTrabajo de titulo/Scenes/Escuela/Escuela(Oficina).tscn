@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbntyv24tokf0"]
 
-[ext_resource type="Script" path="res://Scenes/Escuela/escuela(oficina).gd" id="1_g2v8d"]
-[ext_resource type="Texture2D" uid="uid://cpq433wqf3bv7" path="res://background/Escuela Oficina.jpg" id="2_6anl5"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_2lu2x"]
+[ext_resource type="Script" path="res://Scripts/escuela(oficina).gd" id="1_g2v8d"]
+[ext_resource type="Texture2D" uid="uid://cpq433wqf3bv7" path="res://Background/Escuela Oficina.jpg" id="2_6anl5"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://Assets/arrow_down.png" id="3_2lu2x"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001

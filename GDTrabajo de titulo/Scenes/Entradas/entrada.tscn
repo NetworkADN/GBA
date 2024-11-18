@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgr732mvotfq"]
 
-[ext_resource type="Script" path="res://Scenes/Entradas/entrada.gd" id="1_8dx7u"]
+[ext_resource type="Script" path="res://Scripts/entrada.gd" id="1_8dx7u"]
 [ext_resource type="Texture2D" uid="uid://dptyiv2g3saqb" path="res://Background/Entrada.jpg" id="2_ji11c"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://Assets/arrow_up.png" id="3_abdj4"]
 

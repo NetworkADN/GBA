@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://pkkojm57ah12"]
 
-[ext_resource type="Script" path="res://Scenes/Labs/pasillo_labs.gd" id="1_2id18"]
-[ext_resource type="Texture2D" uid="uid://384kvaju0p0g" path="res://background/Pasillo Labs.jpg" id="2_wkbbb"]
-[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_ol3wb"]
+[ext_resource type="Script" path="res://Scripts/pasillo_labs.gd" id="1_2id18"]
+[ext_resource type="Texture2D" uid="uid://384kvaju0p0g" path="res://Background/Pasillo Labs.jpg" id="2_wkbbb"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://Assets/arrow_up.png" id="3_ol3wb"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://diohvyvhnc2pe"]
 
-[ext_resource type="Script" path="res://Scenes/Labs/entrada_labs.gd" id="1_lhcjl"]
-[ext_resource type="Texture2D" uid="uid://cpi4uysv5wxrp" path="res://background/Entrada Labs.jpg" id="2_nctl5"]
-[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_ad4cl"]
+[ext_resource type="Script" path="res://Scripts/entrada_labs.gd" id="1_lhcjl"]
+[ext_resource type="Texture2D" uid="uid://cpi4uysv5wxrp" path="res://Background/Entrada Labs.jpg" id="2_nctl5"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://Assets/arrow_up.png" id="3_ad4cl"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001

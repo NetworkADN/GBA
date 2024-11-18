@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b46jxnuvrvjeb"]
 
-[ext_resource type="Script" path="res://Scenes/Transa/pasillo_transa.gd" id="1_loamk"]
-[ext_resource type="Texture2D" uid="uid://bqtse83v17o26" path="res://background/Pasillo Transa.jpg" id="2_uxcyj"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_3kdu7"]
+[ext_resource type="Script" path="res://Scripts/pasillo_transa.gd" id="1_loamk"]
+[ext_resource type="Texture2D" uid="uid://bqtse83v17o26" path="res://Background/Pasillo Transa.jpg" id="2_uxcyj"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://Assets/arrow_down.png" id="3_3kdu7"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001

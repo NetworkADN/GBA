@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b05kggl05crev"]
 
-[ext_resource type="Script" path="res://Scenes/Biblioteca/biblioteca(sala_multiuso).gd" id="1_8ve7x"]
-[ext_resource type="Texture2D" uid="uid://bbgxxr1fkjfrf" path="res://background/Sala multiuso.jpg" id="2_sahqk"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_8fbma"]
+[ext_resource type="Script" path="res://Scripts/biblioteca(sala_multiuso).gd" id="1_8ve7x"]
+[ext_resource type="Texture2D" uid="uid://bbgxxr1fkjfrf" path="res://Background/Sala multiuso.jpg" id="2_sahqk"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://Assets/arrow_down.png" id="3_8fbma"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
