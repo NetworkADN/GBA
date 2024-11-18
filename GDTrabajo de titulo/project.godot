@@ -15,6 +15,12 @@ run/main_scene="res://Scenes/Menus/Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManager="*res://Scenes/Audio/audio_manager.tscn"
+AudioPlayer="*res://Scenes/Audio/audio_player.tscn"
+AudioPlayer2="*res://Scenes/Audio/audio_player_2.tscn"
+
 [display]
 
 window/size/viewport_width=1280

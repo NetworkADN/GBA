@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8v0pdlto3gau"
-path="res://.godot/imported/Casillero (Abierto).jpg-eda6082ac04d8de4ece5fd866bffd63e.ctex"
+path="res://.godot/imported/Casillero (Abierto).jpg-fde2756223b2e11b5dacbeed60eca293.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background/Casillero (Abierto).jpg"
-dest_files=["res://.godot/imported/Casillero (Abierto).jpg-eda6082ac04d8de4ece5fd866bffd63e.ctex"]
+source_file="res://Background/Casillero (Abierto).jpg"
+dest_files=["res://.godot/imported/Casillero (Abierto).jpg-fde2756223b2e11b5dacbeed60eca293.ctex"]
 
 [params]
 

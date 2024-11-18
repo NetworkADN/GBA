@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctdqx2tf65hb8"]
+
+[ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="1_npopu"]
+[ext_resource type="AudioStream" uid="uid://dd16wmtgk7fya" path="res://SFX/ZConcreto.wav" id="2_30673"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_npopu")
+
+[node name="FootStepsAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_30673")
+pitch_scale = 2.0
