@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceypxlwgn8jg0"
-path="res://.godot/imported/UTEM.jpg-250fe03fde52779c51f6647a5bd9af78.ctex"
+path="res://.godot/imported/UTEM.jpg-8cf3fbc6ec1b59d1f2bd5c864745b1bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/UTEM.jpg"
-dest_files=["res://.godot/imported/UTEM.jpg-250fe03fde52779c51f6647a5bd9af78.ctex"]
+source_file="res://background/UTEM.jpg"
+dest_files=["res://.godot/imported/UTEM.jpg-8cf3fbc6ec1b59d1f2bd5c864745b1bf.ctex"]
 
 [params]
 
