@@ -1,7 +1,8 @@
 extends Node
 
 var escuela = false
-
+var m3 = false
+var m3_puzzle = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

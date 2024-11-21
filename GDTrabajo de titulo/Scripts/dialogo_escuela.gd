@@ -26,7 +26,7 @@ func _ready():
 			sec, "¿Me harías un favor?",
 			player1, "¡Si, porsupuesto!",
 			sec, "¿Por qué no vas y se la pides tu mismo?",
-			sec, "Debería estar en la primera sala del segundo piso en el M3",
+			sec, "Debería estar en la segunda sala del segundo piso en el M3",
 			player1, "Muchas Gracias, ire enseguida"
 		]
 		await get_tree().create_timer(1).timeout
