@@ -1,11 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4dxhhcr0yo0l"]
+[gd_scene load_steps=8 format=3 uid="uid://b4dxhhcr0yo0l"]
 
-[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_1ausi"]
-[ext_resource type="Texture2D" uid="uid://ctsrhfn4q3nca" path="res://background/Pizarra.jpg" id="2_kede1"]
+[ext_resource type="Script" path="res://Scripts/pizarra.gd" id="1_o4wwl"]
+[ext_resource type="Texture2D" uid="uid://ctsrhfn4q3nca" path="res://Background/Pizarra.jpg" id="2_kede1"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_uo2kc"]
 
+[sub_resource type="Animation" id="Animation_i0amt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l0obv"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1tse1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bty0q"]
+_data = {
+"RESET": SubResource("Animation_i0amt"),
+"fade_in": SubResource("Animation_l0obv"),
+"fade_out": SubResource("Animation_1tse1")
+}
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_1ausi")
+script = ExtResource("1_o4wwl")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -28,4 +116,15 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Pizarra"]
+libraries = {
+"": SubResource("AnimationLibrary_bty0q")
+}
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/Pizarra/Transition"]
+offset_right = 1282.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pizarra/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Pizarra/Transition" to="." method="_on_transition_animation_finished"]

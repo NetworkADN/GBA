@@ -1,6 +1,10 @@
 extends Node2D
 
 @onready var transition = $ParallaxBackground/ParallaxLayer/Sala_m3/Transition
+@onready var sprite = $ParallaxBackground/ParallaxLayer/Sala_m3/Area2D/Sprite2D
+
+@export var normal_color: Color = Color(1, 1, 1, 1)    # Color normal
+@export var hover_color: Color = Color(1, 1, 0.8, 1)  # Color iluminado
 
 var next_scene = ""
 
@@ -26,3 +30,19 @@ func _on_button_pressed() -> void:
 
 func _on_transition_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file(next_scene)
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			next_scene = "res://Scenes/M3/Pizarra.tscn"
+			transition.play("fade_out")
+			AudioManager.steps_audio.play()
+
+
+func _on_area_2d_mouse_entered() -> void:
+	sprite.modulate = hover_color
+
+
+func _on_area_2d_mouse_exited() -> void:
+	sprite.modulate = normal_color
