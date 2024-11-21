@@ -86,7 +86,11 @@ func close_dialog_boxes():
 
 func _input(event):
 	# Detecta clic izquierdo o presionar una tecla para avanzar
-	if DialogsFlags.escuela == false:
+	if DialogsFlags.m3 == false:
+		if event.is_action_pressed("ui_accept"):
+			show_next_line()
+			
+	if DialogsFlags.m3 == true and DialogsFlags.m3_puzzle == true:
 		if event.is_action_pressed("ui_accept"):
 			show_next_line()
 
