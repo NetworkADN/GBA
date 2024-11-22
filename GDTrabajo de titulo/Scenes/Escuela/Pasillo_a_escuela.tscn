@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/pasillo_a_escuela.gd" id="1_r33l7"]
 [ext_resource type="Texture2D" uid="uid://dx2yiqb7hjxn1" path="res://Background/Pasillo a Escuela.jpg" id="2_a67i4"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://Assets/arrow_down.png" id="3_nqi3p"]
-[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://Assets/arrow_up.png" id="4_3lply"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_nqi3p"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_3lply"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -129,6 +129,18 @@ icon = ExtResource("4_3lply")
 flat = true
 expand_icon = true
 
+[node name="Button3" type="Button" parent="."]
+offset_left = 964.0
+offset_top = 448.0
+offset_right = 2597.0
+offset_bottom = 2061.0
+rotation = -1.94423
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_nqi3p")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [node name="Transition" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
@@ -141,4 +153,5 @@ color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

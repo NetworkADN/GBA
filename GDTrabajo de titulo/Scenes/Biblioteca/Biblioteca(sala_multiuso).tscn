@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b05kggl05crev"]
 
 [ext_resource type="Script" path="res://Scripts/biblioteca(sala_multiuso).gd" id="1_8ve7x"]
-[ext_resource type="Texture2D" uid="uid://bbgxxr1fkjfrf" path="res://background/Sala multiuso.jpg" id="2_sahqk"]
+[ext_resource type="Texture2D" uid="uid://bbgxxr1fkjfrf" path="res://Background/Sala multiuso.jpg" id="2_sahqk"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_8fbma"]
 [ext_resource type="Script" path="res://Scripts/samu_dialog.gd" id="4_g7p3m"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_fywem"]
@@ -188,5 +188,18 @@ theme_override_fonts/normal_font = ExtResource("5_fywem")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 1266.0
+offset_top = 413.0
+offset_right = 2543.0
+offset_bottom = 1640.0
+rotation = 1.76643
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_8fbma")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

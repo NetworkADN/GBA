@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var transition = $Transition
-
 var next_scene = ""
+
 @onready var dialog_box = $caja_dialogo  # Nodo para el cuadro de diálogo
 @onready var name_box = $Caja_nombre  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo_escuela/escuela/Dialogo_escuela # Nodo para el texto del diálogo
