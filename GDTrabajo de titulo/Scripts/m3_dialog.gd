@@ -71,6 +71,9 @@ func show_next_line():
 	else:
 		close_dialog_boxes()
 		DialogsFlags.m3 = true
+		DialogsFlags.m3_puzzle = true
+		if DialogsFlags.m3 == true and DialogsFlags.m3_puzzle == true:
+			DialogsFlags.m3_final = true
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar
@@ -80,20 +83,12 @@ func close_dialog_boxes():
 	name_label.visible = false
 	
 
-	
-	# Aquí puedes agregar lógica para iniciar un temporizador o la siguiente fase del juego
-	##start_timer()
-
 func _input(event):
-	# Detecta clic izquierdo o presionar una tecla para avanzar
+	# Detecta presionar una tecla para avanzar
 	if DialogsFlags.m3 == false:
 		if event.is_action_pressed("ui_accept"):
 			show_next_line()
 			
-	if DialogsFlags.m3 == true and DialogsFlags.m3_puzzle == true:
+	if DialogsFlags.m3 == true and DialogsFlags.m3_puzzle == true and DialogsFlags.m3_final == false:
 		if event.is_action_pressed("ui_accept"):
 			show_next_line()
-
-##func start_timer():
-	# Lógica para iniciar un temporizador (opcional)
-##	print("El tiempo comienza a correr.")

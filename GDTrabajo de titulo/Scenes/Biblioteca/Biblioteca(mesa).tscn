@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxsp8y54ptafo"]
+[gd_scene load_steps=7 format=3 uid="uid://bxsp8y54ptafo"]
 
-[ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_bmnlj"]
+[ext_resource type="Script" path="res://Scripts/biblioteca(mesa).gd" id="1_jw0pc"]
 [ext_resource type="Texture2D" uid="uid://cx47gn2gal7ol" path="res://background/Sala multiuso (mesa).jpg" id="2_3yaen"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_p0rxn"]
+[ext_resource type="Script" path="res://Scripts/mesa_dialog.gd" id="4_gipj3"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_0hif1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tvgl3"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_bmnlj")
+script = ExtResource("1_jw0pc")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -28,4 +32,59 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(mesa)/Button" to="." method="_on_button_pressed"]
+[node name="caja_dialogo" type="Node2D" parent="."]
+position = Vector2(614, 376)
+
+[node name="Dialogo" type="Sprite2D" parent="caja_dialogo"]
+modulate = Color(0.0862745, 0.956863, 0.956863, 1)
+self_modulate = Color(0.0509804, 0.352941, 0.541176, 0.878431)
+position = Vector2(28.5, 194.5)
+scale = Vector2(1141, 191)
+texture = SubResource("CanvasTexture_tvgl3")
+
+[node name="Caja_nombre" type="Node2D" parent="."]
+
+[node name="Nombre" type="Sprite2D" parent="Caja_nombre"]
+modulate = Color(0.0862745, 0.956863, 0.956863, 1)
+self_modulate = Color(0.0509804, 0.352941, 0.541176, 0.878431)
+position = Vector2(66.025, 389.29)
+scale = Vector2(150, 55.299)
+texture = SubResource("CanvasTexture_tvgl3")
+offset = Vector2(0.54, 0.94)
+
+[node name="Dialogo_mesa" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_gipj3")
+
+[node name="Dialogo" type="Control" parent="Dialogo_mesa"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dialogo_mesa" type="RichTextLabel" parent="Dialogo_mesa/Dialogo"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 500.0
+offset_right = 1166.0
+offset_bottom = 646.0
+theme_override_fonts/normal_font = ExtResource("5_0hif1")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+
+[node name="nombres" type="Control" parent="Dialogo_mesa"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="caja_nombre" type="RichTextLabel" parent="Dialogo_mesa/nombres"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 423.0
+offset_right = 224.0
+offset_bottom = 462.0
+theme_override_fonts/normal_font = ExtResource("5_0hif1")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true

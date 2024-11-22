@@ -58,18 +58,12 @@ func close_dialog_boxes():
 	end = true
 	
 
-	
-	# Aquí puedes agregar lógica para iniciar un temporizador o la siguiente fase del juego
-	##start_timer()
 
 func _input(event):
-	# Detecta clic izquierdo o presionar una tecla para avanzar
+	# Detecta presionar una tecla para avanzar
 	if event.is_action_pressed("ui_accept"):
 		show_next_line()
 
-##func start_timer():
-	# Lógica para iniciar un temporizador (opcional)
-##	print("El tiempo comienza a correr.")
 
 
 func _on_transition_animation_finished(anim_name):
