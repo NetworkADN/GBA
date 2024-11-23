@@ -21,6 +21,8 @@ var c1 = false
 var c2 = false
 var c3 = false
 var c4 = false
+
+var key = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

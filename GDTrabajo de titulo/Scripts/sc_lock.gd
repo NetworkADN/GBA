@@ -79,7 +79,9 @@ func show_next_line():
 			
 		if  DialogsFlags.c1 == true and DialogsFlags.c2 == true and DialogsFlags.c3 == true and DialogsFlags.c4 == true and DialogsFlags.locker == true:
 			next_scene = "res://Scenes/M8/Sala_carrera(locker_abierto).tscn"
+			DialogsFlags.sc_puzzle = true
 			transition.play("fade_out")
+			
 			
 
 
