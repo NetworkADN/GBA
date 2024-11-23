@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsf3nin5lib8r"
-path="res://.godot/imported/Sala carrera.jpg-5267d2db6609856dd5d7705fafe8777b.ctex"
+path="res://.godot/imported/Sala carrera.jpg-22db06ba4fdd2967dcae3f781824f640.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Sala carrera.jpg"
-dest_files=["res://.godot/imported/Sala carrera.jpg-5267d2db6609856dd5d7705fafe8777b.ctex"]
+source_file="res://background/Sala carrera.jpg"
+dest_files=["res://.godot/imported/Sala carrera.jpg-22db06ba4fdd2967dcae3f781824f640.ctex"]
 
 [params]
 

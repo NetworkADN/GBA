@@ -71,7 +71,6 @@ func show_next_line():
 	else:
 		close_dialog_boxes()
 		DialogsFlags.m3 = true
-		DialogsFlags.m3_puzzle = true
 		if DialogsFlags.m3 == true and DialogsFlags.m3_puzzle == true:
 			DialogsFlags.m3_final = true
 

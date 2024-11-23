@@ -12,6 +12,15 @@ var bibl_final = false
 var lab = false
 var lab_puzzle = false
 var lab_final = false
+var sc = false
+var locker = false
+var sc_puzzle = false
+var sc_final = false
+
+var c1 = false
+var c2 = false
+var c3 = false
+var c4 = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cw3xup5p5id8i"]
 
 [ext_resource type="Script" path="res://Scripts/patio_casino.gd" id="1_yf7km"]
-[ext_resource type="Texture2D" uid="uid://dhjh3v0nwixnr" path="res://Background/Patio Casino.jpg" id="2_abw7o"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://Assets/arrow_down.png" id="3_ahccd"]
-[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://Assets/arrow_up.png" id="4_55iir"]
+[ext_resource type="Texture2D" uid="uid://dhjh3v0nwixnr" path="res://background/Patio Casino.jpg" id="2_abw7o"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_ahccd"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_55iir"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://omd5fq4ko087"
-path="res://.godot/imported/Imagen de WhatsApp 2024-09-13 a las 19.45.36_0bd82a7c.jpg-8a275c2fbf734d6057f5985b588708f7.ctex"
+uid="uid://bnnsh367d6ahd"
+path="res://.godot/imported/candado-removebg-preview.png-064a38c3dffce11bc66945ee876125d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fotos/Imagen de WhatsApp 2024-09-13 a las 19.45.36_0bd82a7c.jpg"
-dest_files=["res://.godot/imported/Imagen de WhatsApp 2024-09-13 a las 19.45.36_0bd82a7c.jpg-8a275c2fbf734d6057f5985b588708f7.ctex"]
+source_file="res://assets/candado-removebg-preview.png"
+dest_files=["res://.godot/imported/candado-removebg-preview.png-064a38c3dffce11bc66945ee876125d8.ctex"]
 
 [params]
 
