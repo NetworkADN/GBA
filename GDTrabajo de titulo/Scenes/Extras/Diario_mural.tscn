@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cboang24ru07n"]
+[gd_scene load_steps=11 format=3 uid="uid://cboang24ru07n"]
 
 [ext_resource type="Script" path="res://Scripts/diario_mural.gd" id="1_rp7fb"]
-[ext_resource type="Texture2D" uid="uid://ck47d7qg7xvo2" path="res://Background/Diario Mural.jpg" id="2_vwjen"]
-[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://Assets/arrow_down.png" id="3_khsa2"]
+[ext_resource type="Texture2D" uid="uid://ck47d7qg7xvo2" path="res://background/Diario Mural.jpg" id="2_vwjen"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_khsa2"]
+[ext_resource type="Script" path="res://Scripts/dm_Dialog.gd" id="4_rmcry"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_xoi47"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -92,6 +94,8 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_kj5yk"]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rp7fb")
 
@@ -125,6 +129,63 @@ libraries = {
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
+
+[node name="caja_dialogo" type="Node2D" parent="."]
+position = Vector2(614, 376)
+
+[node name="Dialogo" type="Sprite2D" parent="caja_dialogo"]
+modulate = Color(0.0862745, 0.956863, 0.956863, 1)
+self_modulate = Color(0.0509804, 0.352941, 0.541176, 0.878431)
+position = Vector2(28.5, 194.5)
+scale = Vector2(1141, 191)
+texture = SubResource("CanvasTexture_kj5yk")
+
+[node name="Caja_nombre" type="Node2D" parent="."]
+
+[node name="Nombre" type="Sprite2D" parent="Caja_nombre"]
+modulate = Color(0.0862745, 0.956863, 0.956863, 1)
+self_modulate = Color(0.0509804, 0.352941, 0.541176, 0.878431)
+position = Vector2(66.025, 389.29)
+scale = Vector2(150, 55.299)
+texture = SubResource("CanvasTexture_kj5yk")
+offset = Vector2(0.54, 0.94)
+
+[node name="Dialogo_dm" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_rmcry")
+
+[node name="Dialogo" type="Control" parent="Dialogo_dm"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dialogo_dm" type="RichTextLabel" parent="Dialogo_dm/Dialogo"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 500.0
+offset_right = 1166.0
+offset_bottom = 646.0
+theme_override_fonts/normal_font = ExtResource("5_xoi47")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+
+[node name="nombres" type="Control" parent="Dialogo_dm"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="caja_nombre" type="RichTextLabel" parent="Dialogo_dm/nombres"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 423.0
+offset_right = 224.0
+offset_bottom = 462.0
+theme_override_fonts/normal_font = ExtResource("5_xoi47")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Diario_mural/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Diario_mural/Transition" to="." method="_on_transition_animation_finished"]
