@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcjktr82ygyst"]
+
+[ext_resource type="Script" path="res://Scripts/cards.gd" id="1_wecxe"]
+[ext_resource type="Texture2D" uid="uid://bkp76fp8yp826" path="res://assets/memorice/pngwing.com.png" id="2_vww74"]
+
+[node name="cards" type="Button"]
+custom_minimum_size = Vector2(150, 200)
+offset_left = 147.0
+offset_top = 85.0
+offset_right = 263.0
+offset_bottom = 291.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_wecxe")
+back_texture = ExtResource("2_vww74")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
