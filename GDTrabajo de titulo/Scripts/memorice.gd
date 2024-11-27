@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var transition = $Transition
+
+var next_scene = ""
+
 @export var card_scene: PackedScene
 @export var grid_size: Vector2 = Vector2(4, 3)
 @export var card_textures: Array
@@ -13,6 +17,7 @@ var game_timer: float = 0.0
 var timer_active: bool = false
 
 func _ready():
+	transition.play("fade_in")
 	setup_board()
 
 	# Mostrar todas las cartas durante 5 segundos
@@ -86,4 +91,11 @@ func game_over():
 	print("¡Juego terminado!")
 	print("Fallos totales: %d" % fail_count)
 	print("Tiempo total: %.2f segundos" % game_timer)
+	DialogsFlags.lab_puzzle = true
+	next_scene = "res://Scenes/Labs/Lab_de_info.tscn"
+	transition.play("fade_out")
 	# Aquí puedes cambiar de escena o mostrar un mensaje
+
+
+func _on_transition_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_file(next_scene)

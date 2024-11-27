@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var transition = $ParallaxBackground/ParallaxLayer/Sala_m3/Transition
 @onready var sprite = $ParallaxBackground/ParallaxLayer/Sala_m3/Area2D/Sprite2D
+@onready var area2d = $ParallaxBackground/ParallaxLayer/Sala_m3/Area2D
 
 @export var normal_color: Color = Color(1, 1, 1, 1)    # Color normal
 @export var hover_color: Color = Color(1, 1, 0.8, 1)  # Color iluminado
@@ -15,6 +16,9 @@ var next_scene = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if DialogsFlags.m3_puzzle == true:
+		sprite.visible = false
+		area2d.visible = false
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false
@@ -42,7 +46,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 func _on_area_2d_mouse_entered() -> void:
 	sprite.modulate = hover_color
-
 
 func _on_area_2d_mouse_exited() -> void:
 	sprite.modulate = normal_color

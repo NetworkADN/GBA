@@ -4,7 +4,6 @@ var player1 = "Yo"
 var supplayer1 = "Objetivo"
 var sec = "Secretaria"
 var think = "Idea"
-
 var dialog = []  # Lista de diálogos
 var current_line = 0  # Línea actual del diálogo
 

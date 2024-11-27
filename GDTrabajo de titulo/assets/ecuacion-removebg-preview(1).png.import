@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c27hwow1unj2q"
-path="res://.godot/imported/Pasillo M3.jpg-5a105dad9a9514915c210e58e3f34389.ctex"
+uid="uid://dju4f0tsx645q"
+path="res://.godot/imported/ecuacion-removebg-preview(1).png-8e926d214fc41c8f82241b90e4e4ad27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Pasillo M3.jpg"
-dest_files=["res://.godot/imported/Pasillo M3.jpg-5a105dad9a9514915c210e58e3f34389.ctex"]
+source_file="res://assets/ecuacion-removebg-preview(1).png"
+dest_files=["res://.godot/imported/ecuacion-removebg-preview(1).png-8e926d214fc41c8f82241b90e4e4ad27.ctex"]
 
 [params]
 

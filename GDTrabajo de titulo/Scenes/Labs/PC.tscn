@@ -1,10 +1,99 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjscfstm62ehn"]
+[gd_scene load_steps=12 format=3 uid="uid://cjscfstm62ehn"]
 
 [ext_resource type="Script" path="res://Scripts/pc.gd" id="1_exh8y"]
-[ext_resource type="Texture2D" uid="uid://mfcl3tjh5mx3" path="res://background/PC.jpg" id="2_xe641"]
+[ext_resource type="Texture2D" uid="uid://mfcl3tjh5mx3" path="res://Background/PC.jpg" id="2_xe641"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_3nfrt"]
 [ext_resource type="Script" path="res://Scripts/pc_ap_dialog.gd" id="4_2b34y"]
+[ext_resource type="Texture2D" uid="uid://cgkbpkeet2eb" path="res://icon.svg" id="4_t1was"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_62kys"]
+
+[sub_resource type="Animation" id="Animation_i0amt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l0obv"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1tse1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bty0q"]
+_data = {
+"RESET": SubResource("Animation_i0amt"),
+"fade_in": SubResource("Animation_l0obv"),
+"fade_out": SubResource("Animation_1tse1")
+}
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jp382"]
 
@@ -20,7 +109,7 @@ position = Vector2(641.394, 361.606)
 scale = Vector2(0.63453, 0.478034)
 texture = ExtResource("2_xe641")
 
-[node name="Sprite2D" type="Button" parent="ParallaxBackground/ParallaxLayer/PC"]
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/PC"]
 offset_left = 177.464
 offset_top = 751.817
 offset_right = 2520.46
@@ -30,6 +119,23 @@ scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("3_3nfrt")
 flat = true
 expand_icon = true
+
+[node name="App" type="Button" parent="ParallaxBackground/ParallaxLayer/PC"]
+offset_left = 23.0187
+offset_top = -283.674
+offset_right = 159.019
+offset_bottom = -147.674
+icon = ExtResource("4_t1was")
+
+[node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/PC"]
+libraries = {
+"": SubResource("AnimationLibrary_bty0q")
+}
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/PC/Transition"]
+offset_right = 1282.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
 
 [node name="caja_dialogo" type="Node2D" parent="."]
 position = Vector2(614, 376)
@@ -87,3 +193,7 @@ offset_bottom = 462.0
 theme_override_fonts/normal_font = ExtResource("5_62kys")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/PC/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/PC/App" to="." method="_on_app_pressed"]
+[connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/PC/Transition" to="." method="_on_transition_animation_finished"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://jax7nrayfkqe"]
 
 [ext_resource type="Script" path="res://Scripts/lab_de_info.gd" id="1_6u657"]
-[ext_resource type="Texture2D" uid="uid://dfcwv35xnajyi" path="res://background/Labs Info.jpg" id="2_0nbsp"]
+[ext_resource type="Texture2D" uid="uid://dfcwv35xnajyi" path="res://Background/Labs Info.jpg" id="2_0nbsp"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_fioj4"]
 [ext_resource type="Script" path="res://Scripts/labs_dialog.gd" id="4_j50rd"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_bwj4y"]
@@ -130,7 +130,13 @@ offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
 
+[node name="Area2D" type="Area2D" parent="ParallaxBackground/ParallaxLayer/Lab"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ParallaxBackground/ParallaxLayer/Lab/Area2D"]
+polygon = PackedVector2Array(-431.837, 64.5769, -269.711, 84.5492, -284.722, 260.305, -446.849, 215.035)
+
 [node name="caja_dialogo" type="Node2D" parent="."]
+visible = false
 position = Vector2(614, 376)
 
 [node name="Dialogo" type="Sprite2D" parent="caja_dialogo"]
@@ -141,6 +147,7 @@ scale = Vector2(1141, 191)
 texture = SubResource("CanvasTexture_g6bca")
 
 [node name="Caja_nombre" type="Node2D" parent="."]
+visible = false
 
 [node name="Nombre" type="Sprite2D" parent="Caja_nombre"]
 modulate = Color(0.0862745, 0.956863, 0.956863, 1)
@@ -189,3 +196,4 @@ bbcode_enabled = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Lab/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Lab/Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="input_event" from="ParallaxBackground/ParallaxLayer/Lab/Area2D" to="." method="_on_area_2d_input_event"]

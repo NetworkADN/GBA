@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://64o6h46cwog2"
-path="res://.godot/imported/Pasillo Casino.jpg-3510cb345978acda6220cc56a337f2e2.ctex"
+path="res://.godot/imported/Pasillo Casino.jpg-ebd1f9976a3fab1d4585dc4aec1d4672.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background/Pasillo Casino.jpg"
-dest_files=["res://.godot/imported/Pasillo Casino.jpg-3510cb345978acda6220cc56a337f2e2.ctex"]
+source_file="res://Background/Pasillo Casino.jpg"
+dest_files=["res://.godot/imported/Pasillo Casino.jpg-ebd1f9976a3fab1d4585dc4aec1d4672.ctex"]
 
 [params]
 

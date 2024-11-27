@@ -21,5 +21,14 @@ func _on_button_pressed() -> void:
 	transition.play("fade_out")
 	AudioManager.steps_audio.play()
 
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			next_scene = "res://Scenes/Labs/PC.tscn"
+			transition.play("fade_out")
+			AudioManager.steps_audio.play()
+
+
 func _on_transition_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file(next_scene)

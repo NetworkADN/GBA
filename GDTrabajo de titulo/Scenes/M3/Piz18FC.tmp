@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://diohvyvhnc2pe"]
+[gd_scene load_steps=9 format=3 uid="uid://b4dxhhcr0yo0l"]
 
-[ext_resource type="Script" path="res://Scripts/entrada_labs.gd" id="1_lhcjl"]
-[ext_resource type="Texture2D" uid="uid://cpi4uysv5wxrp" path="res://Background/Entrada Labs.jpg" id="2_nctl5"]
-[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_ad4cl"]
+[ext_resource type="Script" path="res://Scripts/pizarra.gd" id="1_o4wwl"]
+[ext_resource type="Texture2D" uid="uid://ctsrhfn4q3nca" path="res://Background/Pizarra.jpg" id="2_kede1"]
+[ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_uo2kc"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -92,50 +92,62 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60b5n"]
+size = Vector2(706.182, 233.424)
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_lhcjl")
+script = ExtResource("1_o4wwl")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-5, -8)
 
-[node name="Entrada_Labs" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(640, 359)
-scale = Vector2(0.998438, 0.75)
-texture = ExtResource("2_nctl5")
+[node name="Pizarra" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(644.5, 368.5)
+scale = Vector2(0.634425, 0.475529)
+texture = ExtResource("2_kede1")
 
-[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Entrada_Labs"]
-offset_left = -40.0626
-offset_top = 106.667
-offset_right = 1185.94
-offset_bottom = 1450.67
-scale = Vector2(0.0722657, 0.069987)
-icon = ExtResource("3_ad4cl")
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer/Pizarra"]
+offset_left = -31.0
+offset_top = 617.0
+offset_right = 1817.0
+offset_bottom = 2494.0
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_uo2kc")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Entrada_Labs"]
-offset_left = 53.71
-offset_top = 478.659
-offset_right = 1316.71
-offset_bottom = 1827.66
-rotation = -3.12941
-scale = Vector2(0.0722657, 0.069987)
-icon = ExtResource("3_ad4cl")
-flat = true
-expand_icon = true
-
-[node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Entrada_Labs"]
+[node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Pizarra"]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
 }
 
-[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/Entrada_Labs/Transition"]
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/Pizarra/Transition"]
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
 
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Entrada_Labs/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Entrada_Labs/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Entrada_Labs/Transition" to="." method="_on_transition_animation_finished"]
+[node name="Area2D" type="Area2D" parent="ParallaxBackground/ParallaxLayer/Pizarra"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer/Pizarra/Area2D"]
+position = Vector2(22.8553, 30.4925)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_60b5n")
+
+[node name="Problem" type="Button" parent="ParallaxBackground/ParallaxLayer/Pizarra/Area2D/CollisionShape2D"]
+offset_left = -354.637
+offset_top = -118.815
+offset_right = -112.637
+offset_bottom = -87.8151
+scale = Vector2(2.92823, 7.51044)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "5(2x−3)−3(x+4)=2(3x+7)+8"
+flat = true
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pizarra/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Pizarra/Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="mouse_entered" from="ParallaxBackground/ParallaxLayer/Pizarra/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="ParallaxBackground/ParallaxLayer/Pizarra/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pizarra/Area2D/CollisionShape2D/Problem" to="." method="_on_problem_pressed"]
