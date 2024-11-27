@@ -8,6 +8,7 @@ extends Node2D
 @onready var transition = $ParallaxBackground/ParallaxLayer/Pizarra/Transition
 @onready var button = $ParallaxBackground/ParallaxLayer/Pizarra/Button
 
+
 var next_scene = ""
 
 @export var normal_color: Color = Color(1, 1, 1, 1)    # Color normal

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cfil44ws605q1" path="res://Background/Sala m3.jpg" id="2_51den"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_8vnew"]
 [ext_resource type="Script" path="res://Scripts/m3_dialog.gd" id="4_5hxje"]
-[ext_resource type="Texture2D" uid="uid://barxwvxlpve0s" path="res://assets/box_pizarra2.png" id="4_c8aw0"]
+[ext_resource type="Texture2D" uid="uid://du6r4shjs4dtm" path="res://assets/prop.pizarra.png" id="4_qh45o"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_kkgra"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
@@ -137,9 +137,9 @@ color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-150, -73.3333, -149, -260, 181, -224, 174, -77.3333)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Sala_m3/Area2D"]
-position = Vector2(2.49997, -169.333)
-scale = Vector2(1.49643, 1.48718)
-texture = ExtResource("4_c8aw0")
+position = Vector2(12, -165.333)
+scale = Vector2(0.196875, 0.197531)
+texture = ExtResource("4_qh45o")
 
 [node name="caja_dialogo" type="Node2D" parent="."]
 position = Vector2(614, 376)

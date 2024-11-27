@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://jax7nrayfkqe"]
+[gd_scene load_steps=12 format=3 uid="uid://jax7nrayfkqe"]
 
 [ext_resource type="Script" path="res://Scripts/lab_de_info.gd" id="1_6u657"]
 [ext_resource type="Texture2D" uid="uid://dfcwv35xnajyi" path="res://Background/Labs Info.jpg" id="2_0nbsp"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_fioj4"]
+[ext_resource type="Texture2D" uid="uid://c88f0jwd2uq84" path="res://assets/prop.pc.png" id="4_6wrvl"]
 [ext_resource type="Script" path="res://Scripts/labs_dialog.gd" id="4_j50rd"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_bwj4y"]
 
@@ -135,6 +136,11 @@ color = Color(0, 0, 0, 1)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ParallaxBackground/ParallaxLayer/Lab/Area2D"]
 polygon = PackedVector2Array(-431.837, 64.5769, -269.711, 84.5492, -284.722, 260.305, -446.849, 215.035)
 
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Lab/Area2D"]
+position = Vector2(-351.274, 162.441)
+scale = Vector2(0.235079, 0.242872)
+texture = ExtResource("4_6wrvl")
+
 [node name="caja_dialogo" type="Node2D" parent="."]
 visible = false
 position = Vector2(614, 376)
@@ -197,3 +203,5 @@ bbcode_enabled = true
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Lab/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Lab/Transition" to="." method="_on_transition_animation_finished"]
 [connection signal="input_event" from="ParallaxBackground/ParallaxLayer/Lab/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="ParallaxBackground/ParallaxLayer/Lab/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="ParallaxBackground/ParallaxLayer/Lab/Area2D" to="." method="_on_area_2d_mouse_exited"]
