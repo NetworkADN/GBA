@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtd463lelc5rl"]
+
+[ext_resource type="Script" path="res://Scenes/Box puzzle/triangulo1.gd" id="1_kx4e4"]
+[ext_resource type="Texture2D" uid="uid://bced4fkd1xlmd" path="res://assets/box/58afdaa0829958a978a4a68a-2796067814.png" id="2_ef7p6"]
+[ext_resource type="Texture2D" uid="uid://dgum86o46qo3m" path="res://assets/box/1024px-Triángulo_rectángulo_escaleno.svg-2867338663.png" id="3_i2ac1"]
+[ext_resource type="Texture2D" uid="uid://dnhpp65l5py1c" path="res://assets/box/png-square-shape-red-square-shape-clipart-2400-4198490413.png" id="4_tsph5"]
+[ext_resource type="Texture2D" uid="uid://bsv1tpcnysnc0" path="res://assets/box/trapecio-3-e1559285070945-removebg-preview(1).png" id="5_82i5f"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 721.0
+color = Color(0.119942, 0.318655, 0.423765, 1)
+
+[node name="Figura_que_rellenar" type="Node2D" parent="."]
+
+[node name="Panel" type="Panel" parent="Figura_que_rellenar"]
+offset_left = 538.0
+offset_top = 221.0
+offset_right = 1259.0
+offset_bottom = 527.0
+
+[node name="Figuras" type="Node2D" parent="."]
+
+[node name="triangulo1" type="Node2D" parent="Figuras"]
+script = ExtResource("1_kx4e4")
+
+[node name="triangulo1" type="TextureRect" parent="Figuras/triangulo1"]
+offset_left = 18.0
+offset_top = -20.0
+offset_right = 1042.0
+offset_bottom = 1004.0
+scale = Vector2(0.244629, 0.334961)
+texture = ExtResource("3_i2ac1")
+
+[node name="Area2D" type="Area2D" parent="Figuras/triangulo1/triangulo1"]
+position = Vector2(-147.162, -229.878)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Figuras/triangulo1/triangulo1/Area2D"]
+polygon = PackedVector2Array(290.236, 417.959, 298.411, 1003.1, 1026.04, 1006.09)
+
+[node name="triangulo2" type="TextureRect" parent="Figuras"]
+offset_left = 492.0
+offset_top = 428.0
+offset_right = 1516.0
+offset_bottom = 1452.0
+rotation = 3.13533
+scale = Vector2(0.371839, 0.521595)
+texture = ExtResource("3_i2ac1")
+
+[node name="cuadrado" type="TextureRect" parent="Figuras"]
+offset_left = 15.0
+offset_top = 271.0
+offset_right = 2415.0
+offset_bottom = 2671.0
+scale = Vector2(0.0966666, 0.0954167)
+texture = ExtResource("4_tsph5")
+
+[node name="trapezoide" type="TextureRect" parent="Figuras"]
+offset_left = 630.0
+offset_top = -7.0
+offset_right = 1337.0
+offset_bottom = 346.0
+scale = Vector2(0.557284, 0.493272)
+texture = ExtResource("5_82i5f")
+
+[node name="cuadrado2" type="TextureRect" parent="Figuras"]
+offset_left = 17.0
+offset_top = 493.0
+offset_right = 2417.0
+offset_bottom = 2893.0
+scale = Vector2(0.0966666, 0.095)
+texture = ExtResource("4_tsph5")
+
+[node name="triangulo3" type="TextureRect" parent="Figuras"]
+offset_left = 389.0
+offset_top = 521.0
+offset_right = 1413.0
+offset_bottom = 1545.0
+scale = Vector2(0.262939, 0.197754)
+texture = ExtResource("3_i2ac1")
+
+[node name="triangulo4" type="TextureRect" parent="Figuras"]
+offset_left = 714.0
+offset_top = 181.0
+offset_right = 1738.0
+offset_bottom = 1205.0
+rotation = 3.14159
+scale = Vector2(0.258968, 0.197754)
+texture = ExtResource("3_i2ac1")
+
+[node name="rectangulo" type="TextureRect" parent="Figuras"]
+offset_left = 464.0
+offset_top = 360.0
+offset_right = 843.0
+offset_bottom = 664.0
+rotation = 1.5708
+texture = ExtResource("2_ef7p6")
+expand_mode = 1
+
+[connection signal="input_event" from="Figuras/triangulo1/triangulo1/Area2D" to="Figuras/triangulo1" method="_on_area_2d_input_event"]

@@ -7,6 +7,10 @@ var next_scene = ""
 @onready var name_box = $Caja_nombre  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo_mesa/Dialogo/Dialogo_mesa # Nodo para el texto del diálogo
 @onready var name_label = $Dialogo_mesa/nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var sprite = $"ParallaxBackground/ParallaxLayer/Biblioteca(mesa)/Caja_puzzle/caja"
+
+@export var normal_color: Color = Color(1, 1, 1, 1)    # Color normal
+@export var hover_color: Color = Color(1, 1, 0.8, 1)  # Color iluminado
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +25,20 @@ func _on_button_pressed() -> void:
 	next_scene = "res://Scenes/Biblioteca/Biblioteca(sala_multiuso).tscn"
 	transition.play("fade_out")
 	AudioManager.steps_audio.play()
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			next_scene = "res://Scenes/Box puzzle/Box(Puzzle).tscn"
+			transition.play("fade_out")
+
+
+func _on_area_2d_mouse_entered() -> void:
+	sprite.modulate = hover_color
+
+
+func _on_area_2d_mouse_exited() -> void:
+	sprite.modulate = normal_color
 
 
 func _on_transition_animation_finished(anim_name: StringName) -> void:
