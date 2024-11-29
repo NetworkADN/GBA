@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c80pu3h2syqqs"]
+[gd_scene load_steps=18 format=3 uid="uid://c80pu3h2syqqs"]
 
 [ext_resource type="Script" path="res://Scripts/memorice.gd" id="1_4dg1o"]
 [ext_resource type="PackedScene" uid="uid://bcjktr82ygyst" path="res://Scenes/memorice/cards.tscn" id="2_h0wbv"]
@@ -9,7 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://bx747pnbmwdrt" path="res://assets/memorice/utem.png" id="7_32swo"]
 [ext_resource type="Texture2D" uid="uid://c6n5bmhxhyunq" path="res://assets/memorice/mesa.png" id="8_j8g8v"]
 [ext_resource type="Texture2D" uid="uid://bkp76fp8yp826" path="res://assets/memorice/pngwing.com.png" id="9_p1pe8"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="10_r6vx7"]
 [ext_resource type="Texture2D" uid="uid://1pdd4mjdqsfd" path="res://assets/memorice/60cba695ef52086ffe363090.jpeg" id="10_ug1qx"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="12_3g2ua"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cc3fw"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -105,6 +109,17 @@ card_scene = ExtResource("2_h0wbv")
 card_textures = [ExtResource("3_hasj3"), ExtResource("4_syld1"), ExtResource("5_6kbjh"), ExtResource("6_sokev"), ExtResource("7_32swo"), ExtResource("8_j8g8v")]
 cards_back = ExtResource("9_p1pe8")
 
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("10_r6vx7")
+label_settings = SubResource("LabelSettings_cc3fw")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(639.5, 363.5)
 scale = Vector2(1.99219, 1.97574)
@@ -140,5 +155,7 @@ libraries = {
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
+
+[node name="ClockTimer" parent="." instance=ExtResource("12_3g2ua")]
 
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

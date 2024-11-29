@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://f6l0k63ljmt6"]
+[gd_scene load_steps=14 format=3 uid="uid://f6l0k63ljmt6"]
 
 [ext_resource type="Script" path="res://Scripts/anuncios_escuela.gd" id="1_imgg0"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_e4cwj"]
 [ext_resource type="Texture2D" uid="uid://u24egm585d5b" path="res://background/Anuncios Escuela.jpg" id="2_ng32t"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_0uuny"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_c2qxa"]
 [ext_resource type="Script" path="res://Scripts/ae_Dialog.gd" id="4_35hsb"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_admwo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hstlv"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -98,6 +102,19 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_imgg0")
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("2_e4cwj")
+label_settings = SubResource("LabelSettings_hstlv")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("3_0uuny")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

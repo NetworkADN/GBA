@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://diohvyvhnc2pe"]
+[gd_scene load_steps=11 format=3 uid="uid://diohvyvhnc2pe"]
 
 [ext_resource type="Script" path="res://Scripts/entrada_labs.gd" id="1_lhcjl"]
-[ext_resource type="Texture2D" uid="uid://cpi4uysv5wxrp" path="res://Background/Entrada Labs.jpg" id="2_nctl5"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_gbqwn"]
+[ext_resource type="Texture2D" uid="uid://cpi4uysv5wxrp" path="res://background/Entrada Labs.jpg" id="2_nctl5"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_3vbc8"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_ad4cl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jji0y"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -94,6 +98,19 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lhcjl")
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("2_gbqwn")
+label_settings = SubResource("LabelSettings_jji0y")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("3_3vbc8")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

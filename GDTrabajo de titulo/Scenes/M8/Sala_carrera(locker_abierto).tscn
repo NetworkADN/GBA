@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4dqf2yc3alb7"]
+[gd_scene load_steps=14 format=3 uid="uid://b4dqf2yc3alb7"]
 
 [ext_resource type="Script" path="res://Scripts/sala_carrera(locker_abierto).gd" id="1_satfy"]
 [ext_resource type="Texture2D" uid="uid://c8v0pdlto3gau" path="res://background/Casillero (Abierto).jpg" id="2_44wsk"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_fapki"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_2n4xo"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="3_04bln"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_lvnld"]
 [ext_resource type="Script" path="res://Scripts/lock_a_dialog.gd" id="4_rvguw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvwu2"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -98,6 +102,19 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_satfy")
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("2_fapki")
+label_settings = SubResource("LabelSettings_cvwu2")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("3_lvnld")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

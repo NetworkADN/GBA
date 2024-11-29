@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cboang24ru07n"]
+[gd_scene load_steps=14 format=3 uid="uid://cboang24ru07n"]
 
 [ext_resource type="Script" path="res://Scripts/diario_mural.gd" id="1_rp7fb"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_kj1i5"]
 [ext_resource type="Texture2D" uid="uid://ck47d7qg7xvo2" path="res://background/Diario Mural.jpg" id="2_vwjen"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_5g6yk"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_khsa2"]
 [ext_resource type="Script" path="res://Scripts/dm_Dialog.gd" id="4_rmcry"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_xoi47"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8peu"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -98,6 +102,19 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rp7fb")
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("2_kj1i5")
+label_settings = SubResource("LabelSettings_q8peu")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("3_5g6yk")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

@@ -1,11 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://jax7nrayfkqe"]
+[gd_scene load_steps=15 format=3 uid="uid://jax7nrayfkqe"]
 
 [ext_resource type="Script" path="res://Scripts/lab_de_info.gd" id="1_6u657"]
-[ext_resource type="Texture2D" uid="uid://dfcwv35xnajyi" path="res://Background/Labs Info.jpg" id="2_0nbsp"]
+[ext_resource type="Texture2D" uid="uid://dfcwv35xnajyi" path="res://background/Labs Info.jpg" id="2_0nbsp"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_x5ky6"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_3hysx"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_fioj4"]
 [ext_resource type="Texture2D" uid="uid://c88f0jwd2uq84" path="res://assets/prop.pc.png" id="4_6wrvl"]
 [ext_resource type="Script" path="res://Scripts/labs_dialog.gd" id="4_j50rd"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_bwj4y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mihs4"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -99,6 +103,19 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_6u657")
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("2_x5ky6")
+label_settings = SubResource("LabelSettings_mihs4")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("3_3hysx")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

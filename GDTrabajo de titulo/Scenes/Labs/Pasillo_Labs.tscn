@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://pkkojm57ah12"]
+[gd_scene load_steps=11 format=3 uid="uid://pkkojm57ah12"]
 
 [ext_resource type="Script" path="res://Scripts/pasillo_labs.gd" id="1_2id18"]
-[ext_resource type="Texture2D" uid="uid://384kvaju0p0g" path="res://Background/Pasillo Labs.jpg" id="2_wkbbb"]
-[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://Assets/arrow_up.png" id="3_ol3wb"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_ilhfc"]
+[ext_resource type="Texture2D" uid="uid://384kvaju0p0g" path="res://background/Pasillo Labs.jpg" id="2_wkbbb"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_nbklj"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_ol3wb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xg7ff"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -94,6 +98,19 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2id18")
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("2_ilhfc")
+label_settings = SubResource("LabelSettings_xg7ff")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("3_nbklj")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

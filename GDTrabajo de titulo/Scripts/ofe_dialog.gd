@@ -22,6 +22,7 @@ var current_line = 0  # Línea actual del diálogo
 func _ready():
 	if DialogsFlags.key == true:
 		# Inicializa el diálogo
+		GlobalTimer.pausar_temporizador()
 		dialog = [
 			player1,"¡Buenos dias profesor! Encontré esta llave y queria saber si le pertenece...",
 			vic,"¡Buenos dias! Asi que al final has logrado completarlo todo ¡Buen trabajo!",

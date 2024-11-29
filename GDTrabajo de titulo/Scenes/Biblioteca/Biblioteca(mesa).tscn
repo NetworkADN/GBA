@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxsp8y54ptafo"]
+[gd_scene load_steps=15 format=3 uid="uid://bxsp8y54ptafo"]
 
 [ext_resource type="Script" path="res://Scripts/biblioteca(mesa).gd" id="1_jw0pc"]
-[ext_resource type="Texture2D" uid="uid://cx47gn2gal7ol" path="res://Background/Sala multiuso (mesa).jpg" id="2_3yaen"]
+[ext_resource type="Texture2D" uid="uid://cx47gn2gal7ol" path="res://background/Sala multiuso (mesa).jpg" id="2_3yaen"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_p0rxn"]
 [ext_resource type="Script" path="res://Scripts/mesa_dialog.gd" id="4_gipj3"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_0hif1"]
 [ext_resource type="Texture2D" uid="uid://f1dk2o4enf3l" path="res://assets/caja_puzzle.png" id="6_of1cc"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="7_6ri61"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="8_2ntyj"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -96,6 +98,8 @@ _data = {
 }
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_tvgl3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_alboh"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jw0pc")
@@ -204,6 +208,19 @@ offset_bottom = 462.0
 theme_override_fonts/normal_font = ExtResource("5_0hif1")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("7_6ri61")
+label_settings = SubResource("LabelSettings_alboh")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("8_2ntyj")]
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(mesa)/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Biblioteca(mesa)/Transition" to="." method="_on_transition_animation_finished"]

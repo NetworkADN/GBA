@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://hssr8lrwu7p3"]
+[gd_scene load_steps=14 format=3 uid="uid://hssr8lrwu7p3"]
 
 [ext_resource type="Script" path="res://Scripts/biblioteca(estanteria).gd" id="1_tgvc1"]
 [ext_resource type="Texture2D" uid="uid://creviy728afgc" path="res://background/Estante biblioteca.jpg" id="2_5th4l"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_e3pns"]
 [ext_resource type="Script" path="res://Scripts/est_Dialog.gd" id="4_u5o6v"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_7g3rm"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="6_luir7"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="7_mbg8h"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -95,6 +97,8 @@ _data = {
 }
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_u3ajh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e7rju"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tgvc1")
@@ -187,6 +191,19 @@ offset_bottom = 462.0
 theme_override_fonts/normal_font = ExtResource("5_7g3rm")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("6_luir7")
+label_settings = SubResource("LabelSettings_e7rju")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("7_mbg8h")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

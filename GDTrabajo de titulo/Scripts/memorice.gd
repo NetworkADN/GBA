@@ -2,7 +2,11 @@ extends Node2D
 
 @onready var transition = $Transition
 
+@onready var TimerC = $TimerC
+
 var next_scene = ""
+
+var TimerClock = Clocktimer
 
 @export var card_scene: PackedScene
 @export var grid_size: Vector2 = Vector2(4, 3)
@@ -19,6 +23,7 @@ var timer_active: bool = false
 func _ready():
 	transition.play("fade_in")
 	setup_board()
+	TimerClock = get_tree().get_first_node_in_group("Clock")
 
 	# Mostrar todas las cartas durante 5 segundos
 	interaction_locked = true
@@ -54,6 +59,11 @@ func setup_board():
 		card.connect("pressed", Callable(self, "_on_card_pressed").bind(card))
 		$Control/GridContainer.add_child(card)
 
+
+func update_clocktimer_label():
+	TimerC.text = TimerClock.time_to_string()
+
+
 func _on_card_pressed(card):
 	# Bloquear si la interacción está deshabilitada
 	if interaction_locked or card in flipped_cards:
@@ -86,6 +96,7 @@ func _process(delta):
 	# Incrementar el temporizador si está activo
 	if timer_active:
 		game_timer += delta
+	update_clocktimer_label()
 
 func game_over():
 	print("¡Juego terminado!")

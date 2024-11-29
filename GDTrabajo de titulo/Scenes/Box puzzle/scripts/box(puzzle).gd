@@ -3,13 +3,18 @@ extends Node2D
 
 @onready var transition = $Transition
 
-var next_scene = ""
+@onready var TimerC = $TimerC
+var next_scene = "" 
+
+var TimerClock = Clocktimer
 
 var end = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	transition.play("fade_in")
+	TimerClock = get_tree().get_first_node_in_group("Clock")
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +25,10 @@ func _process(delta):
 		DialogsFlags.bibl_puzzle = true
 		next_scene = "res://Scenes/Biblioteca/Biblioteca(mesa).tscn"
 		transition.play("fade_out")
+	update_clocktimer_label()
+
+func update_clocktimer_label():
+	TimerC.text = TimerClock.time_to_string()
 
 func _on_transition_animation_finished(anim_name):
 	if end == true:

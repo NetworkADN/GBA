@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dtd463lelc5rl"]
+[gd_scene load_steps=21 format=3 uid="uid://dtd463lelc5rl"]
 
 [ext_resource type="Script" path="res://Scenes/Box puzzle/scripts/triangulo1.gd" id="1_kx4e4"]
 [ext_resource type="Script" path="res://Scenes/Box puzzle/scripts/box(puzzle).gd" id="1_q8r5k"]
 [ext_resource type="Texture2D" uid="uid://bced4fkd1xlmd" path="res://assets/box/58afdaa0829958a978a4a68a-2796067814.png" id="2_ef7p6"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_rv7y8"]
 [ext_resource type="Script" path="res://Scenes/Box puzzle/scripts/triangulo_2.gd" id="3_2dbia"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_35mhj"]
 [ext_resource type="Texture2D" uid="uid://dgum86o46qo3m" path="res://assets/box/1024px-Triángulo_rectángulo_escaleno.svg-2867338663.png" id="3_i2ac1"]
 [ext_resource type="Texture2D" uid="uid://dnhpp65l5py1c" path="res://assets/box/png-square-shape-red-square-shape-clipart-2400-4198490413.png" id="4_tsph5"]
 [ext_resource type="Script" path="res://Scenes/Box puzzle/scripts/triangulo_3.gd" id="4_u8qju"]
@@ -13,6 +15,8 @@
 [ext_resource type="Script" path="res://Scenes/Box puzzle/scripts/cuadrado_1.gd" id="8_rvb2p"]
 [ext_resource type="Script" path="res://Scenes/Box puzzle/scripts/cuadrado_2.gd" id="10_ngvi1"]
 [ext_resource type="Script" path="res://Scenes/Box puzzle/trapezoide.gd" id="11_2sqyo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhbve"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -104,6 +108,19 @@ _data = {
 
 [node name="box(puzzle)" type="Node2D"]
 script = ExtResource("1_q8r5k")
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("2_rv7y8")
+label_settings = SubResource("LabelSettings_lhbve")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("3_35mhj")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0

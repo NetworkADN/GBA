@@ -1,11 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8bmnl0f28b28"]
+[gd_scene load_steps=15 format=3 uid="uid://b8bmnl0f28b28"]
 
 [ext_resource type="Script" path="res://Scripts/escuela(entrada).gd" id="1_g8svj"]
-[ext_resource type="Texture2D" uid="uid://d1ja8jikuh6v4" path="res://Background/Escuela Recepcion.jpg" id="2_sp48y"]
+[ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_q6q3m"]
+[ext_resource type="Texture2D" uid="uid://d1ja8jikuh6v4" path="res://background/Escuela Recepcion.jpg" id="2_sp48y"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_atgm8"]
+[ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_c3tig"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_6m20r"]
 [ext_resource type="Script" path="res://Scripts/dialogo_escuela.gd" id="5_l8rb5"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="6_w04o3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ptdl7"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -99,6 +103,19 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_g8svj")
+
+[node name="TimerC" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 97.0
+offset_bottom = 55.0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("2_q6q3m")
+label_settings = SubResource("LabelSettings_ptdl7")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="ClockTimer" parent="." instance=ExtResource("3_c3tig")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
