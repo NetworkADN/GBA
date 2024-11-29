@@ -92,7 +92,7 @@ func game_over():
 	print("Fallos totales: %d" % fail_count)
 	print("Tiempo total: %.2f segundos" % game_timer)
 	DialogsFlags.lab_puzzle = true
-	next_scene = "res://Scenes/Labs/Lab_de_info.tscn"
+	next_scene = "res://Scenes/Labs/PC.tscn"
 	transition.play("fade_out")
 	# Aquí puedes cambiar de escena o mostrar un mensaje
 

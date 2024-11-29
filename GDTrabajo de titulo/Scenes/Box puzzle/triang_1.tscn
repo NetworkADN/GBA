@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ora4x3oesk5"]
+
+[ext_resource type="Texture2D" uid="uid://dgum86o46qo3m" path="res://assets/box/1024px-Triángulo_rectángulo_escaleno.svg-2867338663.png" id="1_7get2"]
+
+[sub_resource type="GDScript" id="GDScript_swjoc"]
+script/source = "extends Sprite2D
+
+@export var figure_name: String = \"triang 1\"  # Nombre único de la figura
+var original_position: Vector2
+var is_dragging: bool = false
+
+func _ready():
+	original_position = position
+
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and get_global_mouse_position().distance_to(global_position) < 50:  # Ajusta el rango según el tamaño
+			is_dragging = true
+		else:
+			is_dragging = false
+			if not is_overlapping_target():
+				position = original_position  # Regresa si no encaja
+			else:
+				position = $\"../triang 1/CollisionPolygon2D\".position
+
+func _process(delta):
+	if is_dragging:
+		position = get_global_mouse_position()
+
+func is_overlapping_target() -> bool:
+	var collision_polygon = $\"../triang 1/CollisionPolygon2D\"  # Ruta ajustada
+	if collision_polygon == null:
+		print(\"CollisionPolygon2D no encontrado en triang 1\")
+		return false
+
+	var query = PhysicsShapeQueryParameters2D.new()
+	query.shape = collision_polygon.shape
+	query.transform = collision_polygon.global_transform
+	query.collision_mask = 1  # Ajusta según las máscaras de colisión
+
+	var results = get_world_2d().direct_space_state.intersect_shape(query, 10)
+	var overlap_count = 0
+	var total_count = 0
+
+	for item in results:
+		total_count += 1
+		if item.collider.has_method(\"is_target_for\") and item.collider.is_target_for(figure_name):
+			overlap_count += 1
+
+	if total_count > 0 and float(overlap_count) / total_count > 0.5:  # Más del 50% debe estar sobre el colisionador
+		return true
+
+	return false
+"
+
+[node name="Triangle" type="Sprite2D"]
+position = Vector2(142, 170)
+scale = Vector2(0.232178, 0.258545)
+texture = ExtResource("1_7get2")
+script = SubResource("GDScript_swjoc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-664.544, -734.321)
+scale = Vector2(1.00973, 0.990574)
+polygon = PackedVector2Array(290.236, 417.959, 298.411, 1003.1, 1026.04, 1006.09)

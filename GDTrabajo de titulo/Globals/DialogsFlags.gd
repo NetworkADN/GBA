@@ -28,6 +28,15 @@ var ord = false
 var key = false
 var help = false
 
+var t1 = false
+var t2 = false
+var t3 = false
+var t4 = false
+var rec = false
+var cuad1 = false
+var cuad2 = false
+var trap = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
