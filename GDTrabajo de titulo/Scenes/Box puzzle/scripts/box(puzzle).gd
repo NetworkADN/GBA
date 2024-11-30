@@ -33,7 +33,7 @@ func update_clocktimer_label():
 
 
 func on_tiempo_terminado():
-	next_scene = "res://Scenes/Menus/Menu_score.tscn"
+	next_scene = "res://Scenes/Extras/End_time.tscn"
 	AudioPlayer.stop()
 	transition.play("fade_out")
 

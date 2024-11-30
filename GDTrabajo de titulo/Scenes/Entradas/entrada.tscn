@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/entrada.gd" id="1_8dx7u"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_0mbi4"]
-[ext_resource type="Texture2D" uid="uid://dptyiv2g3saqb" path="res://Background/Entrada.jpg" id="2_ji11c"]
+[ext_resource type="Texture2D" uid="uid://dptyiv2g3saqb" path="res://background/Entrada.jpg" id="2_ji11c"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_abdj4"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="5_pfxg1"]
 

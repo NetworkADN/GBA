@@ -44,7 +44,7 @@ func _on_button_4_pressed() -> void:
 	AudioManager.steps_audio.play()
 
 func on_tiempo_terminado():
-	next_scene = "res://Scenes/Menus/Menu_score.tscn"
+	next_scene = "res://Scenes/Extras/End_time.tscn"
 	AudioPlayer.stop()
 	transition.play("fade_out")
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://60cydok4oe5s"
-path="res://.godot/imported/Cajon (Cerrado).jpg-cae6ec3fbb5e204f308423723befe43c.ctex"
+path="res://.godot/imported/Cajon (Cerrado).jpg-45cd3c518b2233d2af2410d316705398.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Cajon (Cerrado).jpg"
-dest_files=["res://.godot/imported/Cajon (Cerrado).jpg-cae6ec3fbb5e204f308423723befe43c.ctex"]
+source_file="res://background/Cajon (Cerrado).jpg"
+dest_files=["res://.godot/imported/Cajon (Cerrado).jpg-45cd3c518b2233d2af2410d316705398.ctex"]
 
 [params]
 

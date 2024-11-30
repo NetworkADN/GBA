@@ -40,7 +40,7 @@ func _on_transition_animation_finished(anim_name: StringName) -> void:
 
 
 func on_tiempo_terminado():
-	next_scene = "res://Scenes/Menus/Menu_score.tscn"
+	next_scene = "res://Scenes/Extras/End_time.tscn"
 	AudioPlayer.stop()
 	transition.play("fade_out")
 	

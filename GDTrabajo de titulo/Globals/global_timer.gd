@@ -1,6 +1,6 @@
 extends Node
 
-@export var tiempo_inicial: float = 1800 #1800 # 5 minutos (ajústalo según necesites)
+@export var tiempo_inicial: float = 10 #1800 # 5 minutos (ajústalo según necesites)
 var tiempo_restante: float = tiempo_inicial
 var temporizador_activo: bool = false
 var ft = false
