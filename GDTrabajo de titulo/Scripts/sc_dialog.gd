@@ -59,3 +59,7 @@ func _input(event):
 		if event.is_action_pressed("ui_accept"):
 			show_next_line()
 			
+
+
+func _on_transition_animation_finished(anim_name):
+	pass # Replace with function body.

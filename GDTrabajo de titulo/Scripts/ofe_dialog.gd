@@ -12,7 +12,7 @@ var dialog = []  # Lista de diálogos
 var current_line = 0  # Línea actual del diálogo
 
 # Referencias a nodos
-@onready var transition = $"ParallaxBackground/ParallaxLayer/Sala_carrera(locker)/Transition"
+@onready var transition = $"../Transition"
 
 @onready var dialog_box = $"../caja_dialogo"  # Nodo para el cuadro de diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
@@ -55,13 +55,19 @@ func _ready():
 func show_next_line():
 	# Avanza al siguiente diálogo
 	if current_line < dialog.size():
-		name_label.bbcode_text = dialog[current_line]  # Nombre del hablante
+		name_label.text = dialog[current_line]  # Nombre del hablante
 		dialog_label.bbcode_text = dialog[current_line + 1]  # Texto del diálogo
 		current_line += 2  # Avanza al siguiente par (nombre + texto)
 	else:
 		close_dialog_boxes()
-		next_scene = "" #PONER AQUI LA REFERENCIA AL SCORE
+		next_scene = "res://Scenes/Menus/Menu_score.tscn" #PONER AQUI LA REFERENCIA AL SCORE
 		DialogsFlags.sc_puzzle = true
+		DialogsFlags.end = true
+		GlobalCalcs.Calculos_de_comp()
+		print("Competencia 1: ", GlobalCalcs.com1_score)
+		print("Competencia 2: ", GlobalCalcs.com2_score)
+		print("Competencia 3: ", GlobalCalcs.com3_score)
+		print("Competencia 4: ", GlobalCalcs.com4_score)
 		transition.play("fade_out")
 
 func close_dialog_boxes():
@@ -78,3 +84,5 @@ func _input(event):
 		if event.is_action_pressed("ui_accept"):
 			show_next_line()
 			
+func _on_transition_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_file(next_scene)

@@ -233,6 +233,7 @@ bbcode_enabled = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Sala_carrera/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Sala_carrera/Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Sala_carrera/Transition" to="Dialogo_sc" method="_on_transition_animation_finished"]
 [connection signal="input_event" from="ParallaxBackground/ParallaxLayer/Sala_carrera/locker/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="ParallaxBackground/ParallaxLayer/Sala_carrera/locker/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="ParallaxBackground/ParallaxLayer/Sala_carrera/locker/Area2D" to="." method="_on_area_2d_mouse_exited"]

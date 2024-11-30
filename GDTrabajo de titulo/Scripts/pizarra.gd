@@ -14,6 +14,9 @@ var next_scene = ""
 
 var TimerClock = Clocktimer
 
+var game_timer: float = 0.0
+var timer_active: bool = false
+
 @export var normal_color: Color = Color(1, 1, 1, 1)    # Color normal
 @export var hover_color: Color = Color.WHITE  # Color iluminado
 
@@ -25,8 +28,11 @@ func _ready() -> void:
 	transition.play("fade_in")
 	TimerClock = get_tree().get_first_node_in_group("Clock")
 	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
+	timer_active = true
 
 func _process(delta):
+	if timer_active == true and DialogsFlags.m3_puzzle == false:
+		GlobalCalcs.time_ecu += delta
 	update_clocktimer_label()
 
 func update_clocktimer_label():

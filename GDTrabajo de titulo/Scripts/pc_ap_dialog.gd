@@ -52,6 +52,7 @@ func show_next_line():
 	else:
 		close_dialog_boxes()
 		DialogsFlags.lab_puzzle = true
+		DialogsFlags.lab_final = true
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar

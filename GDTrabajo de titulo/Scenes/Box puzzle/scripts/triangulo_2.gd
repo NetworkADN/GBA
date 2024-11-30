@@ -25,6 +25,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			selected = false
 			if target_position:
 				snap_to_target()
+			else:
+				GlobalCalcs.tries_box +=1
 
 # Ajustar figura al collider
 func snap_to_target() -> void:

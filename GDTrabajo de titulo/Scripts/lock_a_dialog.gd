@@ -46,6 +46,7 @@ func show_next_line():
 	else:
 		close_dialog_boxes()
 		DialogsFlags.sc_final = true
+		DialogsFlags.key = true
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar

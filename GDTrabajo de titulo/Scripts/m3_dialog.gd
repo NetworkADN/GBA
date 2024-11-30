@@ -38,7 +38,7 @@ func _ready():
 		name_label.bbcode_text = player1
 		dialog_label.bbcode_text = "..."
 	
-	if DialogsFlags.m3 == true and DialogsFlags.m3_puzzle == true:
+	if DialogsFlags.m3_final == false and DialogsFlags.m3_puzzle == true:
 		# Inicializa el diálogo
 		dialog = [
 			think, "Bueno, creo que lo resolví",

@@ -20,7 +20,7 @@ func _ready():
 		# Inicializa el diálogo
 		dialog = [
 			think, "Bueno, llegue a la biblioteca",
-			player1, "¡Hola! vengo me envió...",
+			player1, "¡Hola! vengo a la sala multiuso, me envió...",
 			guard, "¡Hola!, si ya me dijo el profesor que vendrias, la sala esta abierta",
 			think, "¿El profesor ya habia dicho que iba a venir?",
 			player1, "Okay... Muchas gracias",

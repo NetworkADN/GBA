@@ -21,6 +21,7 @@ AudioManager="*res://Scenes/Audio/audio_manager.tscn"
 AudioPlayer="*res://Scenes/Audio/audio_player.tscn"
 DialogsFlags="*res://Globals/DialogsFlags.gd"
 GlobalTimer="*res://Globals/global_timer.gd"
+GlobalCalcs="*res://Globals/global_calcs.gd"
 
 [display]
 

@@ -216,3 +216,4 @@ bbcode_enabled = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Sala_carrera(locker)/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Sala_carrera(locker)/Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Sala_carrera(locker)/Transition" to="Dialogo_lc" method="_on_transition_animation_finished"]

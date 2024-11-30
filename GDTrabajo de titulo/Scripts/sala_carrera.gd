@@ -46,7 +46,10 @@ func on_tiempo_terminado():
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			next_scene = "res://Scenes/M8/Sala_carrera(locker).tscn"
+			if DialogsFlags.sc_final == false:
+				next_scene = "res://Scenes/M8/Sala_carrera(locker).tscn"
+			else:
+				next_scene = "res://Scenes/M8/Sala_carrera(locker_abierto).tscn"
 			transition.play("fade_out")
 			AudioManager.steps_audio.play()
 
@@ -59,7 +62,10 @@ func _on_area_2d_mouse_exited() -> void:
 func _on_area_2d_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			next_scene = "res://Scenes/M8/Sala_carrera(cajonera).tscn"
+			if DialogsFlags.cj == false:
+				next_scene = "res://Scenes/M8/Sala_carrera(cajonera).tscn"
+			else:
+				next_scene = "res://Scenes/M8/Sala_carrera(cajonera_abierta).tscn"
 			transition.play("fade_out")
 			AudioManager.steps_audio.play()
 

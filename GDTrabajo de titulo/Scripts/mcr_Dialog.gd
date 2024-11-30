@@ -54,7 +54,7 @@ func _ready():
 func show_next_line():
 	# Avanza al siguiente diálogo
 	if current_line < dialog.size():
-		name_label.bbcode_text = dialog[current_line]  # Nombre del hablante
+		name_label.text = dialog[current_line]  # Nombre del hablante
 		dialog_label.bbcode_text = dialog[current_line + 1]  # Texto del diálogo
 		current_line += 2  # Avanza al siguiente par (nombre + texto)
 	else:

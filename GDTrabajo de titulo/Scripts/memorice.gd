@@ -103,6 +103,8 @@ func game_over():
 	print("¡Juego terminado!")
 	print("Fallos totales: %d" % fail_count)
 	print("Tiempo total: %.2f segundos" % game_timer)
+	GlobalCalcs.time_memo = game_timer
+	GlobalCalcs.tries_memo = fail_count
 	DialogsFlags.lab_puzzle = true
 	next_scene = "res://Scenes/Labs/PC.tscn"
 	transition.play("fade_out")

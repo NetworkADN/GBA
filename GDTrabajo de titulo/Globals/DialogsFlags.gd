@@ -37,6 +37,8 @@ var cuad1 = false
 var cuad2 = false
 var trap = false
 
+var end = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
