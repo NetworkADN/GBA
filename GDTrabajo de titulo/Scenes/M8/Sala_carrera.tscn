@@ -1,12 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://h2upq3jobx0s"]
+[gd_scene load_steps=16 format=3 uid="uid://h2upq3jobx0s"]
 
 [ext_resource type="Script" path="res://Scripts/sala_carrera.gd" id="1_sptxi"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_hx44j"]
-[ext_resource type="Texture2D" uid="uid://bsf3nin5lib8r" path="res://background/Sala carrera.jpg" id="2_wmea1"]
+[ext_resource type="Texture2D" uid="uid://bsf3nin5lib8r" path="res://Background/Sala carrera.jpg" id="2_wmea1"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_gn0av"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_karwb"]
 [ext_resource type="Script" path="res://Scripts/sc_dialog.gd" id="4_r1hwc"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_gcqty"]
+[ext_resource type="Texture2D" uid="uid://dgfpcduaextxp" path="res://assets/prop.casillero.png" id="6_faiel"]
+[ext_resource type="Texture2D" uid="uid://ciuppjwlc7hvh" path="res://assets/prop.cajon.png" id="7_pvgoc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p47cb"]
 
@@ -147,7 +149,32 @@ offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
 
+[node name="locker" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Sala_carrera"]
+
+[node name="Area2D" type="Area2D" parent="ParallaxBackground/ParallaxLayer/Sala_carrera/locker"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ParallaxBackground/ParallaxLayer/Sala_carrera/locker/Area2D"]
+polygon = PackedVector2Array(224.262, -458.213, 499.672, -584.039, 397.377, 389.01, 189.639, 225.437)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Sala_carrera/locker/Area2D/CollisionPolygon2D"]
+position = Vector2(463.475, -97.5145)
+scale = Vector2(1.00164, 0.940777)
+texture = ExtResource("6_faiel")
+
+[node name="mueble" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Sala_carrera"]
+
+[node name="Area2D2" type="Area2D" parent="ParallaxBackground/ParallaxLayer/Sala_carrera/mueble"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ParallaxBackground/ParallaxLayer/Sala_carrera/mueble/Area2D2"]
+polygon = PackedVector2Array(496.524, -40.8932, 875.803, 36.699, 677.508, 720.349, 414.688, 477.087)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Sala_carrera/mueble/Area2D2/CollisionPolygon2D"]
+position = Vector2(653.114, 350.213)
+scale = Vector2(0.738524, 0.735922)
+texture = ExtResource("7_pvgoc")
+
 [node name="caja_dialogo" type="Node2D" parent="."]
+visible = false
 position = Vector2(614, 376)
 
 [node name="Dialogo" type="Sprite2D" parent="caja_dialogo"]
@@ -206,3 +233,9 @@ bbcode_enabled = true
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Sala_carrera/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Sala_carrera/Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="input_event" from="ParallaxBackground/ParallaxLayer/Sala_carrera/locker/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="ParallaxBackground/ParallaxLayer/Sala_carrera/locker/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="ParallaxBackground/ParallaxLayer/Sala_carrera/locker/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="ParallaxBackground/ParallaxLayer/Sala_carrera/mueble/Area2D2" to="." method="_on_area_2d_2_input_event"]
+[connection signal="mouse_entered" from="ParallaxBackground/ParallaxLayer/Sala_carrera/mueble/Area2D2" to="." method="_on_area_2d_2_mouse_entered"]
+[connection signal="mouse_exited" from="ParallaxBackground/ParallaxLayer/Sala_carrera/mueble/Area2D2" to="." method="_on_area_2d_2_mouse_exited"]

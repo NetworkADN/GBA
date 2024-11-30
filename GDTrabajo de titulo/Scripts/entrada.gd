@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var transition = $ParallaxBackground/ParallaxLayer/Entrada/Transition
-
 @onready var TimerC = $TimerC
 var next_scene = "" 
 
@@ -15,6 +14,7 @@ func _ready() -> void:
 	if GlobalTimer.ft == false:
 		GlobalTimer.iniciar_temporizador()
 		GlobalTimer.ft = true
+	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
 
 func _process(delta):
 	update_clocktimer_label()
@@ -37,3 +37,10 @@ func _on_button_2_pressed() -> void:
 # Función para el cambio de escena
 func _on_transition_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file(next_scene)
+
+
+func on_tiempo_terminado():
+	next_scene = "res://Scenes/Menus/Menu_score.tscn"
+	AudioPlayer.stop()
+	transition.play("fade_out")
+	

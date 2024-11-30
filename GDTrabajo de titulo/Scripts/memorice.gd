@@ -24,6 +24,7 @@ func _ready():
 	transition.play("fade_in")
 	setup_board()
 	TimerClock = get_tree().get_first_node_in_group("Clock")
+	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
 
 	# Mostrar todas las cartas durante 5 segundos
 	interaction_locked = true
@@ -107,6 +108,10 @@ func game_over():
 	transition.play("fade_out")
 	# Aquí puedes cambiar de escena o mostrar un mensaje
 
+func on_tiempo_terminado():
+	next_scene = "res://Scenes/Menus/Menu_score.tscn"
+	AudioPlayer.stop()
+	transition.play("fade_out")
 
 func _on_transition_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file(next_scene)

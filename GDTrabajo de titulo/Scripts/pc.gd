@@ -12,6 +12,7 @@ var TimerClock = Clocktimer
 @onready var name_box = $Caja_nombre  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo_pc/Dialogo/Dialogo_pc# Nodo para el texto del diálogo
 @onready var name_label = $Dialogo_pc/nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var app = $ParallaxBackground/ParallaxLayer/PC/App
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +22,7 @@ func _ready() -> void:
 	name_label.visible = false
 	transition.play("fade_in")
 	TimerClock = get_tree().get_first_node_in_group("Clock")
+	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
 
 func _process(delta):
 	update_clocktimer_label()
@@ -36,6 +38,12 @@ func _on_button_pressed() -> void:
 
 func _on_app_pressed() -> void:
 	next_scene = "res://Scenes/memorice/memorice.tscn"
+	transition.play("fade_out")
+
+
+func on_tiempo_terminado():
+	next_scene = "res://Scenes/Menus/Menu_score.tscn"
+	AudioPlayer.stop()
 	transition.play("fade_out")
 
 

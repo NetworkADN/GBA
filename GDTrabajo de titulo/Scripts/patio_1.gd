@@ -11,6 +11,7 @@ var TimerClock = Clocktimer
 func _ready() -> void:
 	transition.play("fade_in")
 	TimerClock = get_tree().get_first_node_in_group("Clock")
+	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
 
 func _process(delta):
 	update_clocktimer_label()
@@ -41,6 +42,11 @@ func _on_button_4_pressed() -> void:
 	next_scene = "res://Scenes/Extras/Diario_mural.tscn"
 	transition.play("fade_out")
 	AudioManager.steps_audio.play()
+
+func on_tiempo_terminado():
+	next_scene = "res://Scenes/Menus/Menu_score.tscn"
+	AudioPlayer.stop()
+	transition.play("fade_out")
 
 # Función para el cambio de escena
 func _on_transition_animation_finished(anim_name: StringName) -> void:

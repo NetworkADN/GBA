@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bxsp8y54ptafo"]
 
 [ext_resource type="Script" path="res://Scripts/biblioteca(mesa).gd" id="1_jw0pc"]
-[ext_resource type="Texture2D" uid="uid://cx47gn2gal7ol" path="res://background/Sala multiuso (mesa).jpg" id="2_3yaen"]
+[ext_resource type="Texture2D" uid="uid://cx47gn2gal7ol" path="res://Background/Sala multiuso (mesa).jpg" id="2_3yaen"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_p0rxn"]
 [ext_resource type="Script" path="res://Scripts/mesa_dialog.gd" id="4_gipj3"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_0hif1"]

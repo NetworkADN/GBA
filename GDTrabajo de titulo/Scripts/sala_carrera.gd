@@ -11,6 +11,11 @@ var TimerClock = Clocktimer
 @onready var name_box = $Caja_nombre  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo_sc/Dialogo/Dialogo_sc # Nodo para el texto del diálogo
 @onready var name_label = $Dialogo_sc/nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var locker = $ParallaxBackground/ParallaxLayer/Sala_carrera/locker/Area2D
+@onready var mueble = $ParallaxBackground/ParallaxLayer/Sala_carrera/mueble/Area2D2
+
+@export var normal_color: Color = Color(1, 1, 1, 1)    # Color normal
+@export var hover_color: Color = Color.RED  # Color iluminado
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +25,7 @@ func _ready() -> void:
 	name_label.visible = false
 	transition.play("fade_in")
 	TimerClock = get_tree().get_first_node_in_group("Clock")
+	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
 
 func _process(delta):
 	update_clocktimer_label()
@@ -32,6 +38,36 @@ func _on_button_pressed() -> void:
 	transition.play("fade_out")
 	AudioManager.steps_audio.play()
 
+func on_tiempo_terminado():
+	next_scene = "res://Scenes/Menus/Menu_score.tscn"
+	AudioPlayer.stop()
+	transition.play("fade_out")
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			next_scene = "res://Scenes/M8/Sala_carrera(locker).tscn"
+			transition.play("fade_out")
+			AudioManager.steps_audio.play()
+
+func _on_area_2d_mouse_entered() -> void:
+	locker.modulate = hover_color
+
+func _on_area_2d_mouse_exited() -> void:
+	locker.modulate = normal_color
+
+func _on_area_2d_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			next_scene = "res://Scenes/M8/Sala_carrera(cajonera).tscn"
+			transition.play("fade_out")
+			AudioManager.steps_audio.play()
+
+func _on_area_2d_2_mouse_entered() -> void:
+	mueble.modulate = hover_color
+
+func _on_area_2d_2_mouse_exited() -> void:
+	mueble.modulate = normal_color
 
 func _on_transition_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file(next_scene)

@@ -19,7 +19,7 @@ var TimerClock = Clocktimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if DialogsFlags.m3_puzzle == true:
+	if DialogsFlags.m3_puzzle == true or DialogsFlags.escuela == false:
 		sprite.visible = false
 		area2d.visible = false
 	dialog_box.visible = false
@@ -28,6 +28,7 @@ func _ready() -> void:
 	name_label.visible = false
 	transition.play("fade_in")
 	TimerClock = get_tree().get_first_node_in_group("Clock")
+	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
 
 func _process(delta):
 	update_clocktimer_label()
@@ -58,3 +59,8 @@ func _on_area_2d_mouse_entered() -> void:
 
 func _on_area_2d_mouse_exited() -> void:
 	sprite.modulate = normal_color
+
+func on_tiempo_terminado():
+	next_scene = "res://Scenes/Menus/Menu_score.tscn"
+	AudioPlayer.stop()
+	transition.play("fade_out")

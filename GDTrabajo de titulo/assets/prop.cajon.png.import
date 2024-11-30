@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c27hwow1unj2q"
-path="res://.godot/imported/Pasillo M3.jpg-5a105dad9a9514915c210e58e3f34389.ctex"
+uid="uid://ciuppjwlc7hvh"
+path="res://.godot/imported/prop.cajon.png-723792a80f6b08ef6f0ac301526c6b0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Pasillo M3.jpg"
-dest_files=["res://.godot/imported/Pasillo M3.jpg-5a105dad9a9514915c210e58e3f34389.ctex"]
+source_file="res://assets/prop.cajon.png"
+dest_files=["res://.godot/imported/prop.cajon.png-723792a80f6b08ef6f0ac301526c6b0f.ctex"]
 
 [params]
 
