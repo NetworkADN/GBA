@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://b4dxhhcr0yo0l"]
 
 [ext_resource type="Script" path="res://Scripts/pizarra.gd" id="1_o4wwl"]
-[ext_resource type="Texture2D" uid="uid://ctsrhfn4q3nca" path="res://background/Pizarra.jpg" id="2_kede1"]
+[ext_resource type="Texture2D" uid="uid://ctsrhfn4q3nca" path="res://Background/Pizarra.jpg" id="2_kede1"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_yuten"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_shdc5"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_uo2kc"]

@@ -1,19 +1,97 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsrkbhcuuicgt"]
+[gd_scene load_steps=9 format=3 uid="uid://dsrkbhcuuicgt"]
 
 [ext_resource type="Script" path="res://Scripts/menu_score.gd" id="1_fpxkw"]
-[ext_resource type="Texture2D" uid="uid://damg6yaopswkk" path="res://background/Fondo Menu.jpg" id="2_pg42w"]
+[ext_resource type="Texture2D" uid="uid://dfxcyada8ssck" path="res://Background/Score.png" id="2_27st8"]
+[ext_resource type="Texture2D" uid="uid://dqcomti648ed5" path="res://assets/estrella.png" id="3_pgmh6"]
+[ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_kgbpi"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83pxc"]
-bg_color = Color(0.473215, 0.449859, 0.879242, 1)
+[sub_resource type="Animation" id="Animation_i0amt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1it7m"]
-bg_color = Color(0.47451, 0.45098, 0.878431, 1)
+[sub_resource type="Animation" id="Animation_l0obv"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwyhd"]
-bg_color = Color(0.47451, 0.45098, 0.878431, 1)
+[sub_resource type="Animation" id="Animation_1tse1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pix7x"]
-bg_color = Color(0.47451, 0.45098, 0.878431, 1)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bty0q"]
+_data = {
+"RESET": SubResource("Animation_i0amt"),
+"fade_in": SubResource("Animation_l0obv"),
+"fade_out": SubResource("Animation_1tse1")
+}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -31,48 +109,166 @@ layout_mode = 0
 offset_right = 1097.0
 offset_bottom = 771.0
 scale = Vector2(1.16911, 0.932642)
-texture = ExtResource("2_pg42w")
+texture = ExtResource("2_27st8")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 389.0
-offset_top = 233.0
-offset_right = 1051.0
-offset_bottom = 346.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.76, 2.42)
-alignment = 1
-
-[node name="PLAY" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_83pxc")
-text = "SCORE 1"
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = 57.2237
+offset_top = 123.327
+offset_right = 1455.22
+offset_bottom = 1643.33
+rotation = -1.56746
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_kgbpi")
+flat = true
 icon_alignment = 1
+expand_icon = true
 
-[node name="SCORE" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_1it7m")
-text = "SCORE 2"
+[node name="estrellas" type="Node2D" parent="Sprite2D"]
 
-[node name="QUIT" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwyhd")
-text = "SCORE 3"
+[node name="Star1" type="Sprite2D" parent="Sprite2D/estrellas"]
+position = Vector2(317.335, 227.311)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
 
-[node name="BACK" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_pix7x")
-text = "BACK"
+[node name="Star2" type="Sprite2D" parent="Sprite2D/estrellas"]
+position = Vector2(388.33, 228.383)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
 
-[connection signal="pressed" from="VBoxContainer/BACK" to="." method="_on_back_pressed"]
+[node name="Star3" type="Sprite2D" parent="Sprite2D/estrellas"]
+position = Vector2(462.745, 229.456)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star4" type="Sprite2D" parent="Sprite2D/estrellas"]
+position = Vector2(538.016, 231.6)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star5" type="Sprite2D" parent="Sprite2D/estrellas"]
+position = Vector2(613.287, 231.6)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="puntuacion" type="Label" parent="Sprite2D/estrellas"]
+offset_left = 671.0
+offset_top = 205.0
+offset_right = 769.0
+offset_bottom = 274.0
+theme_override_font_sizes/font_size = 50
+
+[node name="estrellas2" type="Node2D" parent="Sprite2D"]
+
+[node name="Star1" type="Sprite2D" parent="Sprite2D/estrellas2"]
+position = Vector2(309.637, 384.928)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star2" type="Sprite2D" parent="Sprite2D/estrellas2"]
+position = Vector2(380.632, 386)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star3" type="Sprite2D" parent="Sprite2D/estrellas2"]
+position = Vector2(451.626, 384.928)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star4" type="Sprite2D" parent="Sprite2D/estrellas2"]
+position = Vector2(525.186, 384.928)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star5" type="Sprite2D" parent="Sprite2D/estrellas2"]
+position = Vector2(601.312, 386)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="puntuacion" type="Label" parent="Sprite2D/estrellas2"]
+offset_left = 664.608
+offset_top = 363.484
+offset_right = 762.608
+offset_bottom = 432.484
+theme_override_font_sizes/font_size = 50
+
+[node name="estrellas3" type="Node2D" parent="Sprite2D"]
+
+[node name="Star1" type="Sprite2D" parent="Sprite2D/estrellas3"]
+position = Vector2(307.071, 547.906)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star2" type="Sprite2D" parent="Sprite2D/estrellas3"]
+position = Vector2(383.198, 548.978)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star3" type="Sprite2D" parent="Sprite2D/estrellas3"]
+position = Vector2(452.481, 551.122)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star4" type="Sprite2D" parent="Sprite2D/estrellas3"]
+position = Vector2(530.318, 551.122)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star5" type="Sprite2D" parent="Sprite2D/estrellas3"]
+position = Vector2(603.023, 552.195)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="puntuacion" type="Label" parent="Sprite2D/estrellas3"]
+offset_left = 667.174
+offset_top = 526.461
+offset_right = 765.174
+offset_bottom = 595.461
+theme_override_font_sizes/font_size = 50
+
+[node name="estrellas4" type="Node2D" parent="Sprite2D"]
+
+[node name="Star1" type="Sprite2D" parent="Sprite2D/estrellas4"]
+position = Vector2(305.361, 683.006)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star2" type="Sprite2D" parent="Sprite2D/estrellas4"]
+position = Vector2(379.776, 685.15)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star3" type="Sprite2D" parent="Sprite2D/estrellas4"]
+position = Vector2(452.481, 685.15)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star4" type="Sprite2D" parent="Sprite2D/estrellas4"]
+position = Vector2(526.041, 685.15)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="Star5" type="Sprite2D" parent="Sprite2D/estrellas4"]
+position = Vector2(603.878, 683.006)
+scale = Vector2(0.0561826, 0.0649832)
+texture = ExtResource("3_pgmh6")
+
+[node name="puntuacion" type="Label" parent="Sprite2D/estrellas4"]
+offset_left = 668.03
+offset_top = 650.839
+offset_right = 773.03
+offset_bottom = 719.839
+theme_override_font_sizes/font_size = 50
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bty0q")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+offset_right = 1282.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

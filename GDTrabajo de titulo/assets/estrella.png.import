@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c27hwow1unj2q"
-path="res://.godot/imported/Pasillo M3.jpg-5a105dad9a9514915c210e58e3f34389.ctex"
+uid="uid://dqcomti648ed5"
+path="res://.godot/imported/estrella.png-e1f9c23a65b48dc6ff119cb2234a597c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Pasillo M3.jpg"
-dest_files=["res://.godot/imported/Pasillo M3.jpg-5a105dad9a9514915c210e58e3f34389.ctex"]
+source_file="res://assets/estrella.png"
+dest_files=["res://.godot/imported/estrella.png-e1f9c23a65b48dc6ff119cb2234a597c.ctex"]
 
 [params]
 
