@@ -17,6 +17,7 @@ var current_line = 0  # Línea actual del diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo/Dialogo_lc  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrow = $"../ParallaxBackground/ParallaxLayer/Sala_carrera(locker)/Button"
 
 func _ready():
 	if  DialogsFlags.c1 == true and DialogsFlags.c2 == true and DialogsFlags.c3 == true and DialogsFlags.c4 == true and DialogsFlags.locker == true: 
@@ -27,7 +28,8 @@ func _ready():
 			think,"¡Se abrió! a ver que hay dentro...",
 			
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -41,7 +43,8 @@ func _ready():
 		dialog = [
 			think,"Este es el locker, hay un codigo de 4 digitos en él, supongo que debo buscar los numeros...",
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -55,7 +58,8 @@ func _ready():
 		dialog = [
 			think,"Aun me faltan numeros para abrir el candado, supongo que debo seguir buscando...",
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -87,6 +91,7 @@ func show_next_line():
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar
+	arrow.visible = true
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false

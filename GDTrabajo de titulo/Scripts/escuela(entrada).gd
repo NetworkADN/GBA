@@ -10,6 +10,7 @@ var TimerClock = Clocktimer
 @onready var name_box = $Caja_nombre  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo_escuela/escuela/Dialogo_escuela # Nodo para el texto del diálogo
 @onready var name_label = $Dialogo_escuela/nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrows = $Flechas
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

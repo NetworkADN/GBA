@@ -14,6 +14,8 @@ var current_line = 0  # Línea actual del diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
 @onready var dialog_label = $m3/Dialogo_m3  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrow = $"../ParallaxBackground/ParallaxLayer/Sala_m3/Button"
+@onready var pizarra = $"../ParallaxBackground/ParallaxLayer/Sala_m3/Area2D"
 
 func _ready():
 	if DialogsFlags.m3 == false and DialogsFlags.escuela == true:
@@ -29,7 +31,9 @@ func _ready():
 			think, "Supongo que tendre que esperar a que vuelva o resolver el problema yo mismo...",
 			think, "Aunque por el tiempo que me queda, no tengo opción...",
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		pizarra.visible = false
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -52,7 +56,9 @@ func _ready():
 			prof, "Dile al portero de la biblioteca que te he mandado yo, asi te abre la sala",
 			supplayer1, "Tu siguiente objetivo es ir a la biblioteca"
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		pizarra.visible = false
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -80,6 +86,9 @@ func close_dialog_boxes():
 	name_box.visible = false
 	dialog_label.visible = false
 	name_label.visible = false
+	arrow.visible = true
+	if DialogsFlags.m3_puzzle == false:
+		pizarra.visible = true
 	
 
 func _input(event):

@@ -15,6 +15,7 @@ var current_line = 0  # Línea actual del diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo/Dialogo_cja  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrow = $"../ParallaxBackground/ParallaxLayer/Sala_carrera(cajonera_abierta)/Button"
 
 func _ready():
 	if DialogsFlags.cjrepeat == false and DialogsFlags.cj == true:
@@ -33,7 +34,8 @@ func _ready():
 			supplayer1, "Puedes consultar una pista de donde encontrar las 5 ubicaciones si vuelves al laboratorio de informatica, pero esto tendra un punto negativo en tu puntuacion final",
 			supplayer1, "Tu objetivo es resolver el enigma y encontrar los 4 digitos y su orden en las 5 ubicaciones. Buena suerte"
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -53,7 +55,8 @@ func _ready():
 			note, "La cuarta se encuentra donde se comparten anuncios importantes para la carrera de informática.",
 			note, "Para conocer el orden correcto de las llaves, observa lo que se comunica en el diario mural, en el patio donde todo comienza."
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -79,6 +82,7 @@ func close_dialog_boxes():
 	name_box.visible = false
 	dialog_label.visible = false
 	name_label.visible = false
+	arrow.visible = true
 	
 
 func _input(event):

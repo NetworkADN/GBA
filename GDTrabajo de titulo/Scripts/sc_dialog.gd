@@ -15,6 +15,9 @@ var current_line = 0  # Línea actual del diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo/Dialogo_sc  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrow = $"../ParallaxBackground/ParallaxLayer/Sala_carrera/Button"
+@onready var locker = $"../ParallaxBackground/ParallaxLayer/Sala_carrera/locker"
+@onready var mueble = $"../ParallaxBackground/ParallaxLayer/Sala_carrera/mueble"
 
 func _ready():
 	if DialogsFlags.sc == false and DialogsFlags.lab_final == true:
@@ -24,7 +27,10 @@ func _ready():
 			think,"Puedo ver el locker y el cajón a la derecha",
 			think,"Hora de ponerle fin a esto, despues de todo me queda poco tiempo...",
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		locker.visible = false
+		mueble.visible = false
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -47,10 +53,14 @@ func show_next_line():
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar
+	arrow.visible = true
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false
 	name_label.visible = false
+	if DialogsFlags.sc_final == false:
+		locker.visible = true
+		mueble.visible = true
 	
 
 func _input(event):

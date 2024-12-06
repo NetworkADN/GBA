@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/escuela(entrada).gd" id="1_g8svj"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_q6q3m"]
-[ext_resource type="Texture2D" uid="uid://d1ja8jikuh6v4" path="res://background/Escuela Recepcion.jpg" id="2_sp48y"]
+[ext_resource type="Texture2D" uid="uid://d1ja8jikuh6v4" path="res://Background/Escuela Recepcion.jpg" id="2_sp48y"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_atgm8"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_c3tig"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_6m20r"]
@@ -128,29 +128,6 @@ rotation = 1.5708
 scale = Vector2(0.355551, 0.843493)
 texture = ExtResource("2_sp48y")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 649.0
-offset_top = 631.0
-offset_right = 1894.0
-offset_bottom = 1871.0
-scale = Vector2(0.061849, 0.0724826)
-icon = ExtResource("3_atgm8")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 723.0
-offset_top = 366.0
-offset_right = 1843.0
-offset_bottom = 1611.0
-rotation = -0.0457709
-scale = Vector2(0.0722657, 0.069987)
-icon = ExtResource("4_6m20r")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
 [node name="Transition" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
@@ -218,6 +195,37 @@ theme_override_fonts/normal_font = ExtResource("6_w04o3")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[node name="Flechas" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Flechas"]
+layout_mode = 0
+offset_left = 649.0
+offset_top = 631.0
+offset_right = 1894.0
+offset_bottom = 1871.0
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_atgm8")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="Flechas"]
+layout_mode = 0
+offset_left = 723.0
+offset_top = 366.0
+offset_right = 1843.0
+offset_bottom = 1611.0
+rotation = -0.0457709
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_6m20r")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="pressed" from="Flechas/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Flechas/Button2" to="." method="_on_button_2_pressed"]

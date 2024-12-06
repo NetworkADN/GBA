@@ -12,12 +12,11 @@ var dialog = []  # Lista de diálogos
 var current_line = 0  # Línea actual del diálogo
 
 # Referencias a nodos
-@onready var transition = $"../Transition"
-
 @onready var dialog_box = $"../caja_dialogo"  # Nodo para el cuadro de diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo/Dialogo_ofe  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrow = $"../Button"
 
 func _ready():
 	if DialogsFlags.key == true:
@@ -41,7 +40,8 @@ func _ready():
 			player1, "Bueno profesor, se me hace tarde para ir a la ayudantía, muchas gracias y nos vemos",
 			vic, "Cuidate y buena suerte..."
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -68,7 +68,7 @@ func show_next_line():
 		print("Competencia 2: ", GlobalCalcs.com2_score)
 		print("Competencia 3: ", GlobalCalcs.com3_score)
 		print("Competencia 4: ", GlobalCalcs.com4_score)
-		transition.play("fade_out")
+		get_tree().change_scene_to_file(next_scene)
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar
@@ -83,6 +83,3 @@ func _input(event):
 	if DialogsFlags.key == true:
 		if event.is_action_pressed("ui_accept"):
 			show_next_line()
-			
-func _on_transition_animation_finished(anim_name: StringName) -> void:
-	get_tree().change_scene_to_file(next_scene)

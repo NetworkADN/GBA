@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/patio_transa.gd" id="1_dowqo"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_7ctfv"]
-[ext_resource type="Texture2D" uid="uid://b0dm0lkkyqcdt" path="res://background/Patio transa (UTEM).jpg" id="2_8ncnm"]
+[ext_resource type="Texture2D" uid="uid://b0dm0lkkyqcdt" path="res://Background/Patio transa (UTEM).jpg" id="2_8ncnm"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_h4ksb"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_qt1tf"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_syg5s"]
@@ -156,6 +156,19 @@ offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
 
+[node name="Button3" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_transa"]
+offset_left = 656.775
+offset_top = 294.0
+offset_right = 3100.77
+offset_bottom = 2746.0
+rotation = -2.37861
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_h4ksb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_transa/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_transa/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Patio_transa/Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_transa/Button3" to="." method="_on_button_3_pressed"]

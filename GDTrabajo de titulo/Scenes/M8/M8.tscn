@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/m_8.gd" id="1_wj0qy"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_01prw"]
-[ext_resource type="Texture2D" uid="uid://bfg182id50v6w" path="res://background/M8.jpg" id="2_rhrdh"]
+[ext_resource type="Texture2D" uid="uid://bfg182id50v6w" path="res://Background/M8.jpg" id="2_rhrdh"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_75vvb"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_vamo6"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_ea0b5"]
@@ -156,6 +156,32 @@ offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
 
+[node name="Button3" type="Button" parent="ParallaxBackground/ParallaxLayer/M8"]
+offset_left = -1005.77
+offset_top = 505.379
+offset_right = 963.229
+offset_bottom = 2932.38
+rotation = -7.85241
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_ea0b5")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button4" type="Button" parent="ParallaxBackground/ParallaxLayer/M8"]
+offset_left = 1006.4
+offset_top = 359.98
+offset_right = 2975.39
+offset_bottom = 2786.98
+rotation = -4.71808
+scale = Vector2(0.0722657, 0.069987)
+icon = ExtResource("4_ea0b5")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/M8/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/M8/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/M8/Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/M8/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer/M8/Button4" to="." method="_on_button_4_pressed"]

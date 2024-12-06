@@ -14,6 +14,8 @@ var current_line = 0  # Línea actual del diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo/Dialogo_lab  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrow = $"../ParallaxBackground/ParallaxLayer/Lab/Button"
+@onready var pc = $"../ParallaxBackground/ParallaxLayer/Lab/Area2D"
 
 func _ready():
 	if DialogsFlags.lab == false and DialogsFlags.bibl_final == true:
@@ -24,7 +26,9 @@ func _ready():
 			think, "Parece que tiene un juego abierto...",
 			think, "Le voy a echar un vistazo",
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		pc.visible = false
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -54,7 +58,8 @@ func _ready():
 			think, "A todo esto... ¿Quien era el y por que me ayudó tan 'convenientemente'?¿Será J.P.A.?",
 			think, "Mejor no le doy mas vueltas, no me queda mucho tiempo...",
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -81,10 +86,13 @@ func show_next_line():
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar
+	arrow.visible = true
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false
 	name_label.visible = false
+	if DialogsFlags.lab_puzzle == false:
+		pc.visible = true
 	
 
 func _input(event):

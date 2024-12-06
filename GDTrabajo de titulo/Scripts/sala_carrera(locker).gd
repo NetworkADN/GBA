@@ -24,6 +24,7 @@ func _ready() -> void:
 func _process(delta):
 	update_clocktimer_label()
 
+
 func update_clocktimer_label():
 	TimerC.text = TimerClock.time_to_string()
 

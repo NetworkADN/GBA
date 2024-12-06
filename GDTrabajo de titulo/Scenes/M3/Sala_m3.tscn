@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://cqrh0jacvkbta"]
 
 [ext_resource type="Script" path="res://Scripts/sala_m_3.gd" id="1_qx1dy"]
-[ext_resource type="Texture2D" uid="uid://cfil44ws605q1" path="res://background/Sala m3.jpg" id="2_51den"]
+[ext_resource type="Texture2D" uid="uid://cfil44ws605q1" path="res://Background/Sala m3.jpg" id="2_51den"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_x816v"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_8vnew"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_u6gem"]

@@ -14,6 +14,7 @@ var current_line = 0  # Línea actual del diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo/Dialogo_biblioteca  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrows = $"../Flechas"
 
 func _ready():
 	if DialogsFlags.bibl == false and DialogsFlags.m3_puzzle == true:
@@ -27,7 +28,8 @@ func _ready():
 			think, "Eso fue raro... ¿Acaso el profesor ya sabia que yo resolvería el problema e iria por la llave?",
 			think, "Mejor lo dejo por ahora, ire a la sala multiuso, debería estar recto por aquí...",
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrows.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -50,6 +52,7 @@ func show_next_line():
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar
+	arrows.visible = true
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false

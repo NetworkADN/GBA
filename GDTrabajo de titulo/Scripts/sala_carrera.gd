@@ -19,6 +19,9 @@ var TimerClock = Clocktimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if DialogsFlags.sc_final == true:
+		locker.visible = false
+		mueble.visible = false
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false
@@ -26,9 +29,14 @@ func _ready() -> void:
 	transition.play("fade_in")
 	TimerClock = get_tree().get_first_node_in_group("Clock")
 	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
+	if DialogsFlags.lab_puzzle == false:
+		locker.visible = false
+		mueble.visible = false
+
 
 func _process(delta):
 	update_clocktimer_label()
+
 
 func update_clocktimer_label():
 	TimerC.text = TimerClock.time_to_string()

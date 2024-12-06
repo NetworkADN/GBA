@@ -39,6 +39,5 @@ func on_tiempo_terminado():
 	AudioPlayer.stop()
 	transition.play("fade_out")
 
-
 func _on_transition_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file(next_scene)

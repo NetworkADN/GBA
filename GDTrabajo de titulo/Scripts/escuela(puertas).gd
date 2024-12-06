@@ -37,6 +37,10 @@ func _on_button_3_pressed() -> void:
 	transition.play("fade_out")
 	AudioManager.steps_audio.play()
 
+func _on_button_4_pressed() -> void:
+	next_scene = "res://Scenes/M8/M8.tscn"
+	transition.play("fade_out")
+	AudioManager.steps_audio.play()
 
 func on_tiempo_terminado():
 	next_scene = "res://Scenes/Extras/End_time.tscn"

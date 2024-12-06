@@ -113,6 +113,7 @@ texture = ExtResource("2_27st8")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="Sprite2D"]
+layout_mode = 0
 offset_left = 57.2237
 offset_top = 123.327
 offset_right = 1455.22

@@ -15,6 +15,7 @@ var current_line = 0  # Línea actual del diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo/Dialogo_dm  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrow = $"../ParallaxBackground/ParallaxLayer/Diario_mural/Button"
 
 func _ready():
 	if  DialogsFlags.ord == false and DialogsFlags.cj == true: 
@@ -25,7 +26,8 @@ func _ready():
 			think,"Supongo que se refiere al orden de los numeros...",
 			obt, "HAS ENCONTRADO EL ORDEN DE LOS NUMEROS"
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrow.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -48,6 +50,7 @@ func show_next_line():
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar
+	arrow.visible = true
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false

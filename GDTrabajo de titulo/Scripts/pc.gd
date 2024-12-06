@@ -16,6 +16,8 @@ var TimerClock = Clocktimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if DialogsFlags.lab_puzzle == true:
+		app.visible = false
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false
@@ -26,6 +28,7 @@ func _ready() -> void:
 
 func _process(delta):
 	update_clocktimer_label()
+
 
 func update_clocktimer_label():
 	TimerC.text = TimerClock.time_to_string()

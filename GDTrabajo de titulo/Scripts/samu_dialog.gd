@@ -12,6 +12,7 @@ var current_line = 0  # Línea actual del diálogo
 @onready var name_box = $"../Caja_nombre"  # Nodo para el cuadro del nombre
 @onready var dialog_label = $Dialogo/Dialogo_samu  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
+@onready var arrows = $"../Flechas"
 
 func _ready():
 	if DialogsFlags.samu == false and DialogsFlags.bibl == true:
@@ -22,7 +23,8 @@ func _ready():
 			think, "¿Estará la llave dentro?",
 			think, "Esto esta demasiado extraño...",
 		]
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
+		arrows.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -45,6 +47,7 @@ func show_next_line():
 
 func close_dialog_boxes():
 	# Oculta el cuadro de diálogo y el nombre al terminar
+	arrows.visible = true
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false

@@ -12,6 +12,7 @@ var TimerClock = Clocktimer
 @onready var dialog_label = $Dialogo_samu/Dialogo/Dialogo_samu # Nodo para el texto del diálogo
 @onready var name_label = $Dialogo_samu/nombres/caja_nombre # Nodo para el texto del nombre
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	dialog_box.visible = false

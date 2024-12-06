@@ -7,6 +7,7 @@ extends Node2D
 @onready var name_label = $Dialogo_lab/nombres/caja_nombre  # Nodo para el texto del nombre
 @onready var sprite = $ParallaxBackground/ParallaxLayer/Lab/Area2D/Sprite2D
 @onready var area2d = $ParallaxBackground/ParallaxLayer/Lab/Area2D
+@onready var collision = $ParallaxBackground/ParallaxLayer/Lab/Area2D/CollisionPolygon2D
 
 @export var normal_color: Color = Color(1, 1, 1, 1)    # Color normal
 @export var hover_color: Color = Color.RED #Color iluminado
@@ -16,12 +17,13 @@ var next_scene = ""
 
 var TimerClock = Clocktimer
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if DialogsFlags.lab_puzzle == true:
 		sprite.visible = false
 		area2d.visible = false
+		collision.visible = false
+	area2d.visible = false
 	dialog_box.visible = false
 	name_box.visible = false
 	dialog_label.visible = false
@@ -29,6 +31,8 @@ func _ready() -> void:
 	transition.play("fade_in")
 	TimerClock = get_tree().get_first_node_in_group("Clock")
 	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
+	if DialogsFlags.bibl_puzzle == true:
+		area2d.visible = true
 
 func _process(delta):
 	update_clocktimer_label()
