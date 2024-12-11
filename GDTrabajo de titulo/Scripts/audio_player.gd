@@ -12,3 +12,6 @@ func _play_music(music: AudioStream, volume: float = -12.0):
 
 func play_music_game():
 	_play_music(game_music)
+
+func stop_music():
+	stop()

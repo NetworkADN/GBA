@@ -68,6 +68,7 @@ func show_next_line():
 		print("Competencia 2: ", GlobalCalcs.com2_score)
 		print("Competencia 3: ", GlobalCalcs.com3_score)
 		print("Competencia 4: ", GlobalCalcs.com4_score)
+		AudioPlayer.stop_music()
 		get_tree().change_scene_to_file(next_scene)
 
 func close_dialog_boxes():
