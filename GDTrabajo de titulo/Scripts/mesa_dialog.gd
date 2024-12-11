@@ -16,7 +16,7 @@ var current_line = 0  # Línea actual del diálogo
 @onready var arrow = $"../ParallaxBackground/ParallaxLayer/Biblioteca(mesa)/Button"
 
 func _ready():
-	if DialogsFlags.samu == true and DialogsFlags.bibl_puzzle == true:
+	if DialogsFlags.samu == true and DialogsFlags.bibl_puzzle == true and DialogsFlags.bibl_final == false:
 		# Inicializa el diálogo
 		dialog = [
 			think, "Creo que escuche la caja abrirse",
