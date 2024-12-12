@@ -20,6 +20,8 @@ func _ready():
 	name_box.visible = false
 	dialog_label.visible = false
 	name_label.visible = false
+	GlobalTimer.ft = false
+	GlobalTimer.reiniciar_temporizador()
 	dialog = [
 		player1, "Aquí estoy, mi primer día como ayudante.",
 		player1, "Aún tengo tiempo antes de que comience la ayudantía, debería ir a la escuela a solicitar las llaves de la sala.",

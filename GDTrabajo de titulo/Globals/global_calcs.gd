@@ -104,13 +104,13 @@ func Calculos_de_comp():
 		
 	# Competencia Global
 	
-	if time_left >= 900:
+	if time_left >= 600:
 		com4_score += 4
-	elif time_left < 900 and time_left >= 600:
-		com4_score += 3
 	elif time_left < 600 and time_left >= 300:
+		com4_score += 3
+	elif time_left < 300 and time_left >= 100:
 		com4_score += 2
-	elif time_left < 300 and time_left >= 1:
+	elif time_left < 100 and time_left >= 1:
 		com4_score += 1
 	else:
 		com4_score = 0
