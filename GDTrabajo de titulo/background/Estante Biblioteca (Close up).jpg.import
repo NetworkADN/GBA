@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7ma8rql8hk8r"
-path="res://.godot/imported/Estante Biblioteca (Close up).jpg-2b0b004cf7794987b3b543493275d4fd.ctex"
+path="res://.godot/imported/Estante Biblioteca (Close up).jpg-feb79b9c9d086b6eda8ec23765c72eed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background/Estante Biblioteca (Close up).jpg"
-dest_files=["res://.godot/imported/Estante Biblioteca (Close up).jpg-2b0b004cf7794987b3b543493275d4fd.ctex"]
+source_file="res://Background/Estante Biblioteca (Close up).jpg"
+dest_files=["res://.godot/imported/Estante Biblioteca (Close up).jpg-feb79b9c9d086b6eda8ec23765c72eed.ctex"]
 
 [params]
 
