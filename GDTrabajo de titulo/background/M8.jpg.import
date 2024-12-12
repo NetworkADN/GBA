@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfg182id50v6w"
-path="res://.godot/imported/M8.jpg-21930f25b2e3bb19e1288beb22607988.ctex"
+path="res://.godot/imported/M8.jpg-e42c18d485563749c36c5cee63701562.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background/M8.jpg"
-dest_files=["res://.godot/imported/M8.jpg-21930f25b2e3bb19e1288beb22607988.ctex"]
+source_file="res://Background/M8.jpg"
+dest_files=["res://.godot/imported/M8.jpg-e42c18d485563749c36c5cee63701562.ctex"]
 
 [params]
 
