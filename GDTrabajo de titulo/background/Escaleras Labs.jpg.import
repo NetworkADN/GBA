@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmuw3a1w4sccl"
-path="res://.godot/imported/Escaleras Labs.jpg-1ef92b43cf53811e29f8e1af7f6476d0.ctex"
+path="res://.godot/imported/Escaleras Labs.jpg-5bc4a259086de17b7f27bf6bbbc3c053.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Escaleras Labs.jpg"
-dest_files=["res://.godot/imported/Escaleras Labs.jpg-1ef92b43cf53811e29f8e1af7f6476d0.ctex"]
+source_file="res://background/Escaleras Labs.jpg"
+dest_files=["res://.godot/imported/Escaleras Labs.jpg-5bc4a259086de17b7f27bf6bbbc3c053.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/biblioteca(entrada).gd" id="1_r3eir"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_tw30v"]
-[ext_resource type="Texture2D" uid="uid://b7r8107e3buj0" path="res://Background/Biblioteca.jpg" id="2_vf283"]
+[ext_resource type="Texture2D" uid="uid://b7r8107e3buj0" path="res://background/Biblioteca.jpg" id="2_vf283"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_ei4l6"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_m75ev"]
 [ext_resource type="Script" path="res://Scripts/Bibl_dialog.gd" id="4_77ppw"]
@@ -141,8 +141,8 @@ color = Color(0, 0, 0, 1)
 position = Vector2(614, 376)
 
 [node name="Dialogo" type="Sprite2D" parent="caja_dialogo"]
-modulate = Color(0.0862745, 0.956863, 0.956863, 1)
-self_modulate = Color(0.0509804, 0.352941, 0.541176, 0.878431)
+modulate = Color(0.690196, 0.411765, 0.858824, 1)
+self_modulate = Color(0.627022, 0.000341921, 0.640587, 0.878)
 position = Vector2(28.5, 194.5)
 scale = Vector2(1141, 191)
 texture = SubResource("CanvasTexture_mf554")
@@ -201,6 +201,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="Flechas"]
+layout_mode = 0
 offset_left = 650.0
 offset_top = 720.0
 offset_right = 1932.0
@@ -213,6 +214,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Button2" type="Button" parent="Flechas"]
+layout_mode = 0
 offset_left = 475.0
 offset_top = 313.0
 offset_right = 1502.0
@@ -225,6 +227,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Button3" type="Button" parent="Flechas"]
+layout_mode = 0
 offset_left = 986.0
 offset_top = 231.0
 offset_right = 2126.0

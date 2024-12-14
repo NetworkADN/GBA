@@ -1,5 +1,17 @@
 extends Node
 
+var player1 = "Yo"
+var supplayer1 = "Objetivo"
+var think = "Idea"
+var guard = "Portero"
+var sec = "Secretaria"
+var vic = "Victor"
+var obt = ""
+var student = "Alumno"
+var prof = "Profesor"
+var note = "Nota"
+var std = "Estudiante"
+
 var escuela = false
 var m3 = false
 var m3_puzzle = false
@@ -38,6 +50,16 @@ var cuad2 = false
 var trap = false
 
 var end = false
+
+var player_color = Color(0.08, 0.95, 0.95, 1)
+var think_color = Color(0.69, 0.41, 0.85, 1)
+var sec_color = Color(0, 0.78, 0.08, 1)
+var obj_color = Color(1, 0.65, 0, 1)
+
+var Self_modulate1 = Color(0.05, 0.35, 0.54, 0.87)
+var Self_modulatet = Color(0.62, 0.0, 0.64, 0.87)
+var Self_modulates = Color(0.05, 0.35, 0.54, 0.87)
+var Self_modulateo = Color(0.75, 0.48, 0.0, 0.87)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
