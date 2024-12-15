@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cjfr8pj5kdrxb"]
 
-[ext_resource type="Texture2D" uid="uid://caxtp7lb502aq" path="res://background/Porton.jpg" id="1_6dswq"]
+[ext_resource type="Texture2D" uid="uid://caxtp7lb502aq" path="res://Background/Porton.jpg" id="1_6dswq"]
 [ext_resource type="Script" path="res://Scripts/inicio_dialog.gd" id="2_guwcd"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="2_np84k"]
 

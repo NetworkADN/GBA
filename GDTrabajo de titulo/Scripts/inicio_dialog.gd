@@ -28,7 +28,7 @@ func _ready():
 		player1, "Aquí estoy, mi primer día como ayudante.",
 		player1, "Aún tengo tiempo antes de que comience la ayudantía, debería ir a la escuela a solicitar las llaves de la sala.",
 		supplayer1, "Tu primer objetivo es ir a la escuela a buscar las llaves de la sala del laboratorio de informática.",
-		supplayer1, "Ten en cuenta que debes hacerlo antes de que comiencen las ayudantías, esto es en 30 minutos.",
+		supplayer1, "Ten en cuenta que debes hacerlo antes de que comiencen las ayudantías, esto es en 20 minutos.",
 		supplayer1, "Si no lo logras antes de ese tiempo, el juego se da por terminado. El tiempo comienza a correr cuando se cierre este diálogo.",
 		supplayer1, "¡Buena suerte!"
 	]
