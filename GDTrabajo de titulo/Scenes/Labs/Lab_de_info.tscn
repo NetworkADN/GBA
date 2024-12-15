@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://jax7nrayfkqe"]
+[gd_scene load_steps=17 format=3 uid="uid://jax7nrayfkqe"]
 
 [ext_resource type="Script" path="res://Scripts/lab_de_info.gd" id="1_6u657"]
 [ext_resource type="Texture2D" uid="uid://dfcwv35xnajyi" path="res://background/Labs Info.jpg" id="2_0nbsp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c88f0jwd2uq84" path="res://assets/prop.pc.png" id="4_6wrvl"]
 [ext_resource type="Script" path="res://Scripts/labs_dialog.gd" id="4_j50rd"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_bwj4y"]
+[ext_resource type="LabelSettings" uid="uid://cyyft1uajvt35" path="res://LabelSettings/TextLabelsFlechas.tres" id="6_27n3l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mihs4"]
 
@@ -101,6 +102,12 @@ _data = {
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_g6bca"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_tkmw5"]
+font = ExtResource("5_bwj4y")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_6u657")
 
@@ -137,6 +144,15 @@ icon = ExtResource("3_fioj4")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Pasillo lab" type="Label" parent="ParallaxBackground/ParallaxLayer/Lab/Button"]
+offset_left = 2959.49
+offset_top = 1979.54
+offset_right = 7809.49
+offset_bottom = 2465.54
+rotation = 3.14159
+text = "Volver a Pasillo Laboratorio"
+label_settings = ExtResource("6_27n3l")
 
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Lab"]
 libraries = {
@@ -216,6 +232,14 @@ offset_bottom = 462.0
 theme_override_fonts/normal_font = ExtResource("5_bwj4y")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_tkmw5")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Lab/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Lab/Transition" to="." method="_on_transition_animation_finished"]

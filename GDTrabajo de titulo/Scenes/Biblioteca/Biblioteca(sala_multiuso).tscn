@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b05kggl05crev"]
+[gd_scene load_steps=16 format=3 uid="uid://b05kggl05crev"]
 
 [ext_resource type="Script" path="res://Scripts/biblioteca(sala_multiuso).gd" id="1_8ve7x"]
 [ext_resource type="Texture2D" uid="uid://bbgxxr1fkjfrf" path="res://background/Sala multiuso.jpg" id="2_sahqk"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_fywem"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="6_0sr37"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="7_2vkcr"]
+[ext_resource type="LabelSettings" uid="uid://cyyft1uajvt35" path="res://LabelSettings/TextLabelsFlechas.tres" id="8_ae6ci"]
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -99,6 +100,12 @@ _data = {
 [sub_resource type="CanvasTexture" id="CanvasTexture_qvblm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lkpbr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ird42"]
+font = ExtResource("5_fywem")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8ve7x")
@@ -212,6 +219,15 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Biblioteca (Entrada)" type="Label" parent="Flechas/Button"]
+layout_mode = 0
+offset_left = -1261.14
+offset_top = -386.3
+offset_right = 2467.86
+offset_bottom = 30.7001
+text = "Ir a Biblioteca (Entrada)"
+label_settings = ExtResource("8_ae6ci")
+
 [node name="Button2" type="Button" parent="Flechas"]
 layout_mode = 0
 offset_left = 1266.0
@@ -224,6 +240,24 @@ icon = ExtResource("3_8fbma")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Mesa" type="Label" parent="Flechas/Button2"]
+layout_mode = 0
+offset_left = 1522.07
+offset_top = 1514.78
+offset_right = 5184.07
+offset_bottom = 1931.78
+rotation = 3.12414
+text = "Ir a la mesa"
+label_settings = ExtResource("8_ae6ci")
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_ird42")
 
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
 [connection signal="pressed" from="Flechas/Button" to="." method="_on_button_pressed"]

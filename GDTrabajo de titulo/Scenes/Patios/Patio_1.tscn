@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf0ppqh382jg6"]
+[gd_scene load_steps=14 format=3 uid="uid://bf0ppqh382jg6"]
 
 [ext_resource type="Script" path="res://Scripts/patio_1.gd" id="1_awe03"]
 [ext_resource type="Texture2D" uid="uid://64o6h46cwog2" path="res://background/Pasillo Casino.jpg" id="1_ynx14"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_twkfr"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_7cuvy"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_msei6"]
+[ext_resource type="LabelSettings" uid="uid://cyyft1uajvt35" path="res://LabelSettings/TextLabelsFlechas.tres" id="6_tedti"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="7_bjhjf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xxt8p"]
 
@@ -96,6 +98,12 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_fu200"]
+font = ExtResource("7_bjhjf")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_awe03")
 
@@ -133,6 +141,14 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Entrada" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_1/Button"]
+offset_left = -242.526
+offset_top = -533.461
+offset_right = 2017.47
+offset_bottom = -47.461
+text = "Ir a Entrada"
+label_settings = ExtResource("6_tedti")
+
 [node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_1"]
 offset_left = 69.9785
 offset_top = 126.673
@@ -145,17 +161,35 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Pasillo M3" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_1/Button2"]
+offset_left = 2030.54
+offset_top = 2028.19
+offset_right = 4617.54
+offset_bottom = 2514.19
+rotation = 3.14159
+text = "Ir a Pasillo M3"
+label_settings = ExtResource("6_tedti")
+
 [node name="Button3" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_1"]
-offset_left = -534.0
-offset_top = -16.0
-offset_right = 1059.0
-offset_bottom = 1455.0
+offset_left = -472.0
+offset_top = -12.0
+offset_right = 1121.0
+offset_bottom = 1459.0
 rotation = 1.5768
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_7cuvy")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Patio Casino" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_1/Button3"]
+offset_left = -265.105
+offset_top = 2153.64
+offset_right = 2727.9
+offset_bottom = 2639.64
+rotation = 4.71239
+text = "Ir a Patio Casino"
+label_settings = ExtResource("6_tedti")
 
 [node name="Button4" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_1"]
 offset_left = 161.265
@@ -169,6 +203,17 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Diario mural" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_1/Button4"]
+offset_left = 114.888
+offset_top = -570.646
+offset_right = 3117.89
+offset_bottom = -84.6464
+rotation = 1.5708
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("7_bjhjf")
+theme_override_font_sizes/font_size = 370
+text = "Ir a Diario Mural"
+
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Patio_1"]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
@@ -178,6 +223,14 @@ libraries = {
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_fu200")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_1/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_1/Button2" to="." method="_on_button_2_pressed"]

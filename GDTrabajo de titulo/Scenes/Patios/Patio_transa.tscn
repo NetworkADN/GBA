@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://kiy3e2i27cm0"]
+[gd_scene load_steps=14 format=3 uid="uid://kiy3e2i27cm0"]
 
 [ext_resource type="Script" path="res://Scripts/patio_transa.gd" id="1_dowqo"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_7ctfv"]
-[ext_resource type="Texture2D" uid="uid://b0dm0lkkyqcdt" path="res://Background/Patio transa (UTEM).jpg" id="2_8ncnm"]
+[ext_resource type="Texture2D" uid="uid://b0dm0lkkyqcdt" path="res://background/Patio transa (UTEM).jpg" id="2_8ncnm"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_h4ksb"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_qt1tf"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_syg5s"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="7_7ec78"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ilo2c"]
 
@@ -97,6 +98,12 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_x6ko2"]
+font = ExtResource("7_7ec78")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dowqo")
 
@@ -134,6 +141,16 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Pasillo Transa" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_transa/Button"]
+offset_left = -1767.33
+offset_top = -1014.04
+offset_right = 4686.67
+offset_bottom = -42.0446
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("7_7ec78")
+theme_override_font_sizes/font_size = 700
+text = "Ir a Pasillo Transa"
+
 [node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_transa"]
 offset_left = -211.535
 offset_top = 28.6387
@@ -145,6 +162,16 @@ icon = ExtResource("4_syg5s")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="UTEM" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_transa/Button2"]
+offset_left = -2999.2
+offset_top = -998.095
+offset_right = 5092.8
+offset_bottom = -26.0948
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("7_7ec78")
+theme_override_font_sizes/font_size = 700
+text = "Ir a Monumento UTEM"
 
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Patio_transa"]
 libraries = {
@@ -167,6 +194,25 @@ icon = ExtResource("3_h4ksb")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="M8" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_transa/Button3"]
+offset_left = 3003.06
+offset_top = 2239.82
+offset_right = 5864.06
+offset_bottom = 3211.82
+rotation = 2.44346
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("7_7ec78")
+theme_override_font_sizes/font_size = 700
+text = "Ir a M8"
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_x6ko2")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_transa/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_transa/Button2" to="." method="_on_button_2_pressed"]

@@ -18,6 +18,7 @@ var current_line = 0  # Línea actual del diálogo
 @onready var dialog_label = $Dialogo/Dialogo_est  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
 @onready var arrow = $"../Button"
+@onready var lbl = $"../Biblioteca (Puertas)"
 
 func _ready():
 	if  DialogsFlags.c3 == false and DialogsFlags.cj == true: 
@@ -49,6 +50,7 @@ func _ready():
 		name_box.visible = true
 		dialog_label.visible = true
 		name_label.visible = true
+		lbl.visible = false
 	
 		name_label.bbcode_text = player1
 		dialog_label.bbcode_text = "..."
@@ -97,6 +99,7 @@ func close_dialog_boxes():
 	name_box.visible = false
 	dialog_label.visible = false
 	name_label.visible = false
+	lbl.visible = true
 	
 
 func _input(event):

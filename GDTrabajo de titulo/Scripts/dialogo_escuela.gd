@@ -15,6 +15,7 @@ var current_line = 0  # Línea actual del diálogo
 @onready var dialog_label = $escuela/Dialogo_escuela  # Nodo para el texto del diálogo
 @onready var name_label = $nombres/caja_nombre  # Nodo para el texto del nombre
 @onready var arrows = $"../Flechas"
+@onready var lbl = $"../Escuela (Puertas)"
 
 func _ready():
 	if DialogsFlags.escuela == false:
@@ -33,6 +34,7 @@ func _ready():
 		]
 		await get_tree().create_timer(0.5).timeout
 		arrows.visible = false
+		lbl.visible = false
 		dialog_box.visible = true
 		name_box.visible = true
 		dialog_label.visible = true
@@ -85,6 +87,7 @@ func close_dialog_boxes():
 	dialog_label.visible = false
 	name_label.visible = false
 	arrows.visible = true
+	lbl.visible = true
 
 func _input(event):
 	# Detecta presionar una tecla para avanzar

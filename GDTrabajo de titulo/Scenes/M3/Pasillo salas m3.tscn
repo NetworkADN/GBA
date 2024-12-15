@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dy326wydf3mwi"]
+[gd_scene load_steps=15 format=3 uid="uid://dy326wydf3mwi"]
 
 [ext_resource type="Script" path="res://Scripts/pasillo_salas_m_3.gd" id="1_3d7l5"]
 [ext_resource type="Texture2D" uid="uid://c27hwow1unj2q" path="res://background/Pasillo M3.jpg" id="2_afcya"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_5apvp"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_m4cye"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_rx5bv"]
+[ext_resource type="LabelSettings" uid="uid://cyyft1uajvt35" path="res://LabelSettings/TextLabelsFlechas.tres" id="6_mco0w"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="8_ed0n4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7dsaq"]
 
@@ -97,6 +99,12 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_bulte"]
+font = ExtResource("8_ed0n4")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3d7l5")
 
@@ -134,6 +142,14 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Pasillo M3" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_salas_m3/Button"]
+offset_left = -420.378
+offset_top = -607.042
+offset_right = 2166.62
+offset_bottom = -121.042
+text = "Ir a Pasillo M3"
+label_settings = ExtResource("6_mco0w")
+
 [node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Pasillo_salas_m3"]
 offset_left = 150.0
 offset_top = -105.0
@@ -145,6 +161,15 @@ icon = ExtResource("4_rx5bv")
 flat = true
 expand_icon = true
 
+[node name="Sala M3" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_salas_m3/Button2"]
+offset_left = -142.176
+offset_top = 1599.94
+offset_right = 2117.82
+offset_bottom = 2016.94
+rotation = 4.71239
+text = "Ir a sala M3"
+label_settings = ExtResource("6_mco0w")
+
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Pasillo_salas_m3"]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
@@ -154,6 +179,14 @@ libraries = {
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_bulte")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pasillo_salas_m3/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pasillo_salas_m3/Button2" to="." method="_on_button_2_pressed"]

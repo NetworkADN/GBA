@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8bmnl0f28b28"]
+[gd_scene load_steps=16 format=3 uid="uid://b8bmnl0f28b28"]
 
 [ext_resource type="Script" path="res://Scripts/escuela(entrada).gd" id="1_g8svj"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_q6q3m"]
@@ -100,6 +100,12 @@ _data = {
 }
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p4hla"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vihci"]
+font = ExtResource("6_w04o3")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_g8svj")
@@ -225,6 +231,36 @@ icon = ExtResource("4_6m20r")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Oficina" type="Label" parent="Flechas/Button2"]
+layout_mode = 0
+offset_left = -996.44
+offset_top = -333.193
+offset_right = 2877.56
+offset_bottom = 152.807
+rotation = 0.0349066
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("6_w04o3")
+theme_override_font_sizes/font_size = 300
+text = "Ir a Escuela (Oficina)"
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_vihci")
+
+[node name="Escuela (Puertas)" type="Label" parent="."]
+offset_left = 553.0
+offset_top = 595.0
+offset_right = 1004.0
+offset_bottom = 651.0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("6_w04o3")
+theme_override_font_sizes/font_size = 25
+text = "Ir a Escuela (Puertas)"
 
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
 [connection signal="pressed" from="Flechas/Button" to="." method="_on_button_pressed"]

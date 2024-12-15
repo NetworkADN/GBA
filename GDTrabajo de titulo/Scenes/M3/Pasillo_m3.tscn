@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmpus2xfnow5n"]
+[gd_scene load_steps=15 format=3 uid="uid://dmpus2xfnow5n"]
 
 [ext_resource type="Script" path="res://Scripts/pasillo_m_3.gd" id="1_ilxp1"]
 [ext_resource type="Texture2D" uid="uid://nnqaqx1boq15" path="res://background/m3.jpg" id="2_djw8s"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_6p6hu"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_cxn5x"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_ey4wh"]
+[ext_resource type="LabelSettings" uid="uid://cyyft1uajvt35" path="res://LabelSettings/TextLabelsFlechas.tres" id="6_6vxal"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="7_08ym4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mar8x"]
 
@@ -97,6 +99,12 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_sr6q3"]
+font = ExtResource("7_08ym4")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ilxp1")
 
@@ -134,6 +142,14 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Patio Casino" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_m3/Button"]
+offset_left = -664.6
+offset_top = -491.166
+offset_right = 2328.4
+offset_bottom = -5.16577
+text = "Ir a Patio Casino"
+label_settings = ExtResource("6_6vxal")
+
 [node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Pasillo_m3"]
 offset_left = 165.258
 offset_top = -46.5374
@@ -144,6 +160,17 @@ scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("4_ey4wh")
 flat = true
 expand_icon = true
+
+[node name="Pasillo Salas" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_m3/Button2"]
+offset_left = -273.878
+offset_top = 1760.57
+offset_right = 2583.12
+offset_bottom = 2316.57
+rotation = 4.71239
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("7_08ym4")
+theme_override_font_sizes/font_size = 400
+text = "Ir a Salas M3"
 
 [node name="Button3" type="Button" parent="ParallaxBackground/ParallaxLayer/Pasillo_m3"]
 offset_left = -158.247
@@ -156,6 +183,14 @@ icon = ExtResource("4_ey4wh")
 flat = true
 expand_icon = true
 
+[node name="Transa" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_m3/Button3"]
+offset_left = -885.433
+offset_top = -478.09
+offset_right = 2341.57
+offset_bottom = 7.9104
+text = "Ir a Pasillo Transa"
+label_settings = ExtResource("6_6vxal")
+
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Pasillo_m3"]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
@@ -165,6 +200,14 @@ libraries = {
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_sr6q3")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pasillo_m3/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pasillo_m3/Button2" to="." method="_on_button_2_pressed"]

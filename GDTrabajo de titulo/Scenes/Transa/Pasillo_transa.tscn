@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b46jxnuvrvjeb"]
+[gd_scene load_steps=13 format=3 uid="uid://b46jxnuvrvjeb"]
 
 [ext_resource type="Script" path="res://Scripts/pasillo_transa.gd" id="1_loamk"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_5wi7f"]
-[ext_resource type="Texture2D" uid="uid://bqtse83v17o26" path="res://Background/Pasillo Transa.jpg" id="2_uxcyj"]
+[ext_resource type="Texture2D" uid="uid://bqtse83v17o26" path="res://background/Pasillo Transa.jpg" id="2_uxcyj"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_3kdu7"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_ph1wk"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="6_x2hea"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_siht3"]
 
@@ -96,6 +97,12 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_vltl5"]
+font = ExtResource("6_x2hea")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_loamk")
 
@@ -133,6 +140,16 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Pasillo M3" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_transa/Button"]
+offset_left = -1568.34
+offset_top = -974.947
+offset_right = 3605.66
+offset_bottom = -2.94672
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("6_x2hea")
+theme_override_font_sizes/font_size = 600
+text = "Ir a Pasillo M3"
+
 [node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Pasillo_transa"]
 offset_left = 68.9082
 offset_top = 97.2378
@@ -145,17 +162,39 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Patio Transa" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_transa/Button2"]
+offset_left = 3351.71
+offset_top = 2381.78
+offset_right = 9408.71
+offset_bottom = 3353.78
+rotation = 3.14159
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("6_x2hea")
+theme_override_font_sizes/font_size = 600
+text = "Ir a Patio Transa"
+
 [node name="Button3" type="Button" parent="ParallaxBackground/ParallaxLayer/Pasillo_transa"]
-offset_left = -319.141
-offset_top = -18.9785
-offset_right = 1273.86
-offset_bottom = 1452.02
+offset_left = -317.0
+offset_top = -20.0
+offset_right = 1276.0
+offset_bottom = 1451.0
 rotation = 1.56685
 scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_3kdu7")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Pasillo Escuela" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_transa/Button3"]
+offset_left = -1032.93
+offset_top = 4259.65
+offset_right = 4768.07
+offset_bottom = 5231.65
+rotation = 4.71239
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("6_x2hea")
+theme_override_font_sizes/font_size = 600
+text = "Ir a Pasillo Escuela"
 
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Pasillo_transa"]
 libraries = {
@@ -166,6 +205,14 @@ libraries = {
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_vltl5")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pasillo_transa/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pasillo_transa/Button2" to="." method="_on_button_2_pressed"]

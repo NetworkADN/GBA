@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://w2omn4rnk0op"]
+[gd_scene load_steps=14 format=3 uid="uid://w2omn4rnk0op"]
 
 [ext_resource type="Script" path="res://Scripts/m_8.gd" id="1_wj0qy"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_01prw"]
-[ext_resource type="Texture2D" uid="uid://bfg182id50v6w" path="res://Background/M8.jpg" id="2_rhrdh"]
+[ext_resource type="Texture2D" uid="uid://bfg182id50v6w" path="res://background/M8.jpg" id="2_rhrdh"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_75vvb"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_vamo6"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_ea0b5"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="6_8m1n1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sfy7d"]
 
@@ -97,6 +98,12 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_w57vv"]
+font = ExtResource("6_8m1n1")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wj0qy")
 
@@ -134,6 +141,16 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="UTEM" type="Label" parent="ParallaxBackground/ParallaxLayer/M8/Button"]
+offset_left = -2654.61
+offset_top = -930.998
+offset_right = 5437.39
+offset_bottom = 41.0016
+theme_override_constants/outline_size = 128
+theme_override_fonts/font = ExtResource("6_8m1n1")
+theme_override_font_sizes/font_size = 710
+text = "Ir a Monumento UTEM"
+
 [node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/M8"]
 offset_left = -59.0771
 offset_top = 100.168
@@ -146,6 +163,16 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Sala Carrera" type="Label" parent="ParallaxBackground/ParallaxLayer/M8/Button2"]
+offset_left = -2491.0
+offset_top = -847.243
+offset_right = 5059.0
+offset_bottom = 124.757
+theme_override_constants/outline_size = 128
+theme_override_fonts/font = ExtResource("6_8m1n1")
+theme_override_font_sizes/font_size = 700
+text = "Ir a Sala de Carrera"
+
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/M8"]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
@@ -157,10 +184,10 @@ offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
 
 [node name="Button3" type="Button" parent="ParallaxBackground/ParallaxLayer/M8"]
-offset_left = -1005.77
-offset_top = 505.379
-offset_right = 963.229
-offset_bottom = 2932.38
+offset_left = -878.546
+offset_top = 500.837
+offset_right = 1090.45
+offset_bottom = 2927.84
 rotation = -7.85241
 scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("4_ea0b5")
@@ -168,17 +195,47 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Escuela (Puertas)" type="Label" parent="ParallaxBackground/ParallaxLayer/M8/Button3"]
+offset_left = 2944.88
+offset_top = -1583.77
+offset_right = 10842.9
+offset_bottom = -611.772
+rotation = 1.5708
+theme_override_constants/outline_size = 128
+theme_override_fonts/font = ExtResource("6_8m1n1")
+theme_override_font_sizes/font_size = 700
+text = "Ir a Escuela (Puertas)"
+
 [node name="Button4" type="Button" parent="ParallaxBackground/ParallaxLayer/M8"]
-offset_left = 1006.4
-offset_top = 359.98
-offset_right = 2975.39
-offset_bottom = 2786.98
+offset_left = 832.764
+offset_top = 349.004
+offset_right = 2801.75
+offset_bottom = 2776.0
 rotation = -4.71808
 scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("4_ea0b5")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Patio Transa" type="Label" parent="ParallaxBackground/ParallaxLayer/M8/Button4"]
+offset_left = -637.159
+offset_top = 4417.51
+offset_right = 5816.84
+offset_bottom = 5389.51
+rotation = 4.71239
+theme_override_constants/outline_size = 128
+theme_override_fonts/font = ExtResource("6_8m1n1")
+theme_override_font_sizes/font_size = 700
+text = "Ir a Pasillo Transa"
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_w57vv")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/M8/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/M8/Button2" to="." method="_on_button_2_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://uq4jq23qvr1s"]
+[gd_scene load_steps=15 format=3 uid="uid://uq4jq23qvr1s"]
 
 [ext_resource type="Script" path="res://Scripts/casino(microondas).gd" id="1_jhbfm"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_4cwdb"]
@@ -100,6 +100,12 @@ _data = {
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8jm3n"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_li5at"]
+font = ExtResource("5_r0csj")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jhbfm")
 
@@ -138,6 +144,18 @@ icon = ExtResource("3_6k762")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Biblioteca (Puertas)" type="Label" parent="ParallaxBackground/ParallaxLayer/Casino(microondas)/Button"]
+layout_mode = 0
+offset_left = -2779.79
+offset_top = -1061.84
+offset_right = 5778.21
+offset_bottom = 28.1626
+rotation = -0.0174533
+theme_override_constants/outline_size = 123
+theme_override_fonts/font = ExtResource("5_r0csj")
+theme_override_font_sizes/font_size = 785
+text = "Ir a Casino (entrada)"
 
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Casino(microondas)"]
 libraries = {
@@ -205,6 +223,14 @@ offset_bottom = 462.0
 theme_override_fonts/normal_font = ExtResource("5_r0csj")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_li5at")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Casino(microondas)/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Casino(microondas)/Transition" to="." method="_on_transition_animation_finished"]

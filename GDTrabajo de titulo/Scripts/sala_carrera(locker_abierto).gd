@@ -12,6 +12,8 @@ var TimerClock = Clocktimer
 @onready var dialog_label = $Dialogo_lca/Dialogo/Dialogo_lca # Nodo para el texto del diálogo
 @onready var name_label = $Dialogo_lca/nombres/caja_nombre # Nodo para el texto del nombre
 
+@onready var obj_label = $Objetivo #Label de objetivo
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	dialog_box.visible = false
@@ -23,6 +25,26 @@ func _ready() -> void:
 	GlobalTimer.connect("tiempo_terminado", Callable(self, "on_tiempo_terminado"))
 
 func _process(delta):
+	if DialogsFlags.escuela == false:
+		obj_label.text = "Objetivo: Ir a escuela"
+	elif DialogsFlags.m3 == false:
+		obj_label.text = "Objetivo: Ir al M3"
+	elif DialogsFlags.m3_puzzle == false or DialogsFlags.m3_final == false:
+		obj_label.text = "Objetivo: Resolver la ecuación"
+	elif DialogsFlags.bibl == false:
+		obj_label.text = "Objetivo: Ir a la biblioteca"
+	elif DialogsFlags.bibl_puzzle == false or DialogsFlags.bibl_final == false:
+		obj_label.text = "Objetivo: Revisa la sala multiuso"
+	elif DialogsFlags.lab == false:
+		obj_label.text = "Objetivo: Ir al laboratorio"
+	elif DialogsFlags.lab_puzzle == false or DialogsFlags.lab_final == false:
+		obj_label.text = "Objetivo: Revisar el laboratorio"
+	elif DialogsFlags.sc == false:
+		obj_label.text = "Objetivo: Ir a la sala de carrera"
+	elif DialogsFlags.sc_puzzle == false or DialogsFlags.key == false:
+		obj_label.text = "Objetivo: Busca la clave"
+	else:
+		obj_label.text = "Objetivo: Ir a la oficina en escuela"
 	update_clocktimer_label()
 
 func update_clocktimer_label():

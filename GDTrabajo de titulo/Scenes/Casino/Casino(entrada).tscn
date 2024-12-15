@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b07ieemx6d3px"]
+[gd_scene load_steps=15 format=3 uid="uid://b07ieemx6d3px"]
 
 [ext_resource type="Script" path="res://Scripts/casino(entrada).gd" id="1_8hlnd"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_a4gco"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_cjdpo"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_fn67h"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_fx7l6"]
+[ext_resource type="LabelSettings" uid="uid://cyyft1uajvt35" path="res://LabelSettings/TextLabelsFlechas.tres" id="6_arujk"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="8_th2ir"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lwr2f"]
 
@@ -97,6 +99,12 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_jwwvq"]
+font = ExtResource("8_th2ir")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8hlnd")
 
@@ -125,16 +133,26 @@ scale = Vector2(0.3573, 0.847462)
 texture = ExtResource("2_uj05t")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 1278.0
-offset_top = 306.0
-offset_right = 2417.0
-offset_bottom = 1467.0
+offset_left = 1212.0
+offset_top = 318.0
+offset_right = 2351.0
+offset_bottom = 1479.0
 rotation = -4.71643
 scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("4_fx7l6")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Biblioteca (Puertas)" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = -269.46
+offset_top = 1670.63
+offset_right = 3392.54
+offset_bottom = 2087.63
+rotation = 4.71239
+text = "Ir a Microondas"
+label_settings = ExtResource("6_arujk")
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 681.0
@@ -147,6 +165,15 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="patio casino" type="Label" parent="Button2"]
+layout_mode = 0
+offset_left = -485.052
+offset_top = -344.911
+offset_right = 3176.95
+offset_bottom = 72.0892
+text = "Ir a Patio Casino"
+label_settings = ExtResource("6_arujk")
+
 [node name="Transition" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
@@ -156,6 +183,14 @@ libraries = {
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_jwwvq")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

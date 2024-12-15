@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4dxhhcr0yo0l"]
+[gd_scene load_steps=18 format=3 uid="uid://b4dxhhcr0yo0l"]
 
 [ext_resource type="Script" path="res://Scripts/pizarra.gd" id="1_o4wwl"]
-[ext_resource type="Texture2D" uid="uid://ctsrhfn4q3nca" path="res://Background/Pizarra.jpg" id="2_kede1"]
+[ext_resource type="Texture2D" uid="uid://ctsrhfn4q3nca" path="res://background/Pizarra.jpg" id="2_kede1"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_yuten"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_shdc5"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_uo2kc"]
 [ext_resource type="Script" path="res://Scripts/ecuacion.gd" id="4_xtim5"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="7_vht4h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fgmlk"]
 
@@ -160,6 +161,12 @@ _data = {
 "fade_out": SubResource("Animation_qw87v")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_0kv4g"]
+font = ExtResource("7_vht4h")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_o4wwl")
 
@@ -196,6 +203,16 @@ icon = ExtResource("3_uo2kc")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Estanteria" type="Label" parent="ParallaxBackground/ParallaxLayer/Pizarra/Button"]
+offset_left = -2646.19
+offset_top = -983.573
+offset_right = 4871.81
+offset_bottom = 127.427
+theme_override_constants/outline_size = 128
+theme_override_fonts/font = ExtResource("7_vht4h")
+theme_override_font_sizes/font_size = 800
+text = "Salir de la Pizarra"
 
 [node name="Area2D" type="Area2D" parent="ParallaxBackground/ParallaxLayer/Pizarra"]
 
@@ -290,6 +307,14 @@ color = Color(0, 0, 0, 1)
 [node name="Timer" type="Timer" parent="answer"]
 
 [node name="Timer2" type="Timer" parent="answer"]
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_0kv4g")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pizarra/Button" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="ParallaxBackground/ParallaxLayer/Pizarra/Area2D" to="." method="_on_area_2d_mouse_entered"]

@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://x1wc15hwtbgj"]
+[gd_scene load_steps=14 format=3 uid="uid://x1wc15hwtbgj"]
 
 [ext_resource type="Script" path="res://Scripts/escaleras_lab.gd" id="1_n60qy"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_ehnsh"]
 [ext_resource type="Texture2D" uid="uid://dmuw3a1w4sccl" path="res://background/Escaleras Labs.jpg" id="2_hnxyb"]
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_k366p"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_ucw7l"]
+[ext_resource type="LabelSettings" uid="uid://cyyft1uajvt35" path="res://LabelSettings/TextLabelsFlechas.tres" id="6_bp1xd"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="7_rggkc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uy0g0"]
 
@@ -96,6 +98,12 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_4paas"]
+font = ExtResource("7_rggkc")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_n60qy")
 
@@ -131,6 +139,16 @@ scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("3_ucw7l")
 flat = true
 
+[node name="Entrada Labs" type="Label" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab/Button"]
+layout_mode = 0
+offset_left = -145.196
+offset_top = 2071.88
+offset_right = 2659.8
+offset_bottom = 2488.88
+rotation = 4.71239
+text = "Ir a Entrada Labs"
+label_settings = ExtResource("6_bp1xd")
+
 [node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab"]
 anchors_preset = -1
 anchor_left = -5.07
@@ -148,6 +166,18 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Entrada" type="Label" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab/Button2"]
+layout_mode = 0
+offset_left = 2463.89
+offset_top = 2233.12
+offset_right = 5911.89
+offset_bottom = 2789.12
+rotation = 3.14159
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("7_rggkc")
+theme_override_font_sizes/font_size = 400
+text = "Volver a Entrada"
+
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Escaleras_Lab"]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
@@ -157,6 +187,14 @@ libraries = {
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_4paas")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Escaleras_Lab/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Escaleras_Lab/Button2" to="." method="_on_button_2_pressed"]

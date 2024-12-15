@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cyyft1uajvt35"]
+
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="1_v5sao"]
+
+[resource]
+font = ExtResource("1_v5sao")
+font_size = 350
+outline_size = 50
+outline_color = Color(0, 0, 0, 1)

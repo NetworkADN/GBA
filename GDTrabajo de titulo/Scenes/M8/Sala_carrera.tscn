@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://h2upq3jobx0s"]
+[gd_scene load_steps=17 format=3 uid="uid://h2upq3jobx0s"]
 
 [ext_resource type="Script" path="res://Scripts/sala_carrera.gd" id="1_sptxi"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_hx44j"]
@@ -102,6 +102,12 @@ _data = {
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p1kwv"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_n3nh1"]
+font = ExtResource("5_gcqty")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sptxi")
 
@@ -138,6 +144,16 @@ icon = ExtResource("3_gn0av")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Volver" type="Label" parent="ParallaxBackground/ParallaxLayer/Sala_carrera/Button"]
+offset_left = -2773.55
+offset_top = -1244.09
+offset_right = 6137.45
+offset_bottom = -272.093
+theme_override_constants/outline_size = 128
+theme_override_fonts/font = ExtResource("5_gcqty")
+theme_override_font_sizes/font_size = 700
+text = "Salir de Sala de Carrera"
 
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Sala_carrera"]
 libraries = {
@@ -230,6 +246,14 @@ offset_bottom = 462.0
 theme_override_fonts/normal_font = ExtResource("5_gcqty")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_n3nh1")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Sala_carrera/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Sala_carrera/Transition" to="." method="_on_transition_animation_finished"]

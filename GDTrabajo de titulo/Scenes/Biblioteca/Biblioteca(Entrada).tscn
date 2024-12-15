@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0dpkoo2litc6"]
+[gd_scene load_steps=16 format=3 uid="uid://b0dpkoo2litc6"]
 
 [ext_resource type="Script" path="res://Scripts/biblioteca(entrada).gd" id="1_r3eir"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_tw30v"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="3_m75ev"]
 [ext_resource type="Script" path="res://Scripts/Bibl_dialog.gd" id="4_77ppw"]
 [ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="5_0n8ba"]
+[ext_resource type="LabelSettings" uid="uid://cyyft1uajvt35" path="res://LabelSettings/TextLabelsFlechas.tres" id="8_0pv6j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_h1ros"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_i0amt"]
 length = 0.001
@@ -99,6 +102,12 @@ _data = {
 }
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_mf554"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_byhk0"]
+font = ExtResource("5_0n8ba")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_r3eir")
@@ -213,6 +222,16 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Biblioteca (Puertas)" type="Label" parent="Flechas/Button"]
+layout_mode = 0
+offset_left = 2430.17
+offset_top = 1570.63
+offset_right = 6092.17
+offset_bottom = 1987.63
+rotation = 3.12414
+text = "Ir a Biblioteca (Puertas)"
+label_settings = ExtResource("8_0pv6j")
+
 [node name="Button2" type="Button" parent="Flechas"]
 layout_mode = 0
 offset_left = 475.0
@@ -226,6 +245,16 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Sala Multiuso" type="Label" parent="Flechas/Button2"]
+layout_mode = 0
+offset_left = 1270.81
+offset_top = -751.072
+offset_right = 3987.81
+offset_bottom = -334.072
+rotation = 1.5708
+text = "Ir a Sala Multiuso"
+label_settings = ExtResource("8_0pv6j")
+
 [node name="Button3" type="Button" parent="Flechas"]
 layout_mode = 0
 offset_left = 986.0
@@ -238,6 +267,24 @@ icon = ExtResource("3_m75ev")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Estanteria" type="Label" parent="Flechas/Button3"]
+layout_mode = 0
+offset_left = -142.176
+offset_top = 1599.94
+offset_right = 2117.82
+offset_bottom = 2016.94
+rotation = 4.71239
+text = "Ir a Estanteria"
+label_settings = ExtResource("8_0pv6j")
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_byhk0")
 
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
 [connection signal="pressed" from="Flechas/Button" to="." method="_on_button_pressed"]

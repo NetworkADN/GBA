@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://f6l0k63ljmt6"]
+[gd_scene load_steps=15 format=3 uid="uid://f6l0k63ljmt6"]
 
 [ext_resource type="Script" path="res://Scripts/anuncios_escuela.gd" id="1_imgg0"]
 [ext_resource type="FontFile" uid="uid://cbu68tu4ukqhr" path="res://Fonts/comickbook/ComickBook_CAPS.ttf" id="2_e4cwj"]
@@ -100,6 +100,12 @@ _data = {
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ouhm6"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_anotg"]
+font = ExtResource("5_admwo")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_imgg0")
 
@@ -136,6 +142,16 @@ icon = ExtResource("3_c2qxa")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Escuela" type="Label" parent="ParallaxBackground/ParallaxLayer/Anuncios_escuela/Button"]
+offset_left = -3213.64
+offset_top = -872.197
+offset_right = 6185.36
+offset_bottom = 99.803
+theme_override_constants/outline_size = 138
+theme_override_fonts/font = ExtResource("5_admwo")
+theme_override_font_sizes/font_size = 700
+text = "Volver a escuela (Puertas)"
 
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Anuncios_escuela"]
 libraries = {
@@ -203,6 +219,14 @@ offset_bottom = 462.0
 theme_override_fonts/normal_font = ExtResource("5_admwo")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_anotg")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Anuncios_escuela/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Anuncios_escuela/Transition" to="." method="_on_transition_animation_finished"]

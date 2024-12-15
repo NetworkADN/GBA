@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cw3xup5p5id8i"]
+[gd_scene load_steps=14 format=3 uid="uid://cw3xup5p5id8i"]
 
 [ext_resource type="Script" path="res://Scripts/patio_casino.gd" id="1_yf7km"]
 [ext_resource type="Texture2D" uid="uid://dhjh3v0nwixnr" path="res://background/Patio Casino.jpg" id="2_abw7o"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5xn43o1f54s1" path="res://Scenes/Extras/clock_timer.tscn" id="3_8wjm2"]
 [ext_resource type="Texture2D" uid="uid://c61jlcmn1kuft" path="res://assets/arrow_down.png" id="3_ahccd"]
 [ext_resource type="Texture2D" uid="uid://due0ycww4ijgt" path="res://assets/arrow_up.png" id="4_55iir"]
+[ext_resource type="FontFile" uid="uid://77tm5kpkgub6" path="res://Fonts/comickbook/ComickBook_Simple.ttf" id="7_q74k2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sd2sr"]
 
@@ -97,6 +98,12 @@ _data = {
 "fade_out": SubResource("Animation_1tse1")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_fkd3t"]
+font = ExtResource("7_q74k2")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yf7km")
 
@@ -132,6 +139,16 @@ scale = Vector2(0.061849, 0.0724826)
 icon = ExtResource("3_ahccd")
 flat = true
 
+[node name="Patio 1" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_casino/Button"]
+offset_left = -1487.49
+offset_top = -588.647
+offset_right = 3072.51
+offset_bottom = 105.353
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("7_q74k2")
+theme_override_font_sizes/font_size = 500
+text = "Ir a Pasillo Casino"
+
 [node name="Button2" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_casino"]
 offset_left = -37.5576
 offset_top = -21.3271
@@ -142,6 +159,16 @@ scale = Vector2(0.0722657, 0.069987)
 icon = ExtResource("4_55iir")
 flat = true
 expand_icon = true
+
+[node name="Patio Biblioteca" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_casino/Button2"]
+offset_left = -1677.27
+offset_top = -581.635
+offset_right = 3336.73
+offset_bottom = 112.365
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("7_q74k2")
+theme_override_font_sizes/font_size = 500
+text = "Ir a Patio Biblioteca"
 
 [node name="Button3" type="Button" parent="ParallaxBackground/ParallaxLayer/Patio_casino"]
 offset_left = -400.0
@@ -154,6 +181,17 @@ icon = ExtResource("4_55iir")
 flat = true
 expand_icon = true
 
+[node name="Casino" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_casino/Button3"]
+offset_left = 1881.63
+offset_top = -829.476
+offset_right = 4742.63
+offset_bottom = -135.476
+rotation = 1.5708
+theme_override_constants/outline_size = 78
+theme_override_fonts/font = ExtResource("7_q74k2")
+theme_override_font_sizes/font_size = 500
+text = "Ir a Casino"
+
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Patio_casino"]
 libraries = {
 "": SubResource("AnimationLibrary_bty0q")
@@ -163,6 +201,14 @@ libraries = {
 offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_fkd3t")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_casino/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_casino/Button2" to="." method="_on_button_2_pressed"]

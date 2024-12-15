@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://hssr8lrwu7p3"]
+[gd_scene load_steps=15 format=3 uid="uid://hssr8lrwu7p3"]
 
 [ext_resource type="Script" path="res://Scripts/biblioteca(estanteria).gd" id="1_tgvc1"]
 [ext_resource type="Texture2D" uid="uid://creviy728afgc" path="res://background/Estante biblioteca.jpg" id="2_5th4l"]
@@ -100,6 +100,12 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_e7rju"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_fwe3h"]
+font = ExtResource("5_7g3rm")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tgvc1")
 
@@ -113,17 +119,6 @@ position = Vector2(646.297, 368.584)
 rotation = 1.5708
 scale = Vector2(0.359706, 0.846482)
 texture = ExtResource("2_5th4l")
-
-[node name="Button" type="Button" parent="."]
-offset_left = 645.0
-offset_top = 629.0
-offset_right = 1919.0
-offset_bottom = 1885.0
-scale = Vector2(0.061849, 0.0724826)
-icon = ExtResource("3_e3pns")
-flat = true
-icon_alignment = 1
-expand_icon = true
 
 [node name="Transition" type="AnimationPlayer" parent="."]
 libraries = {
@@ -205,5 +200,34 @@ text_overrun_behavior = 2
 
 [node name="ClockTimer" parent="." instance=ExtResource("7_mbg8h")]
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_fwe3h")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 645.0
+offset_top = 629.0
+offset_right = 1919.0
+offset_bottom = 1885.0
+scale = Vector2(0.061849, 0.0724826)
+icon = ExtResource("3_e3pns")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Biblioteca (Puertas)" type="Label" parent="."]
+offset_left = 571.0
+offset_top = 605.0
+offset_right = 795.0
+offset_bottom = 631.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_7g3rm")
+theme_override_font_sizes/font_size = 18
+text = "Ir a Biblioteca (Entrada)"
+
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

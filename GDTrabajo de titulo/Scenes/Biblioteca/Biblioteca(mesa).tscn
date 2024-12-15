@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxsp8y54ptafo"]
+[gd_scene load_steps=16 format=3 uid="uid://bxsp8y54ptafo"]
 
 [ext_resource type="Script" path="res://Scripts/biblioteca(mesa).gd" id="1_jw0pc"]
 [ext_resource type="Texture2D" uid="uid://cx47gn2gal7ol" path="res://background/Sala multiuso (mesa).jpg" id="2_3yaen"]
@@ -101,6 +101,12 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_alboh"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_2b01o"]
+font = ExtResource("5_0hif1")
+font_size = 25
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jw0pc")
 
@@ -124,6 +130,16 @@ icon = ExtResource("3_p0rxn")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Biblioteca (Puertas)" type="Label" parent="ParallaxBackground/ParallaxLayer/Biblioteca(mesa)/Button"]
+layout_mode = 0
+offset_left = -2142.43
+offset_top = -463.567
+offset_right = 4497.57
+offset_bottom = 369.433
+theme_override_fonts/font = ExtResource("5_0hif1")
+theme_override_font_sizes/font_size = 600
+text = "Volver a sala multiuso"
 
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Biblioteca(mesa)"]
 libraries = {
@@ -221,6 +237,14 @@ vertical_alignment = 1
 text_overrun_behavior = 2
 
 [node name="ClockTimer" parent="." instance=ExtResource("8_2ntyj")]
+
+[node name="Objetivo" type="Label" parent="."]
+offset_left = 818.0
+offset_top = 13.0
+offset_right = 1265.0
+offset_bottom = 50.0
+text = "Objetivo: Ir a la oficina en escuela"
+label_settings = SubResource("LabelSettings_2b01o")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Biblioteca(mesa)/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="ParallaxBackground/ParallaxLayer/Biblioteca(mesa)/Transition" to="." method="_on_transition_animation_finished"]
