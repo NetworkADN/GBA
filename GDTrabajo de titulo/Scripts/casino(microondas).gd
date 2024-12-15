@@ -33,7 +33,7 @@ func _process(delta):
 		obj_label.text = "Objetivo: Resolver la ecuación"
 	elif DialogsFlags.bibl == false:
 		obj_label.text = "Objetivo: Ir a la biblioteca"
-	elif DialogsFlags.bibl_puzzle == false or DialogsFlags.bibl_final:
+	elif DialogsFlags.bibl_puzzle == false or DialogsFlags.bibl_final == true:
 		obj_label.text = "Objetivo: Revisa la sala multiuso"
 	elif DialogsFlags.lab == false:
 		obj_label.text = "Objetivo: Ir al laboratorio"

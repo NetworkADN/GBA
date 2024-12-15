@@ -231,7 +231,6 @@ offset_left = 818.0
 offset_top = 13.0
 offset_right = 1265.0
 offset_bottom = 50.0
-text = "Objetivo: Ir a la oficina en escuela"
 label_settings = SubResource("LabelSettings_hl6rr")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Escuela(puertas)/Button" to="." method="_on_button_pressed"]

@@ -146,13 +146,14 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Volver" type="Label" parent="ParallaxBackground/ParallaxLayer/Sala_carrera/Button"]
+layout_mode = 0
 offset_left = -2773.55
 offset_top = -1244.09
 offset_right = 6137.45
 offset_bottom = -272.093
 theme_override_constants/outline_size = 128
 theme_override_fonts/font = ExtResource("5_gcqty")
-theme_override_font_sizes/font_size = 700
+theme_override_font_sizes/font_size = 710
 text = "Salir de Sala de Carrera"
 
 [node name="Transition" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Sala_carrera"]
@@ -252,7 +253,6 @@ offset_left = 818.0
 offset_top = 13.0
 offset_right = 1265.0
 offset_bottom = 50.0
-text = "Objetivo: Ir a la oficina en escuela"
 label_settings = SubResource("LabelSettings_n3nh1")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Sala_carrera/Button" to="." method="_on_button_pressed"]

@@ -142,6 +142,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Entrada" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_1/Button"]
+layout_mode = 0
 offset_left = -242.526
 offset_top = -533.461
 offset_right = 2017.47
@@ -162,6 +163,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Pasillo M3" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_1/Button2"]
+layout_mode = 0
 offset_left = 2030.54
 offset_top = 2028.19
 offset_right = 4617.54
@@ -183,6 +185,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Patio Casino" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_1/Button3"]
+layout_mode = 0
 offset_left = -265.105
 offset_top = 2153.64
 offset_right = 2727.9
@@ -204,6 +207,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Diario mural" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_1/Button4"]
+layout_mode = 0
 offset_left = 114.888
 offset_top = -570.646
 offset_right = 3117.89
@@ -229,7 +233,6 @@ offset_left = 818.0
 offset_top = 13.0
 offset_right = 1265.0
 offset_bottom = 50.0
-text = "Objetivo: Ir a la oficina en escuela"
 label_settings = SubResource("LabelSettings_fu200")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_1/Button" to="." method="_on_button_pressed"]

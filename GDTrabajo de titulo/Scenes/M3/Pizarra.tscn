@@ -205,6 +205,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Estanteria" type="Label" parent="ParallaxBackground/ParallaxLayer/Pizarra/Button"]
+layout_mode = 0
 offset_left = -2646.19
 offset_top = -983.573
 offset_right = 4871.81
@@ -313,7 +314,6 @@ offset_left = 818.0
 offset_top = 13.0
 offset_right = 1265.0
 offset_bottom = 50.0
-text = "Objetivo: Ir a la oficina en escuela"
 label_settings = SubResource("LabelSettings_0kv4g")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pizarra/Button" to="." method="_on_button_pressed"]

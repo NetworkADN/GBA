@@ -143,6 +143,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Patio Casino" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_m3/Button"]
+layout_mode = 0
 offset_left = -664.6
 offset_top = -491.166
 offset_right = 2328.4
@@ -162,6 +163,7 @@ flat = true
 expand_icon = true
 
 [node name="Pasillo Salas" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_m3/Button2"]
+layout_mode = 0
 offset_left = -273.878
 offset_top = 1760.57
 offset_right = 2583.12
@@ -184,6 +186,7 @@ flat = true
 expand_icon = true
 
 [node name="Transa" type="Label" parent="ParallaxBackground/ParallaxLayer/Pasillo_m3/Button3"]
+layout_mode = 0
 offset_left = -885.433
 offset_top = -478.09
 offset_right = 2341.57
@@ -206,7 +209,6 @@ offset_left = 818.0
 offset_top = 13.0
 offset_right = 1265.0
 offset_bottom = 50.0
-text = "Objetivo: Ir a la oficina en escuela"
 label_settings = SubResource("LabelSettings_sr6q3")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Pasillo_m3/Button" to="." method="_on_button_pressed"]

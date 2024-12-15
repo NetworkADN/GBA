@@ -142,6 +142,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="UTEM" type="Label" parent="ParallaxBackground/ParallaxLayer/M8/Button"]
+layout_mode = 0
 offset_left = -2654.61
 offset_top = -930.998
 offset_right = 5437.39
@@ -164,6 +165,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Sala Carrera" type="Label" parent="ParallaxBackground/ParallaxLayer/M8/Button2"]
+layout_mode = 0
 offset_left = -2491.0
 offset_top = -847.243
 offset_right = 5059.0
@@ -196,6 +198,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Escuela (Puertas)" type="Label" parent="ParallaxBackground/ParallaxLayer/M8/Button3"]
+layout_mode = 0
 offset_left = 2944.88
 offset_top = -1583.77
 offset_right = 10842.9
@@ -203,7 +206,7 @@ offset_bottom = -611.772
 rotation = 1.5708
 theme_override_constants/outline_size = 128
 theme_override_fonts/font = ExtResource("6_8m1n1")
-theme_override_font_sizes/font_size = 700
+theme_override_font_sizes/font_size = 710
 text = "Ir a Escuela (Puertas)"
 
 [node name="Button4" type="Button" parent="ParallaxBackground/ParallaxLayer/M8"]
@@ -219,6 +222,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Patio Transa" type="Label" parent="ParallaxBackground/ParallaxLayer/M8/Button4"]
+layout_mode = 0
 offset_left = -637.159
 offset_top = 4417.51
 offset_right = 5816.84
@@ -234,7 +238,6 @@ offset_left = 818.0
 offset_top = 13.0
 offset_right = 1265.0
 offset_bottom = 50.0
-text = "Objetivo: Ir a la oficina en escuela"
 label_settings = SubResource("LabelSettings_w57vv")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/M8/Button" to="." method="_on_button_pressed"]

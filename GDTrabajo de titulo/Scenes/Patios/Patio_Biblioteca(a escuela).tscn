@@ -140,6 +140,7 @@ icon = ExtResource("3_gb1a5")
 flat = true
 
 [node name="Patio Casino" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)/Button"]
+layout_mode = 0
 offset_left = -1633.52
 offset_top = -817.866
 offset_right = 3498.48
@@ -162,6 +163,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Pasillo escuela" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)/Button2"]
+layout_mode = 0
 offset_left = -1658.83
 offset_top = -152.991
 offset_right = 3175.17
@@ -185,6 +187,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Patio Biblioteca" type="Label" parent="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)/Button3"]
+layout_mode = 0
 offset_left = 2315.87
 offset_top = -1099.34
 offset_right = 7329.87
@@ -210,7 +213,6 @@ offset_left = 818.0
 offset_top = 13.0
 offset_right = 1265.0
 offset_bottom = 50.0
-text = "Objetivo: Ir a la oficina en escuela"
 label_settings = SubResource("LabelSettings_shdrd")
 
 [connection signal="pressed" from="ParallaxBackground/ParallaxLayer/Patio_Biblioteca(a escuela)/Button" to="." method="_on_button_pressed"]
